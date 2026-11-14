@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -26,9 +27,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.datastore.preferences.core.edit
 import androidx.navigation.NavController
-import echo.music.iad1tya.constants.BlockedArtistsKey
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.constants.BlockedArtistsKey
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -55,7 +56,7 @@ fun BlockedArtistsScreen(navController: NavController) {
       Text("No blocked artists", modifier = Modifier.padding(padding).padding(16.dp))
     } else {
       LazyColumn(
-        modifier = Modifier.fillMaxSize().padding(padding),
+        modifier = Modifier.fillMaxSize().padding(padding), flingBehavior = rememberLiquidFling(),
       ) {
         items(blockedArtists.size) { index ->
           val entry = blockedArtists.toList()[index]

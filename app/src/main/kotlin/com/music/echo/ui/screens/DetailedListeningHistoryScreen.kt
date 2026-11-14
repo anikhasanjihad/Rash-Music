@@ -1,6 +1,7 @@
 /** vivimusic Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -15,16 +16,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import echo.music.iad1tya.R
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LocalAlbumsGrid
-import echo.music.iad1tya.ui.component.LocalArtistsGrid
-import echo.music.iad1tya.ui.component.LocalSongsGrid
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.utils.resize
-import echo.music.iad1tya.utils.joinByBullet
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.viewmodels.DetailedListeningHistoryViewModel
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LocalAlbumsGrid
+import com.ahr.rashmusic.ui.component.LocalArtistsGrid
+import com.ahr.rashmusic.ui.component.LocalSongsGrid
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.utils.resize
+import com.ahr.rashmusic.utils.joinByBullet
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.viewmodels.DetailedListeningHistoryViewModel
 import java.time.Instant
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
@@ -61,7 +62,7 @@ fun DetailedListeningHistoryScreen(
       )
     }
   ) { paddingValues ->
-    LazyColumn(contentPadding = paddingValues, modifier = Modifier.fillMaxSize()) {
+    LazyColumn(contentPadding = paddingValues, modifier = Modifier.fillMaxSize(), flingBehavior = rememberLiquidFling()) {
       item { Spacer(modifier = Modifier.height(16.dp)) }
 
       item {

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,7 +25,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.PlaybackException
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 @Composable
 fun PlaybackError(

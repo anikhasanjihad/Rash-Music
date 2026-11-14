@@ -1,7 +1,7 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.utils.lastfm.LastFmTasteApi
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.utils.lastfm.LastFmTasteApi
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -12,7 +12,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import timber.log.Timber
 
-import echo.music.iad1tya.db.daos.SongPlayStatsDao
+import com.ahr.rashmusic.db.daos.SongPlayStatsDao
 
 data class GenreWeight(
   val genre: String,

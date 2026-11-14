@@ -1,9 +1,9 @@
-package echo.music.iad1tya.ui.utils
+package com.ahr.rashmusic.ui.utils
 
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.ui.platform.UriHandler
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 fun UriHandler.safeOpenUri(context: Context, uri: String) {
   if (uri.isBlank()) return

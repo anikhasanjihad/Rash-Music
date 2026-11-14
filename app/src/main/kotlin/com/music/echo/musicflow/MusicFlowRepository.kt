@@ -1,4 +1,4 @@
-package echo.music.iad1tya.musicflow
+package com.ahr.rashmusic.musicflow
 
 import android.content.Context
 import com.music.innertube.YouTube
@@ -8,13 +8,13 @@ import com.music.innertube.models.filterBlockedArtists
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.DataSaverEnabledKey
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.constants.MusicFlowHideRecentKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.constants.DataSaverEnabledKey
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.constants.MusicFlowHideRecentKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.utils.dataStore
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CancellationException

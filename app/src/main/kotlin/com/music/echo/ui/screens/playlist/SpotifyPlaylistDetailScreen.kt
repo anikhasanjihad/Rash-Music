@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.playlist
+package com.ahr.rashmusic.ui.screens.playlist
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
@@ -88,23 +89,23 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import com.music.innertube.models.WatchEndpoint
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AppBarHeight
-import echo.music.iad1tya.constants.ListThumbnailSize
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.spotify.SpotifyMapper
-import echo.music.iad1tya.spotify.models.SpotifyTrack
-import echo.music.iad1tya.ui.component.EmptyPlaceholder
-import echo.music.iad1tya.ui.component.ListItem
-import echo.music.iad1tya.ui.component.OnlineBlur
-import echo.music.iad1tya.ui.component.PlayingIndicator
-import echo.music.iad1tya.utils.joinByBullet
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.makeTimeString
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AppBarHeight
+import com.ahr.rashmusic.constants.ListThumbnailSize
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.spotify.SpotifyMapper
+import com.ahr.rashmusic.spotify.models.SpotifyTrack
+import com.ahr.rashmusic.ui.component.EmptyPlaceholder
+import com.ahr.rashmusic.ui.component.ListItem
+import com.ahr.rashmusic.ui.component.OnlineBlur
+import com.ahr.rashmusic.ui.component.PlayingIndicator
+import com.ahr.rashmusic.utils.joinByBullet
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.makeTimeString
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -204,7 +205,7 @@ fun SpotifyPlaylistDetailScreen(
       LazyColumn(
         state = lazyListState,
         modifier = Modifier.fillMaxSize(),
-        contentPadding = LocalPlayerAwareWindowInsets.current.union(WindowInsets.ime).asPaddingValues(),
+        contentPadding = LocalPlayerAwareWindowInsets.current.union(WindowInsets.ime).asPaddingValues(), flingBehavior = rememberLiquidFling(),
       ) {
         // Playlist Header Hero Section
         if (!isSearching) {

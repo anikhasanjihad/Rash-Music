@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.artist
+package com.ahr.rashmusic.ui.screens.artist
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
@@ -40,20 +41,20 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CONTENT_TYPE_ALBUM
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LibraryAlbumGridItem
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.viewmodels.ArtistAlbumsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CONTENT_TYPE_ALBUM
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LibraryAlbumGridItem
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.viewmodels.ArtistAlbumsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -102,7 +103,7 @@ fun ArtistAlbumsScreen(
         GridCells.Adaptive(
           minSize = GridThumbnailHeight + if (gridItemSize == GridItemSize.BIG) 24.dp else (-24).dp
         ),
-      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues()
+      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling()
     ) {
       item(
         key = "header",

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback.queues
+package com.ahr.rashmusic.playback.queues
 
 import com.music.innertube.models.SongItem
 

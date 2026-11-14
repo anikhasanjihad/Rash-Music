@@ -1,6 +1,6 @@
-package echo.music.iad1tya.musicflow
+package com.ahr.rashmusic.musicflow
 
-import echo.music.iad1tya.generate.trackKeyOf
+import com.ahr.rashmusic.generate.trackKeyOf
 
 data class MusicFlowRankingConfig(
   val artistSpacing: Int = 2,

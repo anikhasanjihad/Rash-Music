@@ -1,10 +1,10 @@
-package echo.music.iad1tya.db
+package com.ahr.rashmusic.db
 
 import androidx.room.Room
-import echo.music.iad1tya.db.entities.Event
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.Event
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.entities.SongEntity
 import java.time.LocalDateTime
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking

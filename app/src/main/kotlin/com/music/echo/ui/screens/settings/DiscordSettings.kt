@@ -1,7 +1,8 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import android.net.Uri
 import androidx.activity.compose.BackHandler
@@ -36,24 +37,24 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.*
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.discord.DiscordOAuthRepository
-import echo.music.iad1tya.ui.component.EditTextPreference
-import echo.music.iad1tya.ui.component.EnumListPreference
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.ListPreference
-import echo.music.iad1tya.ui.component.PreferenceEntry
-import echo.music.iad1tya.ui.component.SwitchPreference
-import echo.music.iad1tya.ui.theme.PlayerColorExtractor
-import echo.music.iad1tya.ui.theme.extractThemeColor
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.*
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.discord.DiscordOAuthRepository
+import com.ahr.rashmusic.ui.component.EditTextPreference
+import com.ahr.rashmusic.ui.component.EnumListPreference
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.ListPreference
+import com.ahr.rashmusic.ui.component.PreferenceEntry
+import com.ahr.rashmusic.ui.component.SwitchPreference
+import com.ahr.rashmusic.ui.theme.PlayerColorExtractor
+import com.ahr.rashmusic.ui.theme.extractThemeColor
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlinx.coroutines.*
 import timber.log.Timber
 
@@ -415,7 +416,7 @@ fun DiscordSettings(
               .asPaddingValues()
               .calculateBottomPadding() + 32.dp,
         ),
-      verticalArrangement = Arrangement.spacedBy(16.dp),
+      verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling(),
     ) {
       item {
         DiscordAccountGroupCard(

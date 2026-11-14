@@ -19,9 +19,9 @@ import coil3.request.ImageRequest
 import coil3.request.SuccessResult
 import coil3.request.allowHardware
 import coil3.toBitmap
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.utils.ComposeToImage
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.utils.ComposeToImage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -1,9 +1,9 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
 import androidx.datastore.preferences.core.mutablePreferencesOf
-import echo.music.iad1tya.constants.LastFMUsernameKey
-import echo.music.iad1tya.db.entities.RecommendationExclusionEntity
-import echo.music.iad1tya.db.entities.SongPlayStatsEntity
+import com.ahr.rashmusic.constants.LastFMUsernameKey
+import com.ahr.rashmusic.db.entities.RecommendationExclusionEntity
+import com.ahr.rashmusic.db.entities.SongPlayStatsEntity
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

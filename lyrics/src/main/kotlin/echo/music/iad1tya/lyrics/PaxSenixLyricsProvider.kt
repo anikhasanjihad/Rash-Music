@@ -1,10 +1,10 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
 import android.content.Context
 import com.music.paxsenix.Paxsenix
-import echo.music.iad1tya.constants.EnablePaxsenixKey
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
+import com.ahr.rashmusic.constants.EnablePaxsenixKey
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
 import timber.log.Timber
 
 object PaxSenixLyricsProvider : LyricsProvider {

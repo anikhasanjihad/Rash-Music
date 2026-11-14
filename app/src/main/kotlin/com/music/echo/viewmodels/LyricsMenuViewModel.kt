@@ -1,17 +1,17 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.LyricsEntity
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.lyrics.LyricsHelper
-import echo.music.iad1tya.lyrics.LyricsResult
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.utils.NetworkConnectivityObserver
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.LyricsEntity
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.lyrics.LyricsHelper
+import com.ahr.rashmusic.lyrics.LyricsResult
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.utils.NetworkConnectivityObserver
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

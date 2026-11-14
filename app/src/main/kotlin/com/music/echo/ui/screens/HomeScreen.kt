@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -102,65 +103,65 @@ import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.YTItem
 import com.music.innertube.utils.completed
 import com.music.innertube.utils.parseCookieString
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EchoWrappedBannerDismissedKey
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.constants.InnerTubeCookieKey
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.ListThumbnailSize
-import echo.music.iad1tya.constants.RandomizeHomeOrderKey
-import echo.music.iad1tya.constants.ShowSpeedDialKey
-import echo.music.iad1tya.constants.SmallGridThumbnailHeight
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.Artist
-import echo.music.iad1tya.db.entities.LocalItem
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.AlbumGridItem
-import echo.music.iad1tya.ui.component.ArtistGridItem
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.LocalBottomSheetPageState
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.component.podcastHome
-import echo.music.iad1tya.ui.component.rememberEpisodesInProgress
-import echo.music.iad1tya.ui.component.RandomizeGridItem
-import echo.music.iad1tya.ui.component.SongGridItem
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.SpeedDialGridItem
-import echo.music.iad1tya.ui.component.YouTubeGridItem
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.component.shimmer.GridItemPlaceHolder
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.ui.component.shimmer.TextPlaceholder
-import echo.music.iad1tya.ui.menu.AlbumMenu
-import echo.music.iad1tya.ui.menu.ArtistMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.ui.menu.YouTubeAlbumMenu
-import echo.music.iad1tya.ui.menu.YouTubeArtistMenu
-import echo.music.iad1tya.ui.menu.YouTubePlaylistMenu
-import echo.music.iad1tya.ui.menu.YouTubeSongMenu
-import echo.music.iad1tya.ui.utils.SnapLayoutInfoProvider
-import echo.music.iad1tya.ui.utils.resize
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.CommunityPlaylistItem
-import echo.music.iad1tya.viewmodels.DailyDiscoverItem
-import echo.music.iad1tya.viewmodels.HomeViewModel
-import echo.music.iad1tya.viewmodels.PodcastsViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EchoWrappedBannerDismissedKey
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.constants.InnerTubeCookieKey
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.ListThumbnailSize
+import com.ahr.rashmusic.constants.RandomizeHomeOrderKey
+import com.ahr.rashmusic.constants.ShowSpeedDialKey
+import com.ahr.rashmusic.constants.SmallGridThumbnailHeight
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.Artist
+import com.ahr.rashmusic.db.entities.LocalItem
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.AlbumGridItem
+import com.ahr.rashmusic.ui.component.ArtistGridItem
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.LocalBottomSheetPageState
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.component.podcastHome
+import com.ahr.rashmusic.ui.component.rememberEpisodesInProgress
+import com.ahr.rashmusic.ui.component.RandomizeGridItem
+import com.ahr.rashmusic.ui.component.SongGridItem
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.SpeedDialGridItem
+import com.ahr.rashmusic.ui.component.YouTubeGridItem
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.component.shimmer.GridItemPlaceHolder
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.ui.component.shimmer.TextPlaceholder
+import com.ahr.rashmusic.ui.menu.AlbumMenu
+import com.ahr.rashmusic.ui.menu.ArtistMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.ui.menu.YouTubeAlbumMenu
+import com.ahr.rashmusic.ui.menu.YouTubeArtistMenu
+import com.ahr.rashmusic.ui.menu.YouTubePlaylistMenu
+import com.ahr.rashmusic.ui.menu.YouTubeSongMenu
+import com.ahr.rashmusic.ui.utils.SnapLayoutInfoProvider
+import com.ahr.rashmusic.ui.utils.resize
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.CommunityPlaylistItem
+import com.ahr.rashmusic.viewmodels.DailyDiscoverItem
+import com.ahr.rashmusic.viewmodels.HomeViewModel
+import com.ahr.rashmusic.viewmodels.PodcastsViewModel
 import kotlin.math.min
 import kotlin.random.Random
 import kotlinx.coroutines.Dispatchers
@@ -426,7 +427,7 @@ fun CommunityPlaylistCard(
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun DailyDiscoverCard(
-  dailyDiscover: echo.music.iad1tya.viewmodels.DailyDiscoverItem,
+  dailyDiscover: com.ahr.rashmusic.viewmodels.DailyDiscoverItem,
   onClick: () -> Unit,
   navController: NavController,
   modifier: Modifier = Modifier
@@ -954,7 +955,7 @@ fun HomeScreen(
       LazyColumn(
         state = lazylistState,
         modifier = Modifier.hapticScrollEdge(lazylistState),
-        contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues()
+        contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling()
       ) {
         item {
           ChipsRow(

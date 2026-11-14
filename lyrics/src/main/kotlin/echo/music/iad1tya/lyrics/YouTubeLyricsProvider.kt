@@ -1,4 +1,4 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
 import android.content.Context
 import com.music.innertube.YouTube

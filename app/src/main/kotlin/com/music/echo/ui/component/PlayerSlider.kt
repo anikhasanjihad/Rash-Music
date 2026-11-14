@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxWidth

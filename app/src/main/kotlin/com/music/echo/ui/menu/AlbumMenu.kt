@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Configuration
@@ -61,27 +62,27 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.ListThumbnailSize
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SpeedDialItem
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.AlbumListItem
-import echo.music.iad1tya.ui.component.ListDialog
-import echo.music.iad1tya.ui.component.ListItem
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
-import echo.music.iad1tya.ui.component.SongListItem
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.ListThumbnailSize
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SpeedDialItem
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.AlbumListItem
+import com.ahr.rashmusic.ui.component.ListDialog
+import com.ahr.rashmusic.ui.component.ListItem
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
+import com.ahr.rashmusic.ui.component.SongListItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -270,7 +271,7 @@ fun AlbumMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       NewActionGrid(

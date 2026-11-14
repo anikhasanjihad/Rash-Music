@@ -1,4 +1,4 @@
-package echo.music.iad1tya.recognition
+package com.ahr.rashmusic.recognition
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -14,8 +14,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.music.shazamkit.models.RecognitionResult
 import com.music.shazamkit.models.RecognitionStatus
-import echo.music.iad1tya.MainActivity
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.MainActivity
+import com.ahr.rashmusic.R
 import java.net.HttpURLConnection
 import java.net.URL
 import kotlinx.coroutines.CoroutineScope

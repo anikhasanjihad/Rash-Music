@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -27,11 +27,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EnableGoogleCastKey
-import echo.music.iad1tya.playback.CastConnectionHandler
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EnableGoogleCastKey
+import com.ahr.rashmusic.playback.CastConnectionHandler
+import com.ahr.rashmusic.utils.rememberPreference
 
 /**
  * Cast button that shows a custom [CastDevicePickerSheet] bottom sheet.
@@ -66,7 +66,7 @@ fun CastButton(
     castHandler?.castDeviceName?.collectAsStateWithLifecycle() ?: remember { mutableStateOf(null) }
   val deviceKind by
     castHandler?.deviceType?.collectAsStateWithLifecycle()
-      ?: remember { mutableStateOf(echo.music.iad1tya.playback.CastDeviceKind.UNKNOWN) }
+      ?: remember { mutableStateOf(com.ahr.rashmusic.playback.CastDeviceKind.UNKNOWN) }
   val deviceType = CastDeviceType.fromKind(deviceKind)
 
   val showPicker: () -> Unit = {

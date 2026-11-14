@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Stable

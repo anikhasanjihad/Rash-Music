@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.search
+package com.ahr.rashmusic.ui.screens.search
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -73,30 +74,30 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.YTItem
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.MiniPlayerBottomSpacing
-import echo.music.iad1tya.constants.MiniPlayerHeight
-import echo.music.iad1tya.constants.NavigationBarHeight
-import echo.music.iad1tya.constants.PauseSearchHistoryKey
-import echo.music.iad1tya.db.entities.SearchHistory
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.EmptyPlaceholder
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.component.shimmer.ListItemPlaceHolder
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.ui.menu.YouTubeAlbumMenu
-import echo.music.iad1tya.ui.menu.YouTubeArtistMenu
-import echo.music.iad1tya.ui.menu.YouTubePlaylistMenu
-import echo.music.iad1tya.ui.menu.YouTubeSongMenu
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.OnlineSearchViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.MiniPlayerBottomSpacing
+import com.ahr.rashmusic.constants.MiniPlayerHeight
+import com.ahr.rashmusic.constants.NavigationBarHeight
+import com.ahr.rashmusic.constants.PauseSearchHistoryKey
+import com.ahr.rashmusic.db.entities.SearchHistory
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.EmptyPlaceholder
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.component.shimmer.ListItemPlaceHolder
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.ui.menu.YouTubeAlbumMenu
+import com.ahr.rashmusic.ui.menu.YouTubeArtistMenu
+import com.ahr.rashmusic.ui.menu.YouTubePlaylistMenu
+import com.ahr.rashmusic.ui.menu.YouTubeSongMenu
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.OnlineSearchViewModel
 import java.net.URLDecoder
 import java.net.URLEncoder
 import kotlinx.coroutines.Dispatchers
@@ -358,7 +359,7 @@ fun OnlineSearchResult(
         LazyColumn(
           state = lazyListState,
           contentPadding = WindowInsets.systemBars.only(WindowInsetsSides.Bottom).asPaddingValues(),
-          modifier = Modifier.fillMaxWidth()
+          modifier = Modifier.fillMaxWidth(), flingBehavior = rememberLiquidFling()
         ) {
           if (searchFilter == null) {
             searchSummary?.summaries?.forEach { summary ->

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.api
+package com.ahr.rashmusic.api
 
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.Dispatchers

@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import android.content.res.Configuration
 import android.widget.Toast
@@ -46,33 +47,33 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
 import com.music.innertube.utils.parseCookieString
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EnableExportAsMp3Key
-import echo.music.iad1tya.constants.ExportDirectoryUriKey
-import echo.music.iad1tya.constants.ExportedSongIdsKey
-import echo.music.iad1tya.constants.ExportingSongIdsKey
-import echo.music.iad1tya.constants.InnerTubeCookieKey
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.PlaylistSong
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SpeedDialItem
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.playback.AudioExportService
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
-import echo.music.iad1tya.ui.component.PlaylistListItem
-import echo.music.iad1tya.ui.component.TextFieldDialog
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EnableExportAsMp3Key
+import com.ahr.rashmusic.constants.ExportDirectoryUriKey
+import com.ahr.rashmusic.constants.ExportedSongIdsKey
+import com.ahr.rashmusic.constants.ExportingSongIdsKey
+import com.ahr.rashmusic.constants.InnerTubeCookieKey
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.PlaylistSong
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SpeedDialItem
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.playback.AudioExportService
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
+import com.ahr.rashmusic.ui.component.PlaylistListItem
+import com.ahr.rashmusic.ui.component.TextFieldDialog
+import com.ahr.rashmusic.utils.rememberPreference
 import java.time.LocalDateTime
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -337,7 +338,7 @@ fun PlaylistMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       NewActionGrid(

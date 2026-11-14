@@ -1,11 +1,11 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
 import androidx.datastore.preferences.core.mutablePreferencesOf
-import echo.music.iad1tya.db.entities.SongPlayStatsEntity
-import echo.music.iad1tya.utils.lastfm.LastFmTasteApi
-import echo.music.iad1tya.utils.lastfm.SimilarArtist
-import echo.music.iad1tya.utils.lastfm.SimilarTrack
-import echo.music.iad1tya.utils.lastfm.Tag
+import com.ahr.rashmusic.db.entities.SongPlayStatsEntity
+import com.ahr.rashmusic.utils.lastfm.LastFmTasteApi
+import com.ahr.rashmusic.utils.lastfm.SimilarArtist
+import com.ahr.rashmusic.utils.lastfm.SimilarTrack
+import com.ahr.rashmusic.utils.lastfm.Tag
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

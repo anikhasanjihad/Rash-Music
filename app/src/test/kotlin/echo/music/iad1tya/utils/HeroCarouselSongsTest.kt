@@ -1,10 +1,10 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import com.music.innertube.models.Album
 import com.music.innertube.models.Artist
 import com.music.innertube.models.SongItem
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SongEntity
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

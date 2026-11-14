@@ -1,10 +1,10 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import echo.music.iad1tya.extensions.toEnum
+import com.ahr.rashmusic.extensions.toEnum
 import kotlin.properties.ReadOnlyProperty
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

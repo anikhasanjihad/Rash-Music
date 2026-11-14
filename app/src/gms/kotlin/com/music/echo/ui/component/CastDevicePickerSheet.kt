@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -43,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.mediarouter.media.MediaRouteSelector
 import androidx.mediarouter.media.MediaRouter
 import com.google.android.gms.cast.CastMediaControlIntent
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import timber.log.Timber
 
 /** Heuristic Cast device type based on route name/description keywords. */
@@ -54,12 +54,12 @@ internal enum class CastDeviceType(val icon: Int, val connectedIcon: Int) {
   UNKNOWN(R.drawable.cast, R.drawable.cast_connected);
 
   companion object {
-    fun fromKind(kind: echo.music.iad1tya.playback.CastDeviceKind): CastDeviceType =
+    fun fromKind(kind: com.ahr.rashmusic.playback.CastDeviceKind): CastDeviceType =
       when (kind) {
-        echo.music.iad1tya.playback.CastDeviceKind.TV -> TV
-        echo.music.iad1tya.playback.CastDeviceKind.SPEAKER -> SPEAKER
-        echo.music.iad1tya.playback.CastDeviceKind.CHROMECAST -> CHROMECAST
-        echo.music.iad1tya.playback.CastDeviceKind.UNKNOWN -> UNKNOWN
+        com.ahr.rashmusic.playback.CastDeviceKind.TV -> TV
+        com.ahr.rashmusic.playback.CastDeviceKind.SPEAKER -> SPEAKER
+        com.ahr.rashmusic.playback.CastDeviceKind.CHROMECAST -> CHROMECAST
+        com.ahr.rashmusic.playback.CastDeviceKind.UNKNOWN -> UNKNOWN
       }
 
     private val TV_KEYWORDS =

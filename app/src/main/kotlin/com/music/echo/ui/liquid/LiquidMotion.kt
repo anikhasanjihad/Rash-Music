@@ -2,7 +2,7 @@
  * Motion tokens adapted from Liquid Music Android (MIT, (c) admin0330).
  * See THIRD_PARTY_NOTICES.md.
  */
-package echo.music.iad1tya.ui.liquid
+package com.ahr.rashmusic.ui.liquid
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring

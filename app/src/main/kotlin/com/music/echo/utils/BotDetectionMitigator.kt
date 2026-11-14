@@ -1,8 +1,8 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import androidx.datastore.preferences.core.edit
 import com.music.innertube.YouTube
-import echo.music.iad1tya.constants.VisitorDataKey
+import com.ahr.rashmusic.constants.VisitorDataKey
 import java.util.concurrent.atomic.AtomicInteger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

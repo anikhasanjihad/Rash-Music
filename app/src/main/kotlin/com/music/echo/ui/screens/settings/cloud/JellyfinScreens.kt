@@ -1,5 +1,6 @@
 package com.music.echo.ui.screens.settings.cloud
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -30,7 +31,7 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.echo.cloud.JellyfinPlaylist
 import com.music.echo.cloud.JellyfinRepository
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -414,7 +415,7 @@ fun JellyfinDashboardScreen(
       } else {
         LazyColumn(
           modifier = Modifier.weight(1f),
-          verticalArrangement = Arrangement.spacedBy(8.dp)
+          verticalArrangement = Arrangement.spacedBy(8.dp), flingBehavior = rememberLiquidFling()
         ) {
           items(playlists) { pl ->
             Card(

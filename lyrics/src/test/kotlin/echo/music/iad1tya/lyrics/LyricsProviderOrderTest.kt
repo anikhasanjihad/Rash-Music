@@ -1,4 +1,4 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

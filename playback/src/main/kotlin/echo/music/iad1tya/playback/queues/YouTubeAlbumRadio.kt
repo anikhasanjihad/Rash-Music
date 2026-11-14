@@ -1,10 +1,10 @@
-package echo.music.iad1tya.playback.queues
+package com.ahr.rashmusic.playback.queues
 
 import androidx.media3.common.MediaItem
 import com.music.innertube.YouTube
 import com.music.innertube.models.WatchEndpoint
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.MediaMetadata
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 

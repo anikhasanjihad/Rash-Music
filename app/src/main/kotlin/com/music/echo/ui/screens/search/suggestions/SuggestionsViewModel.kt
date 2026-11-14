@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.search.suggestions
+package com.ahr.rashmusic.ui.screens.search.suggestions
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -9,8 +9,8 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.playback.PlayerConnection
-import echo.music.iad1tya.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.playback.PlayerConnection
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope

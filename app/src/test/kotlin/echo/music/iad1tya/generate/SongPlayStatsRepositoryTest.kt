@@ -1,7 +1,7 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
-import echo.music.iad1tya.db.daos.SongPlayStatsDao
-import echo.music.iad1tya.db.entities.SongPlayStatsEntity
+import com.ahr.rashmusic.db.daos.SongPlayStatsDao
+import com.ahr.rashmusic.db.entities.SongPlayStatsEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

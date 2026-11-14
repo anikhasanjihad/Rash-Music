@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -33,18 +34,18 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.LocalSyncUtils
-import echo.music.iad1tya.R
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.LocalSyncUtils
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
 import java.time.LocalDateTime
 import kotlinx.coroutines.launch
 
@@ -63,7 +64,7 @@ fun YouTubeSelectionSongMenu(
 
   var showChoosePlaylistDialog by rememberSaveable { mutableStateOf(false) }
 
-  val listenTogetherManager = echo.music.iad1tya.LocalListenTogetherManager.current
+  val listenTogetherManager = com.ahr.rashmusic.LocalListenTogetherManager.current
   val isGuest = listenTogetherManager?.isGuestPlaybackRestricted == true
 
   var downloadState by remember { mutableIntStateOf(Download.STATE_STOPPED) }
@@ -118,9 +119,9 @@ fun YouTubeSelectionSongMenu(
         songSelection
           .map { song ->
             val metadata = song.toMediaMetadata()
-            echo.music.iad1tya.db.entities.Song(
+            com.ahr.rashmusic.db.entities.Song(
               song =
-                echo.music.iad1tya.db.entities.SongEntity(
+                com.ahr.rashmusic.db.entities.SongEntity(
                   id = metadata.id,
                   title = metadata.title,
                   duration = metadata.duration,
@@ -136,14 +137,14 @@ fun YouTubeSelectionSongMenu(
                 ),
               artists =
                 metadata.artists.map { artist ->
-                  echo.music.iad1tya.db.entities.ArtistEntity(
+                  com.ahr.rashmusic.db.entities.ArtistEntity(
                     id = artist.id ?: "",
                     name = artist.name
                   )
                 },
               album =
                 metadata.album?.let { album ->
-                  echo.music.iad1tya.db.entities.AlbumEntity(
+                  com.ahr.rashmusic.db.entities.AlbumEntity(
                     id = album.id,
                     title = album.title,
                     thumbnailUrl = metadata.thumbnailUrl,
@@ -203,7 +204,7 @@ fun YouTubeSelectionSongMenu(
         top = 8.dp,
         end = 8.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       Material3MenuGroup(
@@ -379,7 +380,7 @@ fun YouTubeSelectionSongMenu(
                     insert(metadata)
 
                     val songEntity =
-                      echo.music.iad1tya.db.entities.SongEntity(
+                      com.ahr.rashmusic.db.entities.SongEntity(
                         id = metadata.id,
                         title = metadata.title,
                         duration = metadata.duration,

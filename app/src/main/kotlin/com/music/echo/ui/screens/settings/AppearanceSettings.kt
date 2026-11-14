@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.app.Activity
 import android.content.Context
@@ -53,84 +53,84 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.content.edit
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AppFont
-import echo.music.iad1tya.constants.AppIconTypeKey
-import echo.music.iad1tya.constants.AppleMusicLyricsBlurKey
-import echo.music.iad1tya.constants.CanvasThumbnailAnimationKey
-import echo.music.iad1tya.constants.ChipSortTypeKey
-import echo.music.iad1tya.constants.CropAlbumArtKey
-import echo.music.iad1tya.constants.DefaultOpenTabKey
-import echo.music.iad1tya.constants.DensityScale
-import echo.music.iad1tya.constants.DensityScaleKey
-import echo.music.iad1tya.constants.DynamicThemeKey
-import echo.music.iad1tya.constants.EnableClickHapticsKey
-import echo.music.iad1tya.constants.EnableHapticsKey
-import echo.music.iad1tya.constants.EnableHighRefreshRateKey
-import echo.music.iad1tya.constants.EnableLongPressHapticsKey
-import echo.music.iad1tya.constants.EnableLyricsThumbnailPlayPauseKey
-import echo.music.iad1tya.constants.EnableScrollEdgeHapticsKey
-import echo.music.iad1tya.constants.EnableSliderHapticsKey
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.HapticIntensity
-import echo.music.iad1tya.constants.HapticIntensityKey
-import echo.music.iad1tya.constants.HidePlayerThumbnailKey
-import echo.music.iad1tya.constants.HideStatusBarOnFullscreenKey
-import echo.music.iad1tya.constants.LibraryFilter
-import echo.music.iad1tya.constants.ListenTogetherInTopBarKey
-import echo.music.iad1tya.constants.LyricsAnimationStyle
-import echo.music.iad1tya.constants.LyricsAnimationStyleKey
-import echo.music.iad1tya.constants.LyricsClickKey
-import echo.music.iad1tya.constants.LyricsGlowEffectKey
-import echo.music.iad1tya.constants.LyricsLineSpacingKey
-import echo.music.iad1tya.constants.LyricsScrollKey
-import echo.music.iad1tya.constants.LyricsStandardBlurKey
-import echo.music.iad1tya.constants.LyricsTextPositionKey
-import echo.music.iad1tya.constants.LyricsTextSizeKey
-import echo.music.iad1tya.constants.MiniPlayerBackgroundStyleKey
-import echo.music.iad1tya.constants.PlayerBackgroundStyle
-import echo.music.iad1tya.constants.PlayerBackgroundStyleKey
-import echo.music.iad1tya.constants.PlayerButtonsStyle
-import echo.music.iad1tya.constants.PlayerButtonsStyleKey
-import echo.music.iad1tya.constants.RotatingThumbnailKey
-import echo.music.iad1tya.constants.SelectedFontKey
-import echo.music.iad1tya.constants.SelectedThemeColorKey
-import echo.music.iad1tya.constants.ShowBottomPlaylistKey
-import echo.music.iad1tya.constants.ShowCachedPlaylistKey
-import echo.music.iad1tya.constants.ShowCommentButtonKey
-import echo.music.iad1tya.constants.ShowDownloadedPlaylistKey
-import echo.music.iad1tya.constants.ShowExportedPlaylistKey
-import echo.music.iad1tya.constants.ShowLikedPlaylistKey
-import echo.music.iad1tya.constants.ShowTopPlaylistKey
-import echo.music.iad1tya.constants.SliderStyle
-import echo.music.iad1tya.constants.SliderStyleKey
-import echo.music.iad1tya.constants.SquigglySliderKey
-import echo.music.iad1tya.constants.WavyPlayPauseKey
-import echo.music.iad1tya.constants.SwipeLyricsKey
-import echo.music.iad1tya.constants.SwipeSensitivityKey
-import echo.music.iad1tya.constants.SwipeThumbnailKey
-import echo.music.iad1tya.constants.SwipeToRemoveSongKey
-import echo.music.iad1tya.constants.SwipeToSongKey
-import echo.music.iad1tya.constants.ThumbnailCornerRadiusKey
-import echo.music.iad1tya.constants.UseNewPlayerDesignKey
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.EnumDialog
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.component.PlayerSliderTrack
-import echo.music.iad1tya.ui.component.SquigglySlider
-import echo.music.iad1tya.ui.component.ThumbnailCornerRadiusModal
-import echo.music.iad1tya.ui.component.WavySlider
-import echo.music.iad1tya.ui.theme.DefaultThemeColor
-import echo.music.iad1tya.ui.theme.PlayerSliderColors
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.AppIconType
-import echo.music.iad1tya.utils.IconUtils
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AppFont
+import com.ahr.rashmusic.constants.AppIconTypeKey
+import com.ahr.rashmusic.constants.AppleMusicLyricsBlurKey
+import com.ahr.rashmusic.constants.CanvasThumbnailAnimationKey
+import com.ahr.rashmusic.constants.ChipSortTypeKey
+import com.ahr.rashmusic.constants.CropAlbumArtKey
+import com.ahr.rashmusic.constants.DefaultOpenTabKey
+import com.ahr.rashmusic.constants.DensityScale
+import com.ahr.rashmusic.constants.DensityScaleKey
+import com.ahr.rashmusic.constants.DynamicThemeKey
+import com.ahr.rashmusic.constants.EnableClickHapticsKey
+import com.ahr.rashmusic.constants.EnableHapticsKey
+import com.ahr.rashmusic.constants.EnableHighRefreshRateKey
+import com.ahr.rashmusic.constants.EnableLongPressHapticsKey
+import com.ahr.rashmusic.constants.EnableLyricsThumbnailPlayPauseKey
+import com.ahr.rashmusic.constants.EnableScrollEdgeHapticsKey
+import com.ahr.rashmusic.constants.EnableSliderHapticsKey
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.HapticIntensity
+import com.ahr.rashmusic.constants.HapticIntensityKey
+import com.ahr.rashmusic.constants.HidePlayerThumbnailKey
+import com.ahr.rashmusic.constants.HideStatusBarOnFullscreenKey
+import com.ahr.rashmusic.constants.LibraryFilter
+import com.ahr.rashmusic.constants.ListenTogetherInTopBarKey
+import com.ahr.rashmusic.constants.LyricsAnimationStyle
+import com.ahr.rashmusic.constants.LyricsAnimationStyleKey
+import com.ahr.rashmusic.constants.LyricsClickKey
+import com.ahr.rashmusic.constants.LyricsGlowEffectKey
+import com.ahr.rashmusic.constants.LyricsLineSpacingKey
+import com.ahr.rashmusic.constants.LyricsScrollKey
+import com.ahr.rashmusic.constants.LyricsStandardBlurKey
+import com.ahr.rashmusic.constants.LyricsTextPositionKey
+import com.ahr.rashmusic.constants.LyricsTextSizeKey
+import com.ahr.rashmusic.constants.MiniPlayerBackgroundStyleKey
+import com.ahr.rashmusic.constants.PlayerBackgroundStyle
+import com.ahr.rashmusic.constants.PlayerBackgroundStyleKey
+import com.ahr.rashmusic.constants.PlayerButtonsStyle
+import com.ahr.rashmusic.constants.PlayerButtonsStyleKey
+import com.ahr.rashmusic.constants.RotatingThumbnailKey
+import com.ahr.rashmusic.constants.SelectedFontKey
+import com.ahr.rashmusic.constants.SelectedThemeColorKey
+import com.ahr.rashmusic.constants.ShowBottomPlaylistKey
+import com.ahr.rashmusic.constants.ShowCachedPlaylistKey
+import com.ahr.rashmusic.constants.ShowCommentButtonKey
+import com.ahr.rashmusic.constants.ShowDownloadedPlaylistKey
+import com.ahr.rashmusic.constants.ShowExportedPlaylistKey
+import com.ahr.rashmusic.constants.ShowLikedPlaylistKey
+import com.ahr.rashmusic.constants.ShowTopPlaylistKey
+import com.ahr.rashmusic.constants.SliderStyle
+import com.ahr.rashmusic.constants.SliderStyleKey
+import com.ahr.rashmusic.constants.SquigglySliderKey
+import com.ahr.rashmusic.constants.WavyPlayPauseKey
+import com.ahr.rashmusic.constants.SwipeLyricsKey
+import com.ahr.rashmusic.constants.SwipeSensitivityKey
+import com.ahr.rashmusic.constants.SwipeThumbnailKey
+import com.ahr.rashmusic.constants.SwipeToRemoveSongKey
+import com.ahr.rashmusic.constants.SwipeToSongKey
+import com.ahr.rashmusic.constants.ThumbnailCornerRadiusKey
+import com.ahr.rashmusic.constants.UseNewPlayerDesignKey
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.EnumDialog
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.component.PlayerSliderTrack
+import com.ahr.rashmusic.ui.component.SquigglySlider
+import com.ahr.rashmusic.ui.component.ThumbnailCornerRadiusModal
+import com.ahr.rashmusic.ui.component.WavySlider
+import com.ahr.rashmusic.ui.theme.DefaultThemeColor
+import com.ahr.rashmusic.ui.theme.PlayerSliderColors
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.AppIconType
+import com.ahr.rashmusic.utils.IconUtils
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.roundToInt
 import kotlinx.coroutines.launch
 
@@ -149,26 +149,26 @@ fun AppearanceSettings(
   val (dynamicTheme, onDynamicThemeChange) =
     rememberPreference(DynamicThemeKey, defaultValue = true)
   val (enableLegacyIcon, onEnableLegacyIconChange) =
-    rememberPreference(echo.music.iad1tya.constants.EnableLegacyIconKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.EnableLegacyIconKey, defaultValue = false)
 
   val (appIconType, onAppIconTypeChange) =
     rememberEnumPreference(
-      echo.music.iad1tya.constants.AppIconTypeKey,
-      defaultValue = echo.music.iad1tya.utils.AppIconType.DEFAULT
+      com.ahr.rashmusic.constants.AppIconTypeKey,
+      defaultValue = com.ahr.rashmusic.utils.AppIconType.DEFAULT
     )
 
   var showAppIconDialog by rememberSaveable { mutableStateOf(false) }
   val (enableHighRefreshRate, onEnableHighRefreshRateChange) =
-    rememberPreference(echo.music.iad1tya.constants.EnableHighRefreshRateKey, defaultValue = true)
+    rememberPreference(com.ahr.rashmusic.constants.EnableHighRefreshRateKey, defaultValue = true)
   val (liveBlurDensity, onLiveBlurDensityChange) =
-    rememberPreference(echo.music.iad1tya.constants.LiveBlurDensityKey, defaultValue = 50f)
+    rememberPreference(com.ahr.rashmusic.constants.LiveBlurDensityKey, defaultValue = 50f)
   val (selectedThemeColorInt) =
     rememberPreference(SelectedThemeColorKey, defaultValue = DefaultThemeColor.toArgb())
 
   val isUsingCustomColor = selectedThemeColorInt != DefaultThemeColor.toArgb()
   val coroutineScope = rememberCoroutineScope()
 
-  fun handleIconChange(iconType: echo.music.iad1tya.utils.AppIconType) {
+  fun handleIconChange(iconType: com.ahr.rashmusic.utils.AppIconType) {
     onAppIconTypeChange(iconType)
     IconUtils.setIcon(activity, iconType)
     coroutineScope.launch {
@@ -191,9 +191,9 @@ fun AppearanceSettings(
   val (useNewPlayerDesign, onUseNewPlayerDesignChange) =
     rememberPreference(UseNewPlayerDesignKey, defaultValue = true)
   val (showCodecOnPlayer, onShowCodecOnPlayerChange) =
-    rememberPreference(echo.music.iad1tya.constants.ShowCodecOnPlayerKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.ShowCodecOnPlayerKey, defaultValue = false)
   val (hidePlayerSlider, onHidePlayerSliderChange) =
-    rememberPreference(echo.music.iad1tya.constants.HidePlayerSliderKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.HidePlayerSliderKey, defaultValue = false)
   val (hidePlayerThumbnail, onHidePlayerThumbnailChange) =
     rememberPreference(HidePlayerThumbnailKey, defaultValue = false)
   val (cropAlbumArt, onCropAlbumArtChange) =
@@ -939,19 +939,19 @@ fun AppearanceSettings(
           )
           add(
             Material3SettingsItem(
-              icon = painterResource(echo.music.iad1tya.R.drawable.alphabet_cyrillic),
-              title = { Text(stringResource(echo.music.iad1tya.R.string.app_font)) },
+              icon = painterResource(com.ahr.rashmusic.R.drawable.alphabet_cyrillic),
+              title = { Text(stringResource(com.ahr.rashmusic.R.string.app_font)) },
               trailingContent = {
                 val fontLabel =
                   when (AppFont.fromValue(selectedFontValue)) {
-                    AppFont.SYSTEM -> stringResource(echo.music.iad1tya.R.string.font_system)
+                    AppFont.SYSTEM -> stringResource(com.ahr.rashmusic.R.string.font_system)
                     AppFont.GOOGLE_SANS ->
-                      stringResource(echo.music.iad1tya.R.string.font_google_sans)
-                    AppFont.SANS_FLEX -> stringResource(echo.music.iad1tya.R.string.font_sans_flex)
-                    AppFont.OUTFIT -> stringResource(echo.music.iad1tya.R.string.font_outfit)
+                      stringResource(com.ahr.rashmusic.R.string.font_google_sans)
+                    AppFont.SANS_FLEX -> stringResource(com.ahr.rashmusic.R.string.font_sans_flex)
+                    AppFont.OUTFIT -> stringResource(com.ahr.rashmusic.R.string.font_outfit)
                     AppFont.PLUS_JAKARTA_SANS ->
-                      stringResource(echo.music.iad1tya.R.string.font_plus_jakarta_sans)
-                    AppFont.CUSTOM -> stringResource(echo.music.iad1tya.R.string.font_custom)
+                      stringResource(com.ahr.rashmusic.R.string.font_plus_jakarta_sans)
+                    AppFont.CUSTOM -> stringResource(com.ahr.rashmusic.R.string.font_custom)
                   }
                 Text(fontLabel)
               },

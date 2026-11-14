@@ -1,5 +1,5 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.widget
+package com.ahr.rashmusic.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -22,11 +22,11 @@ import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.MainActivity
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.di.ApplicationScope
+import com.ahr.rashmusic.MainActivity
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.di.ApplicationScope
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -629,7 +629,7 @@ constructor(
   private fun getOpenTargetIntent(item: QuickPick): PendingIntent {
     val intent =
       Intent(context, MainActivity::class.java).apply {
-        action = "echo.music.iad1tya.action.OPEN_WIDGET_TARGET"
+        action = "com.ahr.rashmusic.action.OPEN_WIDGET_TARGET"
         putExtra("extra_widget_target_type", item.targetType)
         putExtra("extra_widget_target_id", item.targetId)
       }

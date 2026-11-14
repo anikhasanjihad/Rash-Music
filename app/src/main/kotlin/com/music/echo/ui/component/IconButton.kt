@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.liquidPress
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -44,7 +45,8 @@ fun ResizableIconButton(
     contentDescription = null,
     colorFilter = ColorFilter.tint(color),
     modifier =
-      modifier
+      Modifier.liquidPress(0.9f)
+        .then(modifier)
         .clickable(
           indication = indication ?: ripple(bounded = false),
           interactionSource = remember { MutableInteractionSource() },
@@ -68,7 +70,8 @@ fun IconButton(
 ) {
   Box(
     modifier =
-      modifier
+      Modifier.liquidPress(0.9f)
+        .then(modifier)
         .minimumInteractiveComponentSize()
         .sizeIn(minWidth = 48.dp, minHeight = 48.dp)
         .clip(CircleShape)

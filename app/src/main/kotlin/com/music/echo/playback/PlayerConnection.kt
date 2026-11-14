@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -11,21 +11,21 @@ import androidx.media3.common.Player.REPEAT_MODE_OFF
 import androidx.media3.common.Player.STATE_ENDED
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.ExoPlayer
-import echo.music.iad1tya.constants.SponsorBlockEnabledKey
-import echo.music.iad1tya.data.SponsorBlockRepository
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.extensions.currentMetadata
-import echo.music.iad1tya.extensions.getCurrentQueueIndex
-import echo.music.iad1tya.extensions.getQueueWindows
-import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.extensions.togglePlayPause
-import echo.music.iad1tya.models.SponsorBlockSegment
-import echo.music.iad1tya.playback.MusicService.MusicBinder
-import echo.music.iad1tya.playback.queues.Queue
-import echo.music.iad1tya.utils.PlaybackLogLevel
-import echo.music.iad1tya.utils.PlaybackLogManager
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.constants.SponsorBlockEnabledKey
+import com.ahr.rashmusic.data.SponsorBlockRepository
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.extensions.currentMetadata
+import com.ahr.rashmusic.extensions.getCurrentQueueIndex
+import com.ahr.rashmusic.extensions.getQueueWindows
+import com.ahr.rashmusic.extensions.metadata
+import com.ahr.rashmusic.extensions.togglePlayPause
+import com.ahr.rashmusic.models.SponsorBlockSegment
+import com.ahr.rashmusic.playback.MusicService.MusicBinder
+import com.ahr.rashmusic.playback.queues.Queue
+import com.ahr.rashmusic.utils.PlaybackLogLevel
+import com.ahr.rashmusic.utils.PlaybackLogManager
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
@@ -145,7 +145,7 @@ class PlayerConnection(
       } catch (_: Exception) {
         androidx.media3.common.C.TIME_UNSET
       }
-      echo.music.iad1tya.playback.PlaybackCutoffGuard.computeEffectiveDuration(meta?.duration, playerDur)
+      com.ahr.rashmusic.playback.PlaybackCutoffGuard.computeEffectiveDuration(meta?.duration, playerDur)
     }.stateIn(scope, SharingStarted.Lazily, 0L)
 
   val queueTitle = MutableStateFlow<String?>(null)

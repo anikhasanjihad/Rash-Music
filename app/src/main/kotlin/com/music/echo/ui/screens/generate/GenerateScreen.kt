@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package echo.music.iad1tya.ui.screens.generate
+package com.ahr.rashmusic.ui.screens.generate
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -46,11 +46,11 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.viewmodels.GenerateUiState
-import echo.music.iad1tya.viewmodels.GenerateViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.viewmodels.GenerateUiState
+import com.ahr.rashmusic.viewmodels.GenerateViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

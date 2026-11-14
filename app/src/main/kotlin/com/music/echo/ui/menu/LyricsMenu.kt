@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.app.SearchManager
 import android.content.Intent
 import android.content.res.Configuration
@@ -54,30 +55,30 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AiProviderKey
-import echo.music.iad1tya.constants.AutoTranslateKey
-import echo.music.iad1tya.constants.DeeplApiKey
-import echo.music.iad1tya.constants.DeeplFormalityKey
-import echo.music.iad1tya.constants.OpenRouterApiKey
-import echo.music.iad1tya.constants.OpenRouterBaseUrlKey
-import echo.music.iad1tya.constants.OpenRouterModelKey
-import echo.music.iad1tya.constants.TranslateLanguageKey
-import echo.music.iad1tya.constants.TranslateModeKey
-import echo.music.iad1tya.db.entities.LyricsEntity
-import echo.music.iad1tya.db.entities.SongEntity
-import echo.music.iad1tya.lyrics.LyricsTranslationHelper
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.ListDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
-import echo.music.iad1tya.ui.component.TextFieldDialog
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.LyricsMenuViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AiProviderKey
+import com.ahr.rashmusic.constants.AutoTranslateKey
+import com.ahr.rashmusic.constants.DeeplApiKey
+import com.ahr.rashmusic.constants.DeeplFormalityKey
+import com.ahr.rashmusic.constants.OpenRouterApiKey
+import com.ahr.rashmusic.constants.OpenRouterBaseUrlKey
+import com.ahr.rashmusic.constants.OpenRouterModelKey
+import com.ahr.rashmusic.constants.TranslateLanguageKey
+import com.ahr.rashmusic.constants.TranslateModeKey
+import com.ahr.rashmusic.db.entities.LyricsEntity
+import com.ahr.rashmusic.db.entities.SongEntity
+import com.ahr.rashmusic.lyrics.LyricsTranslationHelper
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.ListDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
+import com.ahr.rashmusic.ui.component.TextFieldDialog
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.LyricsMenuViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -355,7 +356,7 @@ fun LyricsMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       NewActionGrid(

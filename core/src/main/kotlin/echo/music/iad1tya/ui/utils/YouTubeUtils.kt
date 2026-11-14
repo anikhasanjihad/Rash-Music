@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.utils
+package com.ahr.rashmusic.ui.utils
 
 fun String.resize(
   width: Int? = null,

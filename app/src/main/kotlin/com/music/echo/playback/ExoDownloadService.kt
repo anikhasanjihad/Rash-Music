@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import android.app.Notification
 import android.app.PendingIntent
@@ -14,7 +14,7 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.media3.exoplayer.scheduler.PlatformScheduler
 import androidx.media3.exoplayer.scheduler.Scheduler
 import dagger.hilt.android.AndroidEntryPoint
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import javax.inject.Inject
 
 @AndroidEntryPoint

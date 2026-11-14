@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -20,7 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -153,7 +154,7 @@ fun UptimeScreen(
     LazyColumn(
       modifier = Modifier.fillMaxSize().padding(innerPadding),
       contentPadding = PaddingValues(16.dp),
-      verticalArrangement = Arrangement.spacedBy(12.dp)
+      verticalArrangement = Arrangement.spacedBy(12.dp), flingBehavior = rememberLiquidFling()
     ) {
       item {
         Text(

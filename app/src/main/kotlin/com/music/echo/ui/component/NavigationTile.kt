@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.liquidPress
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -35,7 +36,8 @@ fun NavigationTile(
     Box(
       contentAlignment = Alignment.Center,
       modifier =
-        Modifier.size(56.dp)
+        Modifier.liquidPress(0.92f)
+          .size(56.dp)
           .clip(CircleShape)
           .background(MaterialTheme.colorScheme.surfaceContainer)
           .clickable(onClick = onClick),

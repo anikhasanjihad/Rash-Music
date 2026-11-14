@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import android.content.res.Configuration
 import androidx.compose.animation.core.animateFloatAsState
@@ -53,25 +54,25 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.LocalSyncUtils
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.ListThumbnailSize
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.BottomSheetState
-import echo.music.iad1tya.ui.component.ListDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.MediaMetadataListItem
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.LocalSyncUtils
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.ListThumbnailSize
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.BottomSheetState
+import com.ahr.rashmusic.ui.component.ListDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.MediaMetadataListItem
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
@@ -232,7 +233,7 @@ fun QueueMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       NewActionGrid(
@@ -495,15 +496,15 @@ fun QueueMenu(
                   refetchIconDegree -= 360
                   androidx.media3.exoplayer.offline.DownloadService.sendRemoveDownload(
                     context,
-                    echo.music.iad1tya.playback.ExoDownloadService::class.java,
+                    com.ahr.rashmusic.playback.ExoDownloadService::class.java,
                     mediaMetadata.id,
                     false
                   )
                   val intent =
                     android.content
-                      .Intent(context, echo.music.iad1tya.playback.MusicService::class.java)
+                      .Intent(context, com.ahr.rashmusic.playback.MusicService::class.java)
                       .apply {
-                        action = "echo.music.iad1tya.ACTION_CLEAR_SONG_CACHE"
+                        action = "com.ahr.rashmusic.ACTION_CLEAR_SONG_CACHE"
                         putExtra("songId", mediaMetadata.id)
                       }
                   context.startService(intent)

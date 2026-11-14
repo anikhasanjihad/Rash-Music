@@ -1,8 +1,8 @@
-package echo.music.iad1tya.extensions
+package com.ahr.rashmusic.extensions
 
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.Song
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.Song
 
 fun <T> List<T>.reversed(reversed: Boolean) = if (reversed) asReversed() else this
 

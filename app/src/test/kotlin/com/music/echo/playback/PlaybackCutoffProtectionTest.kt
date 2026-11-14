@@ -1,9 +1,9 @@
 package com.music.echo.playback
 
 import androidx.media3.common.C
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.playback.CutoffDecision
-import echo.music.iad1tya.playback.PlaybackCutoffGuard
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.playback.CutoffDecision
+import com.ahr.rashmusic.playback.PlaybackCutoffGuard
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

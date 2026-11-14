@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import javax.inject.Inject

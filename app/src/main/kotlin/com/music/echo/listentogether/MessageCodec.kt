@@ -1,7 +1,7 @@
-package echo.music.iad1tya.listentogether
+package com.ahr.rashmusic.listentogether
 
 import com.google.protobuf.MessageLite
-import echo.music.iad1tya.listentogether.proto.Listentogether
+import com.ahr.rashmusic.listentogether.proto.Listentogether
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.util.zip.GZIPInputStream

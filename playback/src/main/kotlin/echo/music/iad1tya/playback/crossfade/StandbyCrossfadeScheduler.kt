@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback.crossfade
+package com.ahr.rashmusic.playback.crossfade
 
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -6,12 +6,12 @@ import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.constants.statToPeriod
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.ui.screens.OptionStats
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.constants.statToPeriod
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.ui.screens.OptionStats
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.reportException
 import java.time.Duration
 import java.time.LocalDateTime
 import java.time.ZoneOffset

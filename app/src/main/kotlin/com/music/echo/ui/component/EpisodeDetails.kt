@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,12 +17,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.music.innertube.models.SongItem
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.utils.makeTimeString
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.utils.makeTimeString
 
 /** A chapter from an episode's description: a line such as "12:23 Title". */
 data class EpisodeChapter(val startMs: Long, val title: String)
@@ -49,7 +50,7 @@ fun parseEpisodeChapters(description: String?): List<EpisodeChapter> {
 fun EpisodeDetails(episode: SongItem, onDismiss: () -> Unit) {
   val playerConnection = LocalPlayerConnection.current ?: return
   val chapters = remember(episode.description) { parseEpisodeChapters(episode.description) }
-  LazyColumn(Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
+  LazyColumn(Modifier.fillMaxWidth().padding(horizontal = 16.dp), flingBehavior = rememberLiquidFling()) {
     item(key = "title") {
       Text(
         text = episode.title,

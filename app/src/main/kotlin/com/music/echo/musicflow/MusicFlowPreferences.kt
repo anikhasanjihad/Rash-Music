@@ -1,15 +1,15 @@
-package echo.music.iad1tya.musicflow
+package com.ahr.rashmusic.musicflow
 
 import androidx.datastore.preferences.core.Preferences
-import echo.music.iad1tya.constants.CanvasThumbnailAnimationKey
-import echo.music.iad1tya.constants.DataSaverEnabledKey
-import echo.music.iad1tya.constants.MusicFlowAnimatedBackgroundKey
-import echo.music.iad1tya.constants.MusicFlowAutoNextKey
-import echo.music.iad1tya.constants.MusicFlowAutoplayKey
-import echo.music.iad1tya.constants.MusicFlowCellularPrefetchKey
-import echo.music.iad1tya.constants.MusicFlowEnabledKey
-import echo.music.iad1tya.constants.MusicFlowHideRecentKey
-import echo.music.iad1tya.constants.MusicFlowLyricsKey
+import com.ahr.rashmusic.constants.CanvasThumbnailAnimationKey
+import com.ahr.rashmusic.constants.DataSaverEnabledKey
+import com.ahr.rashmusic.constants.MusicFlowAnimatedBackgroundKey
+import com.ahr.rashmusic.constants.MusicFlowAutoNextKey
+import com.ahr.rashmusic.constants.MusicFlowAutoplayKey
+import com.ahr.rashmusic.constants.MusicFlowCellularPrefetchKey
+import com.ahr.rashmusic.constants.MusicFlowEnabledKey
+import com.ahr.rashmusic.constants.MusicFlowHideRecentKey
+import com.ahr.rashmusic.constants.MusicFlowLyricsKey
 
 data class MusicFlowPreferences(
   val enabled: Boolean = true,

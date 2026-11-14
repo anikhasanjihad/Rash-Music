@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 /**
  * Clean, minimal, Pixel UI / Material You inspired banner card for Echo Wrapped.

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback.crossfade
+package com.ahr.rashmusic.playback.crossfade
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -34,16 +34,16 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.utils.parseCookieString
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.*
-import echo.music.iad1tya.constants.SavedAccountsKey
-import echo.music.iad1tya.models.AccountData
-import echo.music.iad1tya.ui.component.*
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.AccountSettingsViewModel
-import echo.music.iad1tya.viewmodels.HomeViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.*
+import com.ahr.rashmusic.constants.SavedAccountsKey
+import com.ahr.rashmusic.models.AccountData
+import com.ahr.rashmusic.ui.component.*
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.AccountSettingsViewModel
+import com.ahr.rashmusic.viewmodels.HomeViewModel
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

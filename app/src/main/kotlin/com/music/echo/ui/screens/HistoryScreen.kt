@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -56,32 +57,32 @@ import androidx.compose.ui.util.fastForEachReversed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.music.innertube.utils.parseCookieString
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.HistorySource
-import echo.music.iad1tya.constants.InnerTubeCookieKey
-import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.HideOnScrollFAB
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.menu.SelectionMediaMetadataMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.ui.menu.YouTubeSongMenu
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.DateAgo
-import echo.music.iad1tya.viewmodels.HistoryViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.HistorySource
+import com.ahr.rashmusic.constants.InnerTubeCookieKey
+import com.ahr.rashmusic.extensions.metadata
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.HideOnScrollFAB
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.menu.SelectionMediaMetadataMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.ui.menu.YouTubeSongMenu
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.DateAgo
+import com.ahr.rashmusic.viewmodels.HistoryViewModel
 import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
@@ -209,7 +210,7 @@ fun HistoryScreen(
       modifier =
         Modifier.windowInsetsPadding(
           LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Top)
-        )
+        ), flingBehavior = rememberLiquidFling()
     ) {
       item(key = "chips_row") {
         ChipsRow(

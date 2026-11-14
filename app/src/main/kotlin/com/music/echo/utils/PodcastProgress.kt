@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.Context
 import androidx.core.content.edit
@@ -6,7 +6,7 @@ import com.music.innertube.models.PODCAST_BROWSE_PREFIX
 import com.music.innertube.models.SongItem
 import com.music.innertube.pages.HomePage
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_PODCAST_EPISODE
-import echo.music.iad1tya.models.MediaMetadata
+import com.ahr.rashmusic.models.MediaMetadata
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

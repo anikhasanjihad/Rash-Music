@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Box
@@ -37,31 +38,31 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.music.innertube.models.WatchEndpoint
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EchoWrappedBannerDismissedKey
-import echo.music.iad1tya.constants.StatPeriod
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.ChoiceChipsRow
-import echo.music.iad1tya.ui.component.HideOnScrollFAB
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LocalAlbumsGrid
-import echo.music.iad1tya.ui.component.LocalArtistsGrid
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.LocalSongsGrid
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.menu.AlbumMenu
-import echo.music.iad1tya.ui.menu.ArtistMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.joinByBullet
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.viewmodels.StatsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EchoWrappedBannerDismissedKey
+import com.ahr.rashmusic.constants.StatPeriod
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.ChoiceChipsRow
+import com.ahr.rashmusic.ui.component.HideOnScrollFAB
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LocalAlbumsGrid
+import com.ahr.rashmusic.ui.component.LocalArtistsGrid
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.LocalSongsGrid
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.menu.AlbumMenu
+import com.ahr.rashmusic.ui.menu.ArtistMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.joinByBullet
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.viewmodels.StatsViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -183,7 +184,7 @@ fun StatsScreen(
       modifier =
         Modifier.windowInsetsPadding(
           LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Top)
-        )
+        ), flingBehavior = rememberLiquidFling()
     ) {
       item(key = "choice_chips") {
         ChoiceChipsRow(

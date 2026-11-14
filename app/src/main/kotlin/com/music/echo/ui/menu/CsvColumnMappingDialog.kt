@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -34,9 +34,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import echo.music.iad1tya.R
-import echo.music.iad1tya.viewmodels.ConvertedSongLog
-import echo.music.iad1tya.viewmodels.CsvImportState
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.viewmodels.ConvertedSongLog
+import com.ahr.rashmusic.viewmodels.CsvImportState
 
 @Composable
 fun CsvColumnMappingDialog(

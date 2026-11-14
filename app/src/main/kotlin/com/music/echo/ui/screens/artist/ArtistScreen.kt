@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.artist
+package com.ahr.rashmusic.ui.screens.artist
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -93,54 +94,54 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.valentinilk.shimmer.shimmer
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.artistvideo.ArtistVideo
-import echo.music.iad1tya.canvas.AppleMusicArtistBackgroundProvider
-import echo.music.iad1tya.constants.AppBarHeight
-import echo.music.iad1tya.constants.BlockedArtistsKey
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.ShowArtistBackgroundVideoKey
-import echo.music.iad1tya.constants.ShowArtistDescriptionKey
-import echo.music.iad1tya.constants.ShowArtistSubscriberCountKey
-import echo.music.iad1tya.constants.ShowArtistVideoKey
-import echo.music.iad1tya.constants.ShowMonthlyListenersKey
-import echo.music.iad1tya.db.entities.ArtistEntity
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.AlbumGridItem
-import echo.music.iad1tya.ui.component.ExpandableText
-import echo.music.iad1tya.ui.component.HideOnScrollFAB
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LinkSegment
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.YouTubeGridItem
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.component.shimmer.ButtonPlaceholder
-import echo.music.iad1tya.ui.component.shimmer.ListItemPlaceHolder
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.ui.component.shimmer.TextPlaceholder
-import echo.music.iad1tya.ui.menu.AlbumMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.ui.menu.YouTubeAlbumMenu
-import echo.music.iad1tya.ui.menu.YouTubeArtistMenu
-import echo.music.iad1tya.ui.menu.YouTubePlaylistMenu
-import echo.music.iad1tya.ui.menu.YouTubeSongMenu
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.ui.utils.fadingEdge
-import echo.music.iad1tya.ui.utils.isScrollingUp
-import echo.music.iad1tya.ui.utils.resize
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.ArtistViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.artistvideo.ArtistVideo
+import com.ahr.rashmusic.canvas.AppleMusicArtistBackgroundProvider
+import com.ahr.rashmusic.constants.AppBarHeight
+import com.ahr.rashmusic.constants.BlockedArtistsKey
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.ShowArtistBackgroundVideoKey
+import com.ahr.rashmusic.constants.ShowArtistDescriptionKey
+import com.ahr.rashmusic.constants.ShowArtistSubscriberCountKey
+import com.ahr.rashmusic.constants.ShowArtistVideoKey
+import com.ahr.rashmusic.constants.ShowMonthlyListenersKey
+import com.ahr.rashmusic.db.entities.ArtistEntity
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.AlbumGridItem
+import com.ahr.rashmusic.ui.component.ExpandableText
+import com.ahr.rashmusic.ui.component.HideOnScrollFAB
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LinkSegment
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.YouTubeGridItem
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.component.shimmer.ButtonPlaceholder
+import com.ahr.rashmusic.ui.component.shimmer.ListItemPlaceHolder
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.ui.component.shimmer.TextPlaceholder
+import com.ahr.rashmusic.ui.menu.AlbumMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.ui.menu.YouTubeAlbumMenu
+import com.ahr.rashmusic.ui.menu.YouTubeArtistMenu
+import com.ahr.rashmusic.ui.menu.YouTubePlaylistMenu
+import com.ahr.rashmusic.ui.menu.YouTubeSongMenu
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.ui.utils.fadingEdge
+import com.ahr.rashmusic.ui.utils.isScrollingUp
+import com.ahr.rashmusic.ui.utils.resize
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.ArtistViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -180,7 +181,7 @@ fun ArtistScreen(
     rememberPreference(key = ShowArtistSubscriberCountKey, defaultValue = true)
   val showMonthlyListeners by rememberPreference(key = ShowMonthlyListenersKey, defaultValue = true)
   val dataSaverEnabled by
-    rememberPreference(key = echo.music.iad1tya.constants.DataSaverEnabledKey, defaultValue = false)
+    rememberPreference(key = com.ahr.rashmusic.constants.DataSaverEnabledKey, defaultValue = false)
   val showArtistVideoPref by rememberPreference(key = ShowArtistVideoKey, defaultValue = true)
   val showArtistVideo = if (dataSaverEnabled) false else showArtistVideoPref
   val showArtistBackgroundVideoPref by
@@ -206,7 +207,7 @@ fun ArtistScreen(
   Box(modifier = Modifier.fillMaxSize()) {
     LazyColumn(
       state = lazyListState,
-      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
     ) {
       if (artistPage == null && !showLocal) {
         item(key = "shimmer") {

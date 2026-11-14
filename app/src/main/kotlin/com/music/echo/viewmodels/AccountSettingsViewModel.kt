@@ -1,4 +1,4 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import android.content.Context
 import android.content.Intent
@@ -6,15 +6,15 @@ import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.App
-import echo.music.iad1tya.constants.AccountChannelHandleKey
-import echo.music.iad1tya.constants.AccountEmailKey
-import echo.music.iad1tya.constants.AccountNameKey
-import echo.music.iad1tya.constants.DataSyncIdKey
-import echo.music.iad1tya.constants.InnerTubeCookieKey
-import echo.music.iad1tya.constants.VisitorDataKey
-import echo.music.iad1tya.utils.SyncUtils
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.App
+import com.ahr.rashmusic.constants.AccountChannelHandleKey
+import com.ahr.rashmusic.constants.AccountEmailKey
+import com.ahr.rashmusic.constants.AccountNameKey
+import com.ahr.rashmusic.constants.DataSyncIdKey
+import com.ahr.rashmusic.constants.InnerTubeCookieKey
+import com.ahr.rashmusic.constants.VisitorDataKey
+import com.ahr.rashmusic.utils.SyncUtils
+import com.ahr.rashmusic.utils.dataStore
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

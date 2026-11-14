@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback.audio.bluetooth
+package com.ahr.rashmusic.playback.audio.bluetooth
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothA2dp

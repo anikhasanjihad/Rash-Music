@@ -1,5 +1,5 @@
 /** vivimusic Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -42,7 +42,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 /**
  * Pure HSV/hex color conversions used by [ColorPickerDialog]. Kept free of android.* dependencies

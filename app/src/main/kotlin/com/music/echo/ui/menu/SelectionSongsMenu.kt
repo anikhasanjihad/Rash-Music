@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.PaddingValues
@@ -39,24 +40,24 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.LocalSyncUtils
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.models.toSongEntity
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.LocalSyncUtils
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.models.toSongEntity
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
 import java.time.LocalDateTime
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -77,7 +78,7 @@ fun SelectionSongMenu(
   val coroutineScope = rememberCoroutineScope()
   val playerConnection = LocalPlayerConnection.current ?: return
   val syncUtils = LocalSyncUtils.current
-  val listenTogetherManager = echo.music.iad1tya.LocalListenTogetherManager.current
+  val listenTogetherManager = com.ahr.rashmusic.LocalListenTogetherManager.current
   val isGuest = listenTogetherManager?.isGuestPlaybackRestricted == true
 
   val allInLibrary by remember {
@@ -180,7 +181,7 @@ fun SelectionSongMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       NewActionGrid(
@@ -498,7 +499,7 @@ fun SelectionMediaMetadataMenu(
   val downloadUtil = LocalDownloadUtil.current
   val coroutineScope = rememberCoroutineScope()
   val playerConnection = LocalPlayerConnection.current ?: return
-  val listenTogetherManager = echo.music.iad1tya.LocalListenTogetherManager.current
+  val listenTogetherManager = com.ahr.rashmusic.LocalListenTogetherManager.current
   val isGuest = listenTogetherManager?.isGuestPlaybackRestricted == true
 
   val allLiked by
@@ -588,7 +589,7 @@ fun SelectionMediaMetadataMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       Material3MenuGroup(

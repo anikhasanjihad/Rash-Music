@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.content.Intent
 import android.widget.Toast
@@ -41,24 +41,24 @@ import coil3.SingletonImageLoader
 import coil3.annotation.DelicateCoilApi
 import coil3.annotation.ExperimentalCoilApi
 import coil3.imageLoader
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ExportDirectoryUriKey
-import echo.music.iad1tya.constants.ExportingSongIdsKey
-import echo.music.iad1tya.constants.MaxImageCacheSizeKey
-import echo.music.iad1tya.constants.MaxSongCacheSizeKey
-import echo.music.iad1tya.extensions.tryOrNull
-import echo.music.iad1tya.playback.AudioExportService
-import echo.music.iad1tya.ui.component.ActionPromptDialog
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.ui.utils.formatFileSize
-import echo.music.iad1tya.utils.launchSafely
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ExportDirectoryUriKey
+import com.ahr.rashmusic.constants.ExportingSongIdsKey
+import com.ahr.rashmusic.constants.MaxImageCacheSizeKey
+import com.ahr.rashmusic.constants.MaxSongCacheSizeKey
+import com.ahr.rashmusic.extensions.tryOrNull
+import com.ahr.rashmusic.playback.AudioExportService
+import com.ahr.rashmusic.ui.component.ActionPromptDialog
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.ui.utils.formatFileSize
+import com.ahr.rashmusic.utils.launchSafely
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
@@ -208,7 +208,7 @@ fun StorageSettings(
       onConfirm = {
         androidx.media3.exoplayer.offline.DownloadService.sendRemoveAllDownloads(
           context,
-          echo.music.iad1tya.playback.ExoDownloadService::class.java,
+          com.ahr.rashmusic.playback.ExoDownloadService::class.java,
           false
         )
         clearDownloads = false

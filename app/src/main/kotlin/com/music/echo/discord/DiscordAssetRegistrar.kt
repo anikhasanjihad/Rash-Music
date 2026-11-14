@@ -1,6 +1,6 @@
-package echo.music.iad1tya.discord
+package com.ahr.rashmusic.discord
 
-import echo.music.iad1tya.BuildConfig
+import com.ahr.rashmusic.BuildConfig
 import java.net.URI
 import java.util.concurrent.ConcurrentHashMap
 import kotlinx.coroutines.Dispatchers

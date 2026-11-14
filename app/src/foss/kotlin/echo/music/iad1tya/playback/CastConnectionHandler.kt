@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import android.content.Context
 import kotlinx.coroutines.CoroutineScope
@@ -48,7 +48,7 @@ class CastConnectionHandler(context: Context, scope: CoroutineScope, musicServic
 
   fun loadCurrentMedia() {}
 
-  fun loadMedia(metadata: echo.music.iad1tya.models.MediaMetadata) {}
+  fun loadMedia(metadata: com.ahr.rashmusic.models.MediaMetadata) {}
 
   fun play() {}
 

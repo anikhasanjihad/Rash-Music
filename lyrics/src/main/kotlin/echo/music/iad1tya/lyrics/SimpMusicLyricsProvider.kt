@@ -1,10 +1,10 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
 import android.content.Context
 import com.music.simpmusic.SimpMusicLyrics
-import echo.music.iad1tya.constants.EnableSimpMusicKey
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
+import com.ahr.rashmusic.constants.EnableSimpMusicKey
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
 
 object SimpMusicLyricsProvider : LyricsProvider {
   override val name = "SimpMusic"

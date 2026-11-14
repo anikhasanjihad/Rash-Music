@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.animation.core.Animatable
@@ -63,20 +64,20 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.extensions.reversed
-import echo.music.iad1tya.spotify.SpotifyMapper
-import echo.music.iad1tya.ui.component.GridItem
-import echo.music.iad1tya.ui.component.SortHeader
-import echo.music.iad1tya.ui.component.shimmer.ListItemPlaceHolder
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.utils.rememberEnumPreference
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.extensions.reversed
+import com.ahr.rashmusic.spotify.SpotifyMapper
+import com.ahr.rashmusic.ui.component.GridItem
+import com.ahr.rashmusic.ui.component.SortHeader
+import com.ahr.rashmusic.ui.component.shimmer.ListItemPlaceHolder
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.utils.rememberEnumPreference
 import java.text.Collator
 import java.util.Locale
 import kotlinx.coroutines.launch
@@ -149,7 +150,7 @@ fun LibrarySpotifyScreen(
           minSize = GridThumbnailHeight + if (gridItemSize == GridItemSize.BIG) 24.dp else (-24).dp,
         ),
       modifier = Modifier.fillMaxSize(),
-      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
     ) {
       item(
         key = "filter",

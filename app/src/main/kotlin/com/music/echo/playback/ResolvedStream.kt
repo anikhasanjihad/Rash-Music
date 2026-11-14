@@ -1,10 +1,10 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import androidx.core.net.toUri
 import androidx.media3.datasource.DataSpec
-import echo.music.iad1tya.utils.InnerTubeXResolver
-import echo.music.iad1tya.utils.PlayerClient
-import echo.music.iad1tya.utils.YTPlayerUtils.PlaybackData
+import com.ahr.rashmusic.utils.InnerTubeXResolver
+import com.ahr.rashmusic.utils.PlayerClient
+import com.ahr.rashmusic.utils.YTPlayerUtils.PlaybackData
 
 internal data class ResolvedStream(
   val url: String,

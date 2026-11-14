@@ -1,9 +1,9 @@
-package echo.music.iad1tya.playback.queues
+package com.ahr.rashmusic.playback.queues
 
 import androidx.media3.common.MediaItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_PODCAST_EPISODE
-import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.models.MediaMetadata
+import com.ahr.rashmusic.extensions.metadata
+import com.ahr.rashmusic.models.MediaMetadata
 
 interface Queue {
   val preloadItem: MediaMetadata?

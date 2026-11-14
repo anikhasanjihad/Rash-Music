@@ -1,4 +1,4 @@
-package echo.music.iad1tya.di
+package com.ahr.rashmusic.di
 
 import javax.inject.Qualifier
 

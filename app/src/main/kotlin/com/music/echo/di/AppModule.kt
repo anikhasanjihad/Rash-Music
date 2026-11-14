@@ -1,4 +1,4 @@
-package echo.music.iad1tya.di
+package com.ahr.rashmusic.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -13,21 +13,21 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import echo.music.iad1tya.constants.MaxSongCacheSizeKey
-import echo.music.iad1tya.db.InternalDatabase
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.daos.TasteProfileDao
-import echo.music.iad1tya.generate.GenerationStatus
-import echo.music.iad1tya.generate.GenresRepository
-import echo.music.iad1tya.generate.LocalTasteEngine
-import echo.music.iad1tya.generate.RealGenerationStatus
-import echo.music.iad1tya.generate.RecommendationEngine
-import echo.music.iad1tya.listentogether.ListenTogetherClient
-import echo.music.iad1tya.listentogether.ListenTogetherManager
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
-import echo.music.iad1tya.utils.lastfm.LastFmTasteApi
-import echo.music.iad1tya.utils.lastfm.RealLastFmTasteApi
+import com.ahr.rashmusic.constants.MaxSongCacheSizeKey
+import com.ahr.rashmusic.db.InternalDatabase
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.daos.TasteProfileDao
+import com.ahr.rashmusic.generate.GenerationStatus
+import com.ahr.rashmusic.generate.GenresRepository
+import com.ahr.rashmusic.generate.LocalTasteEngine
+import com.ahr.rashmusic.generate.RealGenerationStatus
+import com.ahr.rashmusic.generate.RecommendationEngine
+import com.ahr.rashmusic.listentogether.ListenTogetherClient
+import com.ahr.rashmusic.listentogether.ListenTogetherManager
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
+import com.ahr.rashmusic.utils.lastfm.LastFmTasteApi
+import com.ahr.rashmusic.utils.lastfm.RealLastFmTasteApi
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -105,24 +105,24 @@ object AppModule {
   ): InternalDatabase =
     Room.databaseBuilder(context, InternalDatabase::class.java, InternalDatabase.DB_NAME)
       .addMigrations(
-        echo.music.iad1tya.db.MIGRATION_1_2,
-        echo.music.iad1tya.db.MIGRATION_21_24,
-        echo.music.iad1tya.db.MIGRATION_22_24,
-        echo.music.iad1tya.db.MIGRATION_24_25,
-        echo.music.iad1tya.db.MIGRATION_27_28,
-        echo.music.iad1tya.db.MIGRATION_28_29,
-        echo.music.iad1tya.db.MIGRATION_29_30,
-        echo.music.iad1tya.db.MIGRATION_31_32,
-        echo.music.iad1tya.db.MIGRATION_36_37,
-        echo.music.iad1tya.db.MIGRATION_37_38,
-        echo.music.iad1tya.db.MIGRATION_38_39,
-        echo.music.iad1tya.db.MIGRATION_39_40,
-        echo.music.iad1tya.db.MIGRATION_40_41,
-        echo.music.iad1tya.db.MIGRATION_41_42,
-        echo.music.iad1tya.db.MIGRATION_42_43,
-        echo.music.iad1tya.db.MIGRATION_43_44,
-        echo.music.iad1tya.db.MIGRATION_44_45,
-        echo.music.iad1tya.db.MIGRATION_45_46,
+        com.ahr.rashmusic.db.MIGRATION_1_2,
+        com.ahr.rashmusic.db.MIGRATION_21_24,
+        com.ahr.rashmusic.db.MIGRATION_22_24,
+        com.ahr.rashmusic.db.MIGRATION_24_25,
+        com.ahr.rashmusic.db.MIGRATION_27_28,
+        com.ahr.rashmusic.db.MIGRATION_28_29,
+        com.ahr.rashmusic.db.MIGRATION_29_30,
+        com.ahr.rashmusic.db.MIGRATION_31_32,
+        com.ahr.rashmusic.db.MIGRATION_36_37,
+        com.ahr.rashmusic.db.MIGRATION_37_38,
+        com.ahr.rashmusic.db.MIGRATION_38_39,
+        com.ahr.rashmusic.db.MIGRATION_39_40,
+        com.ahr.rashmusic.db.MIGRATION_40_41,
+        com.ahr.rashmusic.db.MIGRATION_41_42,
+        com.ahr.rashmusic.db.MIGRATION_42_43,
+        com.ahr.rashmusic.db.MIGRATION_43_44,
+        com.ahr.rashmusic.db.MIGRATION_44_45,
+        com.ahr.rashmusic.db.MIGRATION_45_46,
       )
       .setJournalMode(androidx.room.RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
       .setTransactionExecutor(java.util.concurrent.Executors.newFixedThreadPool(4))

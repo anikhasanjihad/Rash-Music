@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
-import echo.music.iad1tya.utils.PodcastProgress
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.utils.PodcastProgress
 
 /**
  * Controls shown while a podcast episode plays: skip back and forward by seconds (next and

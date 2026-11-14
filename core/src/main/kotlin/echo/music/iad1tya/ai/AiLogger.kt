@@ -1,9 +1,9 @@
-package echo.music.iad1tya.ai
+package com.ahr.rashmusic.ai
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.utils.dataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import org.json.JSONArray

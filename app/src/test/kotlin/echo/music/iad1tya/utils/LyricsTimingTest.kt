@@ -1,6 +1,6 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
-import echo.music.iad1tya.lyrics.LyricsUtils
+import com.ahr.rashmusic.lyrics.LyricsUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

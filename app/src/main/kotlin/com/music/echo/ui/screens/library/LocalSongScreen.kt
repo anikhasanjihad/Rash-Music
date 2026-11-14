@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.Manifest
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -100,32 +101,32 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.CONTENT_TYPE_SONG
-import echo.music.iad1tya.constants.LocalSongsExcludedFoldersKey
-import echo.music.iad1tya.constants.LocalSongsFolderFilterModeKey
-import echo.music.iad1tya.constants.LocalSongsIncludedFoldersKey
-import echo.music.iad1tya.constants.LocalSongsMinDurationSecondsKey
-import echo.music.iad1tya.constants.LocalSongsSortDescendingKey
-import echo.music.iad1tya.constants.LocalSongsSortTypeKey
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.extensions.togglePlayPause
-import echo.music.iad1tya.localmedia.LocalFolderFilterMode
-import echo.music.iad1tya.localmedia.LocalSongScanConfig
-import echo.music.iad1tya.localmedia.SupportedLocalAudio
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.SortHeader
-import echo.music.iad1tya.ui.menu.SelectionSongMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.utils.launchSafely
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.LocalSongsScanState
-import echo.music.iad1tya.viewmodels.LocalSongsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.CONTENT_TYPE_SONG
+import com.ahr.rashmusic.constants.LocalSongsExcludedFoldersKey
+import com.ahr.rashmusic.constants.LocalSongsFolderFilterModeKey
+import com.ahr.rashmusic.constants.LocalSongsIncludedFoldersKey
+import com.ahr.rashmusic.constants.LocalSongsMinDurationSecondsKey
+import com.ahr.rashmusic.constants.LocalSongsSortDescendingKey
+import com.ahr.rashmusic.constants.LocalSongsSortTypeKey
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.extensions.togglePlayPause
+import com.ahr.rashmusic.localmedia.LocalFolderFilterMode
+import com.ahr.rashmusic.localmedia.LocalSongScanConfig
+import com.ahr.rashmusic.localmedia.SupportedLocalAudio
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.SortHeader
+import com.ahr.rashmusic.ui.menu.SelectionSongMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.utils.launchSafely
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.LocalSongsScanState
+import com.ahr.rashmusic.viewmodels.LocalSongsViewModel
 import java.text.Collator
 import java.time.LocalDateTime
 import java.util.Locale
@@ -500,7 +501,7 @@ fun LocalSongScreen(
             top = 12.dp,
             bottom = bottomContentPadding,
           )
-        },
+        }, flingBehavior = rememberLiquidFling(),
     ) {
       if (isEmbedded && filterContent != null) {
         item(
@@ -616,7 +617,7 @@ fun LocalSongScreen(
             song = song,
             showInLibraryIcon = false,
             showDownloadIcon = false,
-            shape = echo.music.iad1tya.utils.listItemShape(index, visibleSongs.size),
+            shape = com.ahr.rashmusic.utils.listItemShape(index, visibleSongs.size),
             isActive = song.id == mediaMetadata?.id,
             isPlaying = isPlaying,
             trailingContent = {

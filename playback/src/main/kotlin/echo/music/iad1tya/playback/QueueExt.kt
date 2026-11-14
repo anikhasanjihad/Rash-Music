@@ -1,15 +1,15 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.models.PersistQueue
-import echo.music.iad1tya.models.QueueData
-import echo.music.iad1tya.models.QueueType
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.LocalAlbumRadio
-import echo.music.iad1tya.playback.queues.Queue
-import echo.music.iad1tya.playback.queues.YouTubeAlbumRadio
-import echo.music.iad1tya.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.models.PersistQueue
+import com.ahr.rashmusic.models.QueueData
+import com.ahr.rashmusic.models.QueueType
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.LocalAlbumRadio
+import com.ahr.rashmusic.playback.queues.Queue
+import com.ahr.rashmusic.playback.queues.YouTubeAlbumRadio
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
 
 fun Queue.toPersistQueue(
   title: String?,

@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Context
 import android.content.res.Configuration
 import android.widget.Toast
@@ -80,32 +81,32 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EnableExportAsMp3Key
-import echo.music.iad1tya.constants.ExportDirectoryUriKey
-import echo.music.iad1tya.constants.ExportedSongIdsKey
-import echo.music.iad1tya.constants.ExportingSongIdsKey
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.VarispeedKey
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EnableExportAsMp3Key
+import com.ahr.rashmusic.constants.ExportDirectoryUriKey
+import com.ahr.rashmusic.constants.ExportedSongIdsKey
+import com.ahr.rashmusic.constants.ExportingSongIdsKey
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.VarispeedKey
 
-import echo.music.iad1tya.constants.QueueEditLockKey
-import echo.music.iad1tya.constants.ShowLyricsOnPlayerKey
-import echo.music.iad1tya.listentogether.ConnectionState
-import echo.music.iad1tya.listentogether.ListenTogetherEvent
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.ui.component.BottomSheetState
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.ListDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.constants.QueueEditLockKey
+import com.ahr.rashmusic.constants.ShowLyricsOnPlayerKey
+import com.ahr.rashmusic.listentogether.ConnectionState
+import com.ahr.rashmusic.listentogether.ListenTogetherEvent
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.ui.component.BottomSheetState
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.ListDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.log2
 import kotlin.math.pow
 import kotlin.math.round
@@ -200,7 +201,7 @@ fun PlayerMenu(
     rememberPreference(key = ShowLyricsOnPlayerKey, defaultValue = false)
 
   val (exportProgressString) =
-    rememberPreference(key = echo.music.iad1tya.constants.ExportProgressKey, defaultValue = "")
+    rememberPreference(key = com.ahr.rashmusic.constants.ExportProgressKey, defaultValue = "")
   val exportProgress =
     remember(exportProgressString, mediaMetadata.id) {
       exportProgressString
@@ -241,7 +242,7 @@ fun PlayerMenu(
               onDismiss()
             } else {
               onDismiss()
-              echo.music.iad1tya.playback.AudioExportService.start(
+              com.ahr.rashmusic.playback.AudioExportService.start(
                 context = context,
                 songId = mediaMetadata.id,
                 songTitle = mediaMetadata.title,
@@ -302,7 +303,7 @@ fun PlayerMenu(
   var showListenTogetherDialog by rememberSaveable { mutableStateOf(false) }
 
   val listenTogetherManager = LocalListenTogetherManager.current
-  val ringtoneViewModel = echo.music.iad1tya.LocalRingtoneViewModel.current
+  val ringtoneViewModel = com.ahr.rashmusic.LocalRingtoneViewModel.current
   val isListenTogetherGuest by
     listenTogetherManager?.guestPlaybackRestricted?.collectAsState(initial = false)
       ?: remember { mutableStateOf(false) }
@@ -496,7 +497,7 @@ fun PlayerMenu(
     ) {
       LazyColumn(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling()
       ) {
         item {
             Column {
@@ -572,7 +573,7 @@ fun PlayerMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       val startingRadioText = stringResource(R.string.starting_radio)
@@ -755,7 +756,7 @@ fun PlayerMenu(
             )
             add(
               Material3MenuItemData(
-                customComposable = { echo.music.iad1tya.ui.component.CastButton(asMenuItem = true) }
+                customComposable = { com.ahr.rashmusic.ui.component.CastButton(asMenuItem = true) }
               )
             )
 
@@ -964,7 +965,7 @@ fun PlayerMenu(
                         onDismiss()
                       } else {
                         onDismiss()
-                        echo.music.iad1tya.playback.AudioExportService.start(
+                        com.ahr.rashmusic.playback.AudioExportService.start(
                           context = context,
                           songId = mediaMetadata.id,
                           songTitle = mediaMetadata.title,
@@ -1146,7 +1147,7 @@ fun TempoPitchDialog(onDismiss: () -> Unit) {
     playerConnection.player.playbackParameters =
       PlaybackParameters(tempo, 2f.pow(transposeValue.toFloat() / 12))
   }
-  val listenTogetherManager = echo.music.iad1tya.LocalListenTogetherManager.current
+  val listenTogetherManager = com.ahr.rashmusic.LocalListenTogetherManager.current
   val isInRoom = listenTogetherManager?.isInRoom ?: false
 
   androidx.compose.ui.window.Dialog(
@@ -1294,7 +1295,7 @@ fun ListenTogetherDialog(visible: Boolean, mediaMetadata: MediaMetadata?, onDism
   if (!visible) return
 
   val context = LocalContext.current
-  val listenTogetherManager = echo.music.iad1tya.LocalListenTogetherManager.current
+  val listenTogetherManager = com.ahr.rashmusic.LocalListenTogetherManager.current
 
   if (listenTogetherManager == null) {
     ListDialog(onDismiss = onDismiss) {
@@ -1343,7 +1344,7 @@ fun ListenTogetherDialog(visible: Boolean, mediaMetadata: MediaMetadata?, onDism
   val pendingSuggestions by listenTogetherManager.pendingSuggestions.collectAsState()
 
   var savedUsername by
-    rememberPreference(echo.music.iad1tya.constants.ListenTogetherUsernameKey, "")
+    rememberPreference(com.ahr.rashmusic.constants.ListenTogetherUsernameKey, "")
   var roomCodeInput by rememberSaveable { mutableStateOf("") }
   var usernameInput by rememberSaveable { mutableStateOf(savedUsername) }
 
@@ -2367,7 +2368,7 @@ fun SpeedDialog(onDismiss: () -> Unit) {
   val updatePlaybackParameters = {
     playerConnection.player.playbackParameters = PlaybackParameters(speed, speed)
   }
-  val listenTogetherManager = echo.music.iad1tya.LocalListenTogetherManager.current
+  val listenTogetherManager = com.ahr.rashmusic.LocalListenTogetherManager.current
   val isInRoom = listenTogetherManager?.isInRoom ?: false
 
   androidx.compose.ui.window.Dialog(

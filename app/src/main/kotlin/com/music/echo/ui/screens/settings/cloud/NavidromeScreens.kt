@@ -1,5 +1,6 @@
 package com.music.echo.ui.screens.settings.cloud
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -33,7 +34,7 @@ import coil3.compose.AsyncImage
 import com.music.echo.cloud.NavidromePlaylist
 import com.music.echo.cloud.NavidromeRepository
 import com.music.echo.cloud.NavidromeSong
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -426,7 +427,7 @@ fun NavidromeDashboardScreen(
       } else {
         LazyColumn(
           modifier = Modifier.weight(1f),
-          verticalArrangement = Arrangement.spacedBy(8.dp)
+          verticalArrangement = Arrangement.spacedBy(8.dp), flingBehavior = rememberLiquidFling()
         ) {
           items(playlists) { pl ->
             Card(

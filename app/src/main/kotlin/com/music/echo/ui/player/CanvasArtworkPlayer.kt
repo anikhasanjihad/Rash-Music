@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import android.graphics.Matrix
 import android.view.TextureView
@@ -31,7 +31,7 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import com.music.innertube.YouTube
 import com.music.innertube.models.YouTubeClient
-import echo.music.iad1tya.LocalPlayerConnection
+import com.ahr.rashmusic.LocalPlayerConnection
 import java.util.Locale
 import okhttp3.OkHttpClient
 
@@ -105,8 +105,8 @@ fun CanvasArtworkPlayer(
 
         val url = request.url.toString()
         val extraHeaders =
-          echo.music.iad1tya.utils.InnerTubeXResolver.headersFor(url)
-            ?: echo.music.iad1tya.utils.PlayerClient.forStreamUrl(url).mediaHeaders()
+          com.ahr.rashmusic.utils.InnerTubeXResolver.headersFor(url)
+            ?: com.ahr.rashmusic.utils.PlayerClient.forStreamUrl(url).mediaHeaders()
 
         val builder = request.newBuilder()
         for ((k, v) in extraHeaders) {

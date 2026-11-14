@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.equalizer.axion
+package com.ahr.rashmusic.ui.screens.equalizer.axion
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,7 +20,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import java.net.URL
 import java.net.URLEncoder
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 @Serializable
 data class AutoEqItem(val name: String, val path: String)
@@ -85,7 +86,7 @@ fun AutoEqBottomSheet(
                     CircularProgressIndicator()
                 }
             } else {
-                LazyColumn(modifier = Modifier.fillMaxWidth().weight(1f)) {
+                LazyColumn(modifier = Modifier.fillMaxWidth().weight(1f), flingBehavior = rememberLiquidFling()) {
                     items(filteredItems) { item ->
                         ListItem(
                             headlineContent = { Text(item.name) },

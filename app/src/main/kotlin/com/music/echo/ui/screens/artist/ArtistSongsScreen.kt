@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.artist
+package com.ahr.rashmusic.ui.screens.artist
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Box
@@ -32,27 +33,27 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ArtistSongSortDescendingKey
-import echo.music.iad1tya.constants.ArtistSongSortType
-import echo.music.iad1tya.constants.ArtistSongSortTypeKey
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.HideOnScrollFAB
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.SortHeader
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.ArtistSongsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ArtistSongSortDescendingKey
+import com.ahr.rashmusic.constants.ArtistSongSortType
+import com.ahr.rashmusic.constants.ArtistSongSortTypeKey
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.HideOnScrollFAB
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.SortHeader
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.ArtistSongsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -82,7 +83,7 @@ fun ArtistSongsScreen(
   ) {
     LazyColumn(
       state = lazyListState,
-      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
     ) {
       item(
         key = "header",

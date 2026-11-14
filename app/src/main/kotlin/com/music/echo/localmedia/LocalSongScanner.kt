@@ -1,4 +1,4 @@
-package echo.music.iad1tya.localmedia
+package com.ahr.rashmusic.localmedia
 
 import android.content.ContentUris
 import android.content.Context
@@ -6,16 +6,16 @@ import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.AlbumArtistMap
-import echo.music.iad1tya.db.entities.AlbumEntity
-import echo.music.iad1tya.db.entities.ArtistEntity
-import echo.music.iad1tya.db.entities.FormatEntity
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SongAlbumMap
-import echo.music.iad1tya.db.entities.SongArtistMap
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.AlbumArtistMap
+import com.ahr.rashmusic.db.entities.AlbumEntity
+import com.ahr.rashmusic.db.entities.ArtistEntity
+import com.ahr.rashmusic.db.entities.FormatEntity
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SongAlbumMap
+import com.ahr.rashmusic.db.entities.SongArtistMap
+import com.ahr.rashmusic.db.entities.SongEntity
 import java.nio.charset.StandardCharsets
 import java.time.Instant
 import java.time.LocalDateTime

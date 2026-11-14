@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils.cipher
+package com.ahr.rashmusic.utils.cipher
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.canvas
+package com.ahr.rashmusic.canvas
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -93,7 +93,7 @@ object AppleMusicArtistBackgroundProvider {
   ): String? {
     return runCatching {
         val url = "$AMP_BASE_URL/v1/catalog/$storefront/search"
-        val token = echo.music.iad1tya.canvas.AppleMusicTokenProvider.getToken()
+        val token = com.ahr.rashmusic.canvas.AppleMusicTokenProvider.getToken()
         val response =
           client.get(url) {
             header("Authorization", "Bearer $token")
@@ -153,7 +153,7 @@ object AppleMusicArtistBackgroundProvider {
   ): String? {
     return runCatching {
         val url = "$AMP_BASE_URL/v1/catalog/$storefront/artists/$artistId"
-        val token = echo.music.iad1tya.canvas.AppleMusicTokenProvider.getToken()
+        val token = com.ahr.rashmusic.canvas.AppleMusicTokenProvider.getToken()
         val response =
           client.get(url) {
             header("Authorization", "Bearer $token")

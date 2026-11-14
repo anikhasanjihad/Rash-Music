@@ -1,4 +1,4 @@
-package echo.music.iad1tya.echomusic.commitscreen
+package com.ahr.rashmusic.echomusic.commitscreen
 
 import android.content.Intent
 import android.net.Uri
@@ -56,10 +56,10 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
 import java.net.URL
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter

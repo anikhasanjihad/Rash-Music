@@ -1,6 +1,6 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
-import echo.music.iad1tya.db.entities.SongPlayStatsEntity
+import com.ahr.rashmusic.db.entities.SongPlayStatsEntity
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

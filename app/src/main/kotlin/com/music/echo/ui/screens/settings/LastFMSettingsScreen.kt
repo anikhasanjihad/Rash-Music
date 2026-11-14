@@ -1,5 +1,5 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -51,25 +51,25 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EnableLastFMScrobblingKey
-import echo.music.iad1tya.constants.LastFMSessionKey
-import echo.music.iad1tya.constants.LastFMUseNowPlaying
-import echo.music.iad1tya.constants.LastFMUseSendLikes
-import echo.music.iad1tya.constants.LastFMUsernameKey
-import echo.music.iad1tya.constants.ScrobbleDelayPercentKey
-import echo.music.iad1tya.constants.ScrobbleDelaySecondsKey
-import echo.music.iad1tya.constants.ScrobbleMinSongDurationKey
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.lastfm.LastFM
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EnableLastFMScrobblingKey
+import com.ahr.rashmusic.constants.LastFMSessionKey
+import com.ahr.rashmusic.constants.LastFMUseNowPlaying
+import com.ahr.rashmusic.constants.LastFMUseSendLikes
+import com.ahr.rashmusic.constants.LastFMUsernameKey
+import com.ahr.rashmusic.constants.ScrobbleDelayPercentKey
+import com.ahr.rashmusic.constants.ScrobbleDelaySecondsKey
+import com.ahr.rashmusic.constants.ScrobbleMinSongDurationKey
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.lastfm.LastFM
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.utils.reportException
 import kotlin.math.roundToInt
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -269,16 +269,16 @@ fun LastFMSettingsScreen(navController: NavController) {
       androidx.compose.material3.TopAppBar(
         title = {
           androidx.compose.material3.Text(
-            androidx.compose.ui.res.stringResource(echo.music.iad1tya.R.string.lastfm_integration)
+            androidx.compose.ui.res.stringResource(com.ahr.rashmusic.R.string.lastfm_integration)
           )
         },
         navigationIcon = {
-          echo.music.iad1tya.ui.component.IconButton(
+          com.ahr.rashmusic.ui.component.IconButton(
             onClick = navController::navigateUp,
             onLongClick = navController::backToMain,
           ) {
             androidx.compose.material3.Icon(
-              androidx.compose.ui.res.painterResource(echo.music.iad1tya.R.drawable.arrow_back),
+              androidx.compose.ui.res.painterResource(com.ahr.rashmusic.R.drawable.arrow_back),
               contentDescription = null,
             )
           }

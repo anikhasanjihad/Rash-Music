@@ -1,11 +1,11 @@
 package echo.music.core.mapping
 
-import echo.music.iad1tya.db.entities.AlbumEntity
-import echo.music.iad1tya.db.entities.ArtistEntity
-import echo.music.iad1tya.db.entities.Playlist as DbPlaylist
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.Song as DbSong
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.AlbumEntity
+import com.ahr.rashmusic.db.entities.ArtistEntity
+import com.ahr.rashmusic.db.entities.Playlist as DbPlaylist
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.Song as DbSong
+import com.ahr.rashmusic.db.entities.SongEntity
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -79,37 +80,37 @@ import androidx.compose.ui.util.fastForEachIndexed
 import androidx.compose.ui.util.fastForEachReversed
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.exoplayer.offline.Download
-import echo.music.iad1tya.playback.DownloadUtil
+import com.ahr.rashmusic.playback.DownloadUtil
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AlbumCanvasEnabledKey
-import echo.music.iad1tya.constants.AppBarHeight
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.playback.queues.LocalAlbumRadio
-import echo.music.iad1tya.ui.component.ExpandableText
-import echo.music.iad1tya.ui.component.HeartBurstIcon
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LinkSegment
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.YouTubeGridItem
-import echo.music.iad1tya.ui.menu.AlbumMenu
-import echo.music.iad1tya.ui.menu.SelectionSongMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.ui.menu.YouTubeAlbumMenu
-import echo.music.iad1tya.ui.player.CanvasArtworkPlayer
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.AlbumViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AlbumCanvasEnabledKey
+import com.ahr.rashmusic.constants.AppBarHeight
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.playback.queues.LocalAlbumRadio
+import com.ahr.rashmusic.ui.component.ExpandableText
+import com.ahr.rashmusic.ui.component.HeartBurstIcon
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LinkSegment
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.YouTubeGridItem
+import com.ahr.rashmusic.ui.menu.AlbumMenu
+import com.ahr.rashmusic.ui.menu.SelectionSongMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.ui.menu.YouTubeAlbumMenu
+import com.ahr.rashmusic.ui.player.CanvasArtworkPlayer
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.AlbumViewModel
 
 @OptIn(
   ExperimentalFoundationApi::class,
@@ -142,7 +143,7 @@ fun AlbumScreen(
   val descriptionRuns by viewModel.descriptionRuns.collectAsState()
   val hideExplicit by rememberPreference(key = HideExplicitKey, defaultValue = false)
   val dataSaverEnabled by
-    rememberPreference(key = echo.music.iad1tya.constants.DataSaverEnabledKey, defaultValue = false)
+    rememberPreference(key = com.ahr.rashmusic.constants.DataSaverEnabledKey, defaultValue = false)
   val hideVideoSongsPref by rememberPreference(key = HideVideoSongsKey, defaultValue = false)
   val hideVideoSongs = if (dataSaverEnabled) true else hideVideoSongsPref
   val albumCanvasEnabledPref by
@@ -221,7 +222,7 @@ fun AlbumScreen(
 
   LazyColumn(
     state = lazyListState,
-    contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+    contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
   ) {
     val albumWithSongs = albumWithSongs
     if (albumWithSongs != null && albumWithSongs.songs.isNotEmpty()) {

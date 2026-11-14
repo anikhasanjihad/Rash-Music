@@ -1,10 +1,10 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.ui.screens.CrashActivity
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.ui.screens.CrashActivity
 import java.io.PrintWriter
 import java.io.StringWriter
 import kotlin.system.exitProcess

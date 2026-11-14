@@ -4,8 +4,9 @@
   ExperimentalMaterial3Api::class
 )
 
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -69,16 +70,16 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.DarkModeKey
-import echo.music.iad1tya.constants.DynamicThemeKey
-import echo.music.iad1tya.constants.IsMonochromeThemeKey
-import echo.music.iad1tya.constants.PureBlackKey
-import echo.music.iad1tya.constants.PureBlackMiniPlayerKey
-import echo.music.iad1tya.constants.SelectedThemeColorKey
-import echo.music.iad1tya.ui.theme.DefaultThemeColor
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.DarkModeKey
+import com.ahr.rashmusic.constants.DynamicThemeKey
+import com.ahr.rashmusic.constants.IsMonochromeThemeKey
+import com.ahr.rashmusic.constants.PureBlackKey
+import com.ahr.rashmusic.constants.PureBlackMiniPlayerKey
+import com.ahr.rashmusic.constants.SelectedThemeColorKey
+import com.ahr.rashmusic.ui.theme.DefaultThemeColor
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -140,7 +141,7 @@ fun ThemeScreen(navController: NavController, highlightKey: String? = null) {
           )
           .padding(innerPadding),
       contentPadding = PaddingValues(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 120.dp),
-      verticalArrangement = Arrangement.spacedBy(24.dp)
+      verticalArrangement = Arrangement.spacedBy(24.dp), flingBehavior = rememberLiquidFling()
     ) {
       item {
         Text(

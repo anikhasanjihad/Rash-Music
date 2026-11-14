@@ -3,7 +3,7 @@ package echo.music.core.repository
 import echo.music.core.mapping.toDomain
 import echo.music.domain.models.Song as DomainSong
 import echo.music.domain.repositories.SongRepository
-import echo.music.iad1tya.db.MusicDatabase
+import com.ahr.rashmusic.db.MusicDatabase
 import java.time.LocalDateTime
 import javax.inject.Inject
 import javax.inject.Singleton

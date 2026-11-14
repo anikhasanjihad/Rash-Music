@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.search.suggestions
+package com.ahr.rashmusic.ui.screens.search.suggestions
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -46,10 +47,10 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.compose.SubcomposeAsyncImage
 import com.valentinilk.shimmer.shimmer
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.SuggestionRegionKey
-import echo.music.iad1tya.constants.SuggestionRegionSlugToName
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.SuggestionRegionKey
+import com.ahr.rashmusic.constants.SuggestionRegionSlugToName
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.abs
 import kotlinx.coroutines.launch
 
@@ -67,7 +68,7 @@ fun SuggestionsTabContent(
   val isLoading by viewModel.isLoading.collectAsState()
   val isManualLoading by viewModel.isManualLoading.collectAsState()
   val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
-  val playerConnection = echo.music.iad1tya.LocalPlayerConnection.current
+  val playerConnection = com.ahr.rashmusic.LocalPlayerConnection.current
   val context = LocalContext.current
   val (regionCode, _) = rememberPreference(key = SuggestionRegionKey, defaultValue = "system")
 
@@ -89,7 +90,7 @@ fun SuggestionsTabContent(
     },
     modifier = Modifier.fillMaxSize()
   ) {
-    LazyColumn(modifier = Modifier.fillMaxSize(), contentPadding = contentPadding) {
+    LazyColumn(modifier = Modifier.fillMaxSize(), contentPadding = contentPadding, flingBehavior = rememberLiquidFling()) {
       if (
         isLoading &&
           !isManualLoading &&

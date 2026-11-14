@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
@@ -72,29 +72,29 @@ import coil3.SingletonImageLoader
 import coil3.compose.AsyncImage
 import coil3.request.CachePolicy
 import coil3.request.ImageRequest
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.applecanvas.AppleMusicCanvasProvider
-import echo.music.iad1tya.canvas.CanvasArtwork
-import echo.music.iad1tya.canvas.TidalCanvasProvider
-import echo.music.iad1tya.constants.CanvasThumbnailAnimationKey
-import echo.music.iad1tya.constants.CropAlbumArtKey
-import echo.music.iad1tya.constants.HidePlayerThumbnailKey
-import echo.music.iad1tya.constants.PlayerBackgroundStyle
-import echo.music.iad1tya.constants.PlayerBackgroundStyleKey
-import echo.music.iad1tya.constants.PlayerHorizontalPadding
-import echo.music.iad1tya.constants.RotatingThumbnailKey
-import echo.music.iad1tya.constants.SwipeThumbnailKey
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.constants.ThumbnailCornerRadiusKey
-import echo.music.iad1tya.echomusiccanvas.echomusicCanvasProvider
-import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.listentogether.RoomRole
-import echo.music.iad1tya.ui.utils.resize
-import echo.music.iad1tya.utils.isLocalMediaId
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.applecanvas.AppleMusicCanvasProvider
+import com.ahr.rashmusic.canvas.CanvasArtwork
+import com.ahr.rashmusic.canvas.TidalCanvasProvider
+import com.ahr.rashmusic.constants.CanvasThumbnailAnimationKey
+import com.ahr.rashmusic.constants.CropAlbumArtKey
+import com.ahr.rashmusic.constants.HidePlayerThumbnailKey
+import com.ahr.rashmusic.constants.PlayerBackgroundStyle
+import com.ahr.rashmusic.constants.PlayerBackgroundStyleKey
+import com.ahr.rashmusic.constants.PlayerHorizontalPadding
+import com.ahr.rashmusic.constants.RotatingThumbnailKey
+import com.ahr.rashmusic.constants.SwipeThumbnailKey
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.constants.ThumbnailCornerRadiusKey
+import com.ahr.rashmusic.echomusiccanvas.echomusicCanvasProvider
+import com.ahr.rashmusic.extensions.metadata
+import com.ahr.rashmusic.listentogether.RoomRole
+import com.ahr.rashmusic.ui.utils.resize
+import com.ahr.rashmusic.utils.isLocalMediaId
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 import java.io.File
 import java.util.Locale
 import kotlinx.coroutines.Dispatchers
@@ -538,7 +538,7 @@ private fun ThumbnailItem(
   textBackgroundColor: Color,
   layoutDirection: LayoutDirection,
   onSeek: (String, Boolean) -> Unit,
-  playerConnection: echo.music.iad1tya.playback.PlayerConnection,
+  playerConnection: com.ahr.rashmusic.playback.PlayerConnection,
   context: android.content.Context,
   lazyGridState: androidx.compose.foundation.lazy.grid.LazyGridState,
   isLandscape: Boolean = false,
@@ -745,7 +745,7 @@ private fun ThumbnailItem(
                         storefront = storefront
                       )
                       ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
-                } ?: echo.music.iad1tya.canvas.YouTubeVideoCanvasProvider.getCanvasForVideo(
+                } ?: com.ahr.rashmusic.canvas.YouTubeVideoCanvasProvider.getCanvasForVideo(
                   videoId = item.mediaId,
                   title = songTitleRaw,
                   artist = artistNameRaw,

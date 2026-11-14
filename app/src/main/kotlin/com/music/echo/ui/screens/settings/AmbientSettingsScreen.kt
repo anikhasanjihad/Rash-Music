@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -11,11 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.*
-import echo.music.iad1tya.ui.component.*
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.utils.rememberEnumPreference
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.*
+import com.ahr.rashmusic.ui.component.*
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.utils.rememberEnumPreference
 
 @Composable
 fun AmbientSettingsContent(modifier: Modifier = Modifier) {

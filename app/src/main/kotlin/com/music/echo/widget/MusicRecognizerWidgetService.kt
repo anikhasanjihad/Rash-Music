@@ -1,5 +1,5 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.widget
+package com.ahr.rashmusic.widget
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -25,11 +25,11 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import echo.music.iad1tya.MainActivity
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.DatabaseDao
-import echo.music.iad1tya.db.entities.RecognitionHistory
-import echo.music.iad1tya.recognition.MusicRecognitionService
+import com.ahr.rashmusic.MainActivity
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.DatabaseDao
+import com.ahr.rashmusic.db.entities.RecognitionHistory
+import com.ahr.rashmusic.recognition.MusicRecognitionService
 import java.io.File
 import java.io.FileOutputStream
 import java.time.LocalDateTime

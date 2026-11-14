@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback.crossfade
+package com.ahr.rashmusic.playback.crossfade
 
 import kotlin.math.max
 import kotlin.math.min

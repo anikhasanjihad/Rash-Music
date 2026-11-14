@@ -1,4 +1,4 @@
-package echo.music.iad1tya.db.entities
+package com.ahr.rashmusic.db.entities
 
 import androidx.room.Entity
 import androidx.room.Index

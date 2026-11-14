@@ -1,13 +1,13 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.content.Context
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.ProcessLifecycleOwner
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.discord.DiscordOAuthRepository
-import echo.music.iad1tya.utils.DiscordImageResolver
-import echo.music.iad1tya.utils.DiscordRPC
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.discord.DiscordOAuthRepository
+import com.ahr.rashmusic.utils.DiscordImageResolver
+import com.ahr.rashmusic.utils.DiscordRPC
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicLong
 import kotlinx.coroutines.CancellationException

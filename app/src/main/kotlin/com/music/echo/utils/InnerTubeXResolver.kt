@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -19,8 +19,8 @@ import com.metrolist.innertubex.extraction.YtConfigParserImpl
 import com.metrolist.innertubex.extraction.generateClientPlaybackNonce
 import com.metrolist.innertubex.extraction.strategy.PoTokenProviderKind
 import com.metrolist.innertubex.models.YouTubeLocale
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.utils.potoken.PoTokenGenerator
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.utils.potoken.PoTokenGenerator
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.HttpTimeout

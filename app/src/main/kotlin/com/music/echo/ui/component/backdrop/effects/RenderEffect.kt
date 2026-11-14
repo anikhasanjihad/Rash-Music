@@ -7,15 +7,15 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package echo.music.iad1tya.ui.component.backdrop.effects
+package com.ahr.rashmusic.ui.component.backdrop.effects
 
 import androidx.compose.ui.graphics.RenderEffect
-import echo.music.iad1tya.ui.component.backdrop.BackdropEffectScope
-import echo.music.iad1tya.ui.component.backdrop.RuntimeShader
-import echo.music.iad1tya.ui.component.backdrop.internal.RuntimeShaderEffect
-import echo.music.iad1tya.ui.component.backdrop.internal.chain
-import echo.music.iad1tya.ui.component.backdrop.isRenderEffectSupported
-import echo.music.iad1tya.ui.component.backdrop.isRuntimeShaderSupported
+import com.ahr.rashmusic.ui.component.backdrop.BackdropEffectScope
+import com.ahr.rashmusic.ui.component.backdrop.RuntimeShader
+import com.ahr.rashmusic.ui.component.backdrop.internal.RuntimeShaderEffect
+import com.ahr.rashmusic.ui.component.backdrop.internal.chain
+import com.ahr.rashmusic.ui.component.backdrop.isRenderEffectSupported
+import com.ahr.rashmusic.ui.component.backdrop.isRuntimeShaderSupported
 import kotlin.contracts.ExperimentalContracts
 import org.intellij.lang.annotations.Language
 

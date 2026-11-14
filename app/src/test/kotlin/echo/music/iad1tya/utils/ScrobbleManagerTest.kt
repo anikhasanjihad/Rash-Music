@@ -1,6 +1,6 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
-import echo.music.iad1tya.models.MediaMetadata
+import com.ahr.rashmusic.models.MediaMetadata
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest

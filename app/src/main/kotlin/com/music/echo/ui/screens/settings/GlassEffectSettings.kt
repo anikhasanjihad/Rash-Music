@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -37,30 +37,30 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.*
-import echo.music.iad1tya.constants.LiquidGlassBlurRadiusKey
-import echo.music.iad1tya.constants.LiquidGlassChromaticAberrationKey
-import echo.music.iad1tya.constants.LiquidGlassDepthEffectKey
-import echo.music.iad1tya.constants.LiquidGlassGlobalEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassLensAmountKey
-import echo.music.iad1tya.constants.LiquidGlassLensHeightKey
-import echo.music.iad1tya.constants.LiquidGlassMiniPlayerEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassNavBarEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassPlayerEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassSurfaceOpacityKey
-import echo.music.iad1tya.constants.LiquidGlassSurfaceTintColorKey
-import echo.music.iad1tya.constants.LiquidGlassTextColorKey
-import echo.music.iad1tya.constants.LiquidGlassVibrancyKey
-import echo.music.iad1tya.constants.UseFloatingNavBarKey
-import echo.music.iad1tya.ui.component.ColorPickerDialog
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.IconButton as AppIconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.*
+import com.ahr.rashmusic.constants.LiquidGlassBlurRadiusKey
+import com.ahr.rashmusic.constants.LiquidGlassChromaticAberrationKey
+import com.ahr.rashmusic.constants.LiquidGlassDepthEffectKey
+import com.ahr.rashmusic.constants.LiquidGlassGlobalEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassLensAmountKey
+import com.ahr.rashmusic.constants.LiquidGlassLensHeightKey
+import com.ahr.rashmusic.constants.LiquidGlassMiniPlayerEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassNavBarEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassPlayerEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassSurfaceOpacityKey
+import com.ahr.rashmusic.constants.LiquidGlassSurfaceTintColorKey
+import com.ahr.rashmusic.constants.LiquidGlassTextColorKey
+import com.ahr.rashmusic.constants.LiquidGlassVibrancyKey
+import com.ahr.rashmusic.constants.UseFloatingNavBarKey
+import com.ahr.rashmusic.ui.component.ColorPickerDialog
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.IconButton as AppIconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

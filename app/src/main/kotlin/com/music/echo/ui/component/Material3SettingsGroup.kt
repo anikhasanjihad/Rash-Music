@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.liquidPress
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
@@ -31,7 +32,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.ui.utils.scrollToOnHighlight
+import com.ahr.rashmusic.ui.utils.scrollToOnHighlight
 
 @Composable
 fun Material3SettingsGroup(
@@ -106,7 +107,8 @@ private fun Material3SettingsItemRow(
 ) {
   Row(
     modifier =
-      Modifier.fillMaxWidth()
+      Modifier.liquidPress(0.98f)
+        .fillMaxWidth()
         .clickable(
           enabled = item.enabled && item.onClick != null,
           onClick = { item.onClick?.invoke() }

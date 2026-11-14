@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.ambient
+package com.ahr.rashmusic.ui.screens.ambient
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -8,15 +8,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.applecanvas.AppleMusicCanvasProvider
-import echo.music.iad1tya.canvas.CanvasArtwork
-import echo.music.iad1tya.canvas.TidalCanvasProvider
-import echo.music.iad1tya.echomusiccanvas.echomusicCanvasProvider
-import echo.music.iad1tya.ui.player.CanvasArtworkPlaybackCache
-import echo.music.iad1tya.ui.player.CanvasArtworkPlayer
-import echo.music.iad1tya.ui.player.normalizeCanvasArtistName
-import echo.music.iad1tya.ui.player.normalizeCanvasSongTitle
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.applecanvas.AppleMusicCanvasProvider
+import com.ahr.rashmusic.canvas.CanvasArtwork
+import com.ahr.rashmusic.canvas.TidalCanvasProvider
+import com.ahr.rashmusic.echomusiccanvas.echomusicCanvasProvider
+import com.ahr.rashmusic.ui.player.CanvasArtworkPlaybackCache
+import com.ahr.rashmusic.ui.player.CanvasArtworkPlayer
+import com.ahr.rashmusic.ui.player.normalizeCanvasArtistName
+import com.ahr.rashmusic.ui.player.normalizeCanvasSongTitle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.Locale

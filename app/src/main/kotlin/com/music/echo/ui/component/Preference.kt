@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.liquidPress
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -37,7 +38,7 @@ import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import kotlin.math.roundToInt
 
 @Composable
@@ -54,7 +55,8 @@ fun PreferenceEntry(
   Row(
     verticalAlignment = Alignment.CenterVertically,
     modifier =
-      modifier
+      Modifier.liquidPress()
+        .then(modifier)
         .fillMaxWidth()
         .clickable(
           enabled = isEnabled && onClick != null,

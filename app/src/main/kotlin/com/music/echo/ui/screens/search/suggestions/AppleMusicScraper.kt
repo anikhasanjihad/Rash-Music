@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.search.suggestions
+package com.ahr.rashmusic.ui.screens.search.suggestions
 
 import android.util.Log
 import java.lang.Exception

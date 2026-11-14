@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import android.content.res.Configuration
 import androidx.compose.animation.core.animateFloatAsState
@@ -43,7 +44,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
-import echo.music.iad1tya.generate.trackKeyOf
+import com.ahr.rashmusic.generate.trackKeyOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextRange
@@ -60,40 +61,40 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.LocalSyncUtils
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EnableExportAsMp3Key
-import echo.music.iad1tya.constants.ExportDirectoryUriKey
-import echo.music.iad1tya.constants.ExportedSongIdsKey
-import echo.music.iad1tya.constants.ExportingSongIdsKey
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.ListThumbnailSize
-import echo.music.iad1tya.db.entities.ArtistEntity
-import echo.music.iad1tya.db.entities.Event
-import echo.music.iad1tya.db.entities.PlaylistSong
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SpeedDialItem
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.HeartBurstIcon
-import echo.music.iad1tya.ui.component.ListDialog
-import echo.music.iad1tya.ui.component.LocalBottomSheetPageState
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.TextFieldDialog
-import echo.music.iad1tya.ui.utils.ShowMediaInfo
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.utils.shareLocalAudio
-import echo.music.iad1tya.viewmodels.CachePlaylistViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.LocalSyncUtils
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EnableExportAsMp3Key
+import com.ahr.rashmusic.constants.ExportDirectoryUriKey
+import com.ahr.rashmusic.constants.ExportedSongIdsKey
+import com.ahr.rashmusic.constants.ExportingSongIdsKey
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.ListThumbnailSize
+import com.ahr.rashmusic.db.entities.ArtistEntity
+import com.ahr.rashmusic.db.entities.Event
+import com.ahr.rashmusic.db.entities.PlaylistSong
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SpeedDialItem
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.HeartBurstIcon
+import com.ahr.rashmusic.ui.component.ListDialog
+import com.ahr.rashmusic.ui.component.LocalBottomSheetPageState
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.TextFieldDialog
+import com.ahr.rashmusic.ui.utils.ShowMediaInfo
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.utils.shareLocalAudio
+import com.ahr.rashmusic.viewmodels.CachePlaylistViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -125,7 +126,7 @@ fun SongMenu(
   val (exportingSongIds) = rememberPreference(key = ExportingSongIdsKey, defaultValue = "")
   val (exportedSongIds) = rememberPreference(key = ExportedSongIdsKey, defaultValue = "")
   val (exportProgressRaw) =
-    rememberPreference(key = echo.music.iad1tya.constants.ExportProgressKey, defaultValue = "")
+    rememberPreference(key = com.ahr.rashmusic.constants.ExportProgressKey, defaultValue = "")
 
   val isExporting =
     remember(exportingSongIds, song.id) { exportingSongIds.split(",").contains(song.id) }
@@ -160,7 +161,7 @@ fun SongMenu(
               onDismiss()
             } else {
               onDismiss()
-              echo.music.iad1tya.playback.AudioExportService.start(
+              com.ahr.rashmusic.playback.AudioExportService.start(
                 context = context,
                 songId = song.id,
                 songTitle = song.song.title,
@@ -305,7 +306,7 @@ fun SongMenu(
 
   var showSelectArtistDialog by rememberSaveable { mutableStateOf(false) }
 
-  val ringtoneViewModel = echo.music.iad1tya.LocalRingtoneViewModel.current
+  val ringtoneViewModel = com.ahr.rashmusic.LocalRingtoneViewModel.current
 
   if (showSelectArtistDialog) {
     ListDialog(
@@ -383,7 +384,7 @@ fun SongMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       NewActionGrid(
@@ -465,7 +466,7 @@ fun SongMenu(
                   val durationMs =
                     if (song.song.duration > 0) song.song.duration.toLong() * 1000 else 180000L
                   val trackInfo =
-                    echo.music.iad1tya.listentogether.TrackInfo(
+                    com.ahr.rashmusic.listentogether.TrackInfo(
                       id = song.id,
                       title = song.song.title,
                       artist = orderedArtists.joinToString(", ") { it.name },
@@ -653,7 +654,7 @@ fun SongMenu(
                       database.recommendationExclusionDao.delete(trackKey)
                     } else {
                       database.recommendationExclusionDao.upsert(
-                        echo.music.iad1tya.db.entities.RecommendationExclusionEntity(
+                        com.ahr.rashmusic.db.entities.RecommendationExclusionEntity(
                           trackKey = trackKey,
                           excludedAtMillis = System.currentTimeMillis(),
                           trackName = song.song.title,
@@ -867,7 +868,7 @@ fun SongMenu(
                         onDismiss()
                       } else {
                         onDismiss()
-                        echo.music.iad1tya.playback.AudioExportService.start(
+                        com.ahr.rashmusic.playback.AudioExportService.start(
                           context = context,
                           songId = song.id,
                           songTitle = song.song.title,
@@ -979,15 +980,15 @@ fun SongMenu(
                     cacheViewModel.removeSongFromCache(song.id)
                     androidx.media3.exoplayer.offline.DownloadService.sendRemoveDownload(
                       context,
-                      echo.music.iad1tya.playback.ExoDownloadService::class.java,
+                      com.ahr.rashmusic.playback.ExoDownloadService::class.java,
                       song.id,
                       false
                     )
                     val intent =
                       android.content
-                        .Intent(context, echo.music.iad1tya.playback.MusicService::class.java)
+                        .Intent(context, com.ahr.rashmusic.playback.MusicService::class.java)
                         .apply {
-                          action = "echo.music.iad1tya.ACTION_CLEAR_SONG_CACHE"
+                          action = "com.ahr.rashmusic.ACTION_CLEAR_SONG_CACHE"
                           putExtra("songId", song.id)
                         }
                     context.startService(intent)

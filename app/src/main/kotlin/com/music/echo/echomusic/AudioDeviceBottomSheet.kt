@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package echo.music.iad1tya.echomusic
+package com.ahr.rashmusic.echomusic
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -106,12 +106,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AudioQuality
-import echo.music.iad1tya.constants.AudioQualityKey
-import echo.music.iad1tya.echomusic.shapes.RoundedStarShape
-import echo.music.iad1tya.utils.rememberEnumPreference
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AudioQuality
+import com.ahr.rashmusic.constants.AudioQualityKey
+import com.ahr.rashmusic.echomusic.shapes.RoundedStarShape
+import com.ahr.rashmusic.utils.rememberEnumPreference
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
@@ -910,8 +910,8 @@ fun DownloadQualitySelector() {
   val context = LocalContext.current
   val (downloadQuality, onDownloadQualityChange) =
     rememberEnumPreference(
-      key = echo.music.iad1tya.constants.DownloadQualityKey,
-      defaultValue = echo.music.iad1tya.constants.DownloadQuality.YOUTUBE
+      key = com.ahr.rashmusic.constants.DownloadQualityKey,
+      defaultValue = com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE
     )
 
   Column(modifier = Modifier.fillMaxWidth()) {
@@ -925,7 +925,7 @@ fun DownloadQualitySelector() {
     val options = listOf("Opus")
     val selectedIndex =
       when (downloadQuality) {
-        echo.music.iad1tya.constants.DownloadQuality.YOUTUBE -> 0
+        com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE -> 0
         else -> 0
       }
 
@@ -940,8 +940,8 @@ fun DownloadQualitySelector() {
           onCheckedChange = {
             val newQuality =
               when (index) {
-                0 -> echo.music.iad1tya.constants.DownloadQuality.YOUTUBE
-                else -> echo.music.iad1tya.constants.DownloadQuality.YOUTUBE
+                0 -> com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE
+                else -> com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE
               }
             onDownloadQualityChange(newQuality)
           },

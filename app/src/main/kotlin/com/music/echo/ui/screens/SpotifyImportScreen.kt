@@ -1,7 +1,8 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.net.Uri
 import android.webkit.CookieManager
 import android.webkit.WebResourceRequest
@@ -29,20 +30,20 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.spotify.SpotifyAuth
-import echo.music.iad1tya.spotifyimport.SpotifyImportProgressUi
-import echo.music.iad1tya.spotifyimport.SpotifyImportSourceType
-import echo.music.iad1tya.spotifyimport.SpotifyImportSourceUi
-import echo.music.iad1tya.spotifyimport.SpotifyImportSummaryUi
-import echo.music.iad1tya.spotifyimport.SpotifyImportUiState
-import echo.music.iad1tya.spotifyimport.SpotifyImportViewModel
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.spotify.SpotifyAuth
+import com.ahr.rashmusic.spotifyimport.SpotifyImportProgressUi
+import com.ahr.rashmusic.spotifyimport.SpotifyImportSourceType
+import com.ahr.rashmusic.spotifyimport.SpotifyImportSourceUi
+import com.ahr.rashmusic.spotifyimport.SpotifyImportSummaryUi
+import com.ahr.rashmusic.spotifyimport.SpotifyImportUiState
+import com.ahr.rashmusic.spotifyimport.SpotifyImportViewModel
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
 
 @Composable
 fun SpotifyImportScreen(
@@ -85,7 +86,7 @@ fun SpotifyImportScreen(
           start = 16.dp,
           end = 16.dp
         ),
-      verticalArrangement = Arrangement.spacedBy(16.dp)
+      verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling()
     ) {
       item {
         Spacer(modifier = Modifier.height(16.dp))
@@ -418,7 +419,7 @@ private fun SpotifyLoginSheet(
               mainWebView = this
               cookieManager.removeAllCookies(null)
               cookieManager.flush()
-              loadUrl(echo.music.iad1tya.spotify.SpotifyAuth.LOGIN_URL)
+              loadUrl(com.ahr.rashmusic.spotify.SpotifyAuth.LOGIN_URL)
             }
           container.addView(
             spotifyWebView,
@@ -628,7 +629,7 @@ private fun SpotifyAddByLinkDialog(
 ) {
   var link by remember { mutableStateOf(androidx.compose.ui.text.input.TextFieldValue("")) }
 
-  echo.music.iad1tya.ui.component.TextFieldDialog(
+  com.ahr.rashmusic.ui.component.TextFieldDialog(
     icon = { Icon(painter = painterResource(R.drawable.link), contentDescription = null) },
     title = {
       Column {
@@ -708,7 +709,7 @@ private fun SpotifySourcePickerSheet(
       LazyColumn(
         modifier = Modifier.fillMaxWidth().weight(1f),
         verticalArrangement = Arrangement.spacedBy(8.dp),
-        contentPadding = PaddingValues(bottom = 6.dp),
+        contentPadding = PaddingValues(bottom = 6.dp), flingBehavior = rememberLiquidFling(),
       ) {
         items(
           items = state.sources,

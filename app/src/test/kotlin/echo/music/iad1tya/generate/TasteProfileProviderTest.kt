@@ -1,15 +1,15 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.mutablePreferencesOf
-import echo.music.iad1tya.constants.LastFMUsernameKey
-import echo.music.iad1tya.db.daos.TasteProfileDao
-import echo.music.iad1tya.db.entities.TasteProfileEntity
-import echo.music.iad1tya.utils.lastfm.LastFmTasteApi
-import echo.music.iad1tya.utils.lastfm.SimilarArtist
-import echo.music.iad1tya.utils.lastfm.SimilarTrack
-import echo.music.iad1tya.utils.lastfm.Tag
+import com.ahr.rashmusic.constants.LastFMUsernameKey
+import com.ahr.rashmusic.db.daos.TasteProfileDao
+import com.ahr.rashmusic.db.entities.TasteProfileEntity
+import com.ahr.rashmusic.utils.lastfm.LastFmTasteApi
+import com.ahr.rashmusic.utils.lastfm.SimilarArtist
+import com.ahr.rashmusic.utils.lastfm.SimilarTrack
+import com.ahr.rashmusic.utils.lastfm.Tag
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest

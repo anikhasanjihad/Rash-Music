@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Configuration
@@ -55,37 +56,37 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.utils.completed
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EnableExportAsMp3Key
-import echo.music.iad1tya.constants.ExportDirectoryUriKey
-import echo.music.iad1tya.constants.ExportedSongIdsKey
-import echo.music.iad1tya.constants.ExportingSongIdsKey
-import echo.music.iad1tya.constants.ListThumbnailSize
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.db.entities.SpeedDialItem
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.AudioExportService
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.ListDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.utils.resize
-import echo.music.iad1tya.utils.joinByBullet
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EnableExportAsMp3Key
+import com.ahr.rashmusic.constants.ExportDirectoryUriKey
+import com.ahr.rashmusic.constants.ExportedSongIdsKey
+import com.ahr.rashmusic.constants.ExportingSongIdsKey
+import com.ahr.rashmusic.constants.ListThumbnailSize
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.entities.SpeedDialItem
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.AudioExportService
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.ListDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.utils.resize
+import com.ahr.rashmusic.utils.joinByBullet
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -388,7 +389,7 @@ fun YouTubePlaylistMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       NewActionGrid(

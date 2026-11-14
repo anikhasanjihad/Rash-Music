@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.ambient
+package com.ahr.rashmusic.ui.screens.ambient
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
@@ -55,12 +55,12 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.constants.*
-import echo.music.iad1tya.extensions.togglePlayPause
-import echo.music.iad1tya.ui.player.InlineLyricsView
-import echo.music.iad1tya.ui.screens.ambient.AmbientCanvasBackground
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.constants.*
+import com.ahr.rashmusic.extensions.togglePlayPause
+import com.ahr.rashmusic.ui.player.InlineLyricsView
+import com.ahr.rashmusic.ui.screens.ambient.AmbientCanvasBackground
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.abs
 
 @Composable
@@ -310,7 +310,7 @@ fun AmbientModeScreen(navController: NavController) {
             shape = RoundedCornerShape(24.dp),
             tonalElevation = 3.dp
           ) {
-            echo.music.iad1tya.ui.screens.settings.AmbientSettingsContent(
+            com.ahr.rashmusic.ui.screens.settings.AmbientSettingsContent(
               modifier = Modifier.padding(8.dp)
             )
           }

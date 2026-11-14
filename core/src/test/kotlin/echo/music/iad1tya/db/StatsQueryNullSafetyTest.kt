@@ -1,11 +1,11 @@
-package echo.music.iad1tya.db
+package com.ahr.rashmusic.db
 
 import androidx.room.Room
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.AlbumEntity
-import echo.music.iad1tya.db.entities.Event
-import echo.music.iad1tya.db.entities.SongEntity
-import echo.music.iad1tya.db.entities.SongWithStats
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.AlbumEntity
+import com.ahr.rashmusic.db.entities.Event
+import com.ahr.rashmusic.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.SongWithStats
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneOffset

@@ -1,10 +1,10 @@
 package com.music.echo.spotify
 
-import echo.music.iad1tya.spotifyimport.SpotifyImportRepository
-import echo.music.iad1tya.spotify.Spotify
-import echo.music.iad1tya.spotify.models.SpotifyTrack
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.models.SimilarRecommendation
+import com.ahr.rashmusic.spotifyimport.SpotifyImportRepository
+import com.ahr.rashmusic.spotify.Spotify
+import com.ahr.rashmusic.spotify.models.SpotifyTrack
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.models.SimilarRecommendation
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
@@ -73,8 +73,8 @@ class LoadSpotifyRecommendationsUseCase @Inject constructor(
                             val resolved = spotifyPlaybackResolver.resolveAndFilter(tracks, hideExplicit)
                             if (resolved.isEmpty()) return@async null
                             
-                            val fakeArtist = echo.music.iad1tya.db.entities.Artist(
-                                artist = echo.music.iad1tya.db.entities.ArtistEntity(
+                            val fakeArtist = com.ahr.rashmusic.db.entities.Artist(
+                                artist = com.ahr.rashmusic.db.entities.ArtistEntity(
                                     id = topArtist.id,
                                     name = topArtist.name,
                                     thumbnailUrl = topArtist.images?.firstOrNull()?.url

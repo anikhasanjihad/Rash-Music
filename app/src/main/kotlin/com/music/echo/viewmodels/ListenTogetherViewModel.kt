@@ -1,8 +1,8 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.listentogether.ListenTogetherManager
+import com.ahr.rashmusic.listentogether.ListenTogetherManager
 import javax.inject.Inject
 
 @HiltViewModel

@@ -1,10 +1,10 @@
-package echo.music.iad1tya.db.daos
+package com.ahr.rashmusic.db.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import echo.music.iad1tya.db.entities.TasteProfileEntity
+import com.ahr.rashmusic.db.entities.TasteProfileEntity
 
 @Dao
 interface TasteProfileDao {

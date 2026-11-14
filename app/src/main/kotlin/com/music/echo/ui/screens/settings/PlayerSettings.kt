@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -30,55 +30,55 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AudioNormalizationKey
-import echo.music.iad1tya.constants.VarispeedKey
-import echo.music.iad1tya.constants.AudioOffload
-import echo.music.iad1tya.constants.AudioQuality
-import echo.music.iad1tya.constants.AudioQualityKey
-import echo.music.iad1tya.constants.AutoDownloadOnLikeKey
-import echo.music.iad1tya.constants.AutoLoadMoreKey
-import echo.music.iad1tya.constants.AutoSkipNextOnErrorKey
-import echo.music.iad1tya.constants.AutomixCrossfadeKey
-import echo.music.iad1tya.constants.AutomixDebugOverlayKey
-import echo.music.iad1tya.constants.CrossfadeDurationKey
-import echo.music.iad1tya.constants.CrossfadeEnabledKey
-import echo.music.iad1tya.constants.CrossfadeGaplessKey
-import echo.music.iad1tya.constants.DisableLoadMoreWhenRepeatAllKey
-import echo.music.iad1tya.constants.DownloadOnWifiOnlyKey
-import echo.music.iad1tya.constants.DownloadWithMetadataKey
-import echo.music.iad1tya.constants.EnableBitPerfectUsbDacKey
-import echo.music.iad1tya.constants.EnableExportAsMp3Key
-import echo.music.iad1tya.constants.EnableGoogleCastKey
-import echo.music.iad1tya.constants.UsbDacVolumeModeKey
-import echo.music.iad1tya.constants.HistoryDuration
-import echo.music.iad1tya.constants.KeepScreenOn
-import echo.music.iad1tya.constants.PauseOnMute
-import echo.music.iad1tya.constants.PersistentQueueKey
-import echo.music.iad1tya.constants.PersistentShuffleAcrossQueuesKey
-import echo.music.iad1tya.constants.PreloadLyricsEnabledKey
-import echo.music.iad1tya.constants.PreloadNextSongEnabledKey
-import echo.music.iad1tya.constants.PreloadNextSongLimitKey
-import echo.music.iad1tya.constants.PreventDuplicateTracksInQueueKey
-import echo.music.iad1tya.constants.RememberShuffleAndRepeatKey
-import echo.music.iad1tya.constants.ResumeOnBluetoothConnectKey
-import echo.music.iad1tya.constants.AutoplayOnAutomotiveConnectKey
-import echo.music.iad1tya.constants.SeekExtraSeconds
-import echo.music.iad1tya.constants.ShufflePlaylistFirstKey
-import echo.music.iad1tya.constants.SimilarContent
-import echo.music.iad1tya.constants.SkipSilenceInstantKey
-import echo.music.iad1tya.constants.SkipSilenceKey
-import echo.music.iad1tya.constants.StopMusicOnTaskClearKey
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.EnumDialog
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AudioNormalizationKey
+import com.ahr.rashmusic.constants.VarispeedKey
+import com.ahr.rashmusic.constants.AudioOffload
+import com.ahr.rashmusic.constants.AudioQuality
+import com.ahr.rashmusic.constants.AudioQualityKey
+import com.ahr.rashmusic.constants.AutoDownloadOnLikeKey
+import com.ahr.rashmusic.constants.AutoLoadMoreKey
+import com.ahr.rashmusic.constants.AutoSkipNextOnErrorKey
+import com.ahr.rashmusic.constants.AutomixCrossfadeKey
+import com.ahr.rashmusic.constants.AutomixDebugOverlayKey
+import com.ahr.rashmusic.constants.CrossfadeDurationKey
+import com.ahr.rashmusic.constants.CrossfadeEnabledKey
+import com.ahr.rashmusic.constants.CrossfadeGaplessKey
+import com.ahr.rashmusic.constants.DisableLoadMoreWhenRepeatAllKey
+import com.ahr.rashmusic.constants.DownloadOnWifiOnlyKey
+import com.ahr.rashmusic.constants.DownloadWithMetadataKey
+import com.ahr.rashmusic.constants.EnableBitPerfectUsbDacKey
+import com.ahr.rashmusic.constants.EnableExportAsMp3Key
+import com.ahr.rashmusic.constants.EnableGoogleCastKey
+import com.ahr.rashmusic.constants.UsbDacVolumeModeKey
+import com.ahr.rashmusic.constants.HistoryDuration
+import com.ahr.rashmusic.constants.KeepScreenOn
+import com.ahr.rashmusic.constants.PauseOnMute
+import com.ahr.rashmusic.constants.PersistentQueueKey
+import com.ahr.rashmusic.constants.PersistentShuffleAcrossQueuesKey
+import com.ahr.rashmusic.constants.PreloadLyricsEnabledKey
+import com.ahr.rashmusic.constants.PreloadNextSongEnabledKey
+import com.ahr.rashmusic.constants.PreloadNextSongLimitKey
+import com.ahr.rashmusic.constants.PreventDuplicateTracksInQueueKey
+import com.ahr.rashmusic.constants.RememberShuffleAndRepeatKey
+import com.ahr.rashmusic.constants.ResumeOnBluetoothConnectKey
+import com.ahr.rashmusic.constants.AutoplayOnAutomotiveConnectKey
+import com.ahr.rashmusic.constants.SeekExtraSeconds
+import com.ahr.rashmusic.constants.ShufflePlaylistFirstKey
+import com.ahr.rashmusic.constants.SimilarContent
+import com.ahr.rashmusic.constants.SkipSilenceInstantKey
+import com.ahr.rashmusic.constants.SkipSilenceKey
+import com.ahr.rashmusic.constants.StopMusicOnTaskClearKey
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.EnumDialog
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -94,12 +94,12 @@ fun PlayerSettings(
     rememberEnumPreference(AudioQualityKey, defaultValue = AudioQuality.OPUS)
   val (audioQualityWifi, onAudioQualityWifiChange) =
     rememberEnumPreference(
-      echo.music.iad1tya.constants.AudioQualityWifiKey,
+      com.ahr.rashmusic.constants.AudioQualityWifiKey,
       defaultValue = AudioQuality.LOSSLESS
     )
   val (audioQualityCellular, onAudioQualityCellularChange) =
     rememberEnumPreference(
-      echo.music.iad1tya.constants.AudioQualityCellularKey,
+      com.ahr.rashmusic.constants.AudioQualityCellularKey,
       defaultValue = AudioQuality.MEDIUM
     )
 
@@ -123,13 +123,13 @@ fun PlayerSettings(
     rememberPreference(AudioNormalizationKey, defaultValue = true)
   val (audioLoudnessPreset, onAudioLoudnessPresetChange) =
     rememberEnumPreference(
-      echo.music.iad1tya.constants.AudioLoudnessPresetKey,
-      defaultValue = echo.music.iad1tya.constants.AudioLoudnessPreset.NORMAL
+      com.ahr.rashmusic.constants.AudioLoudnessPresetKey,
+      defaultValue = com.ahr.rashmusic.constants.AudioLoudnessPreset.NORMAL
     )
   var showLoudnessPresetDialog by remember { mutableStateOf(false) }
 
   val (spatialAudio, onSpatialAudioChange) =
-    rememberPreference(echo.music.iad1tya.constants.SpatialAudioKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.SpatialAudioKey, defaultValue = false)
 
   val (audioOffload, onAudioOffloadChange) =
     rememberPreference(key = AudioOffload, defaultValue = false)
@@ -150,7 +150,7 @@ fun PlayerSettings(
     rememberPreference(key = PreloadLyricsEnabledKey, defaultValue = true)
 
   val (dataSaverEnabled, onDataSaverEnabledChange) =
-    rememberPreference(key = echo.music.iad1tya.constants.DataSaverEnabledKey, defaultValue = false)
+    rememberPreference(key = com.ahr.rashmusic.constants.DataSaverEnabledKey, defaultValue = false)
 
   val (enableExportAsMp3, onEnableExportAsMp3Change) =
     rememberPreference(key = EnableExportAsMp3Key, defaultValue = false)
@@ -161,7 +161,7 @@ fun PlayerSettings(
     rememberPreference(key = EnableGoogleCastKey, defaultValue = true)
 
   val (showSeekButtons, onShowSeekButtonsChange) =
-    rememberPreference(echo.music.iad1tya.constants.ShowSeekButtonsKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.ShowSeekButtonsKey, defaultValue = false)
 
   val (seekExtraSeconds, onSeekExtraSeconds) =
     rememberPreference(SeekExtraSeconds, defaultValue = false)
@@ -206,14 +206,14 @@ fun PlayerSettings(
 
   val (playbackEngine, onPlaybackEngineChange) =
     rememberEnumPreference(
-      echo.music.iad1tya.constants.PlaybackEngineKey,
-      defaultValue = echo.music.iad1tya.constants.PlaybackEngine.AUTO
+      com.ahr.rashmusic.constants.PlaybackEngineKey,
+      defaultValue = com.ahr.rashmusic.constants.PlaybackEngine.AUTO
     )
 
   val (downloadQuality, onDownloadQualityChange) =
     rememberEnumPreference(
-      echo.music.iad1tya.constants.DownloadQualityKey,
-      defaultValue = echo.music.iad1tya.constants.DownloadQuality.YOUTUBE
+      com.ahr.rashmusic.constants.DownloadQualityKey,
+      defaultValue = com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE
     )
 
   if (showAudioQualityWifiDialog) {
@@ -265,10 +265,10 @@ fun PlayerSettings(
       },
       title = stringResource(R.string.download_quality_title),
       current = downloadQuality,
-      values = listOf(echo.music.iad1tya.constants.DownloadQuality.YOUTUBE),
+      values = listOf(com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE),
       valueText = {
         when (it) {
-          echo.music.iad1tya.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
+          com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE -> "YouTube Music (AAC/Default)"
           else -> ""
         }
       }
@@ -286,20 +286,20 @@ fun PlayerSettings(
       current = audioLoudnessPreset,
       values =
         listOf(
-          echo.music.iad1tya.constants.AudioLoudnessPreset.QUIET,
-          echo.music.iad1tya.constants.AudioLoudnessPreset.NORMAL,
-          echo.music.iad1tya.constants.AudioLoudnessPreset.LOUD,
-          echo.music.iad1tya.constants.AudioLoudnessPreset.AGGRESSIVE
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.QUIET,
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.NORMAL,
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.LOUD,
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.AGGRESSIVE
         ),
       valueText = {
         when (it) {
-          echo.music.iad1tya.constants.AudioLoudnessPreset.QUIET ->
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.QUIET ->
             stringResource(R.string.loudness_preset_quiet)
-          echo.music.iad1tya.constants.AudioLoudnessPreset.NORMAL ->
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.NORMAL ->
             stringResource(R.string.loudness_preset_normal)
-          echo.music.iad1tya.constants.AudioLoudnessPreset.LOUD ->
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.LOUD ->
             stringResource(R.string.loudness_preset_loud)
-          echo.music.iad1tya.constants.AudioLoudnessPreset.AGGRESSIVE ->
+          com.ahr.rashmusic.constants.AudioLoudnessPreset.AGGRESSIVE ->
             stringResource(R.string.loudness_preset_aggressive)
         }
       }
@@ -311,31 +311,31 @@ fun PlayerSettings(
       onDismiss = { showPlaybackEngineDialog = false },
       onSelect = {
         onPlaybackEngineChange(it)
-        echo.music.iad1tya.utils.YTPlayerUtils.playbackEngine = it
+        com.ahr.rashmusic.utils.YTPlayerUtils.playbackEngine = it
         showPlaybackEngineDialog = false
       },
       title = "Playback Engine",
       current = playbackEngine,
       values =
         listOf(
-          echo.music.iad1tya.constants.PlaybackEngine.POTOKEN,
-          echo.music.iad1tya.constants.PlaybackEngine.BRAVEPIPE,
-          echo.music.iad1tya.constants.PlaybackEngine.AUTO
+          com.ahr.rashmusic.constants.PlaybackEngine.POTOKEN,
+          com.ahr.rashmusic.constants.PlaybackEngine.BRAVEPIPE,
+          com.ahr.rashmusic.constants.PlaybackEngine.AUTO
         ),
       valueText = {
         when (it) {
-          echo.music.iad1tya.constants.PlaybackEngine.POTOKEN -> "eXtended InnerTube"
-          echo.music.iad1tya.constants.PlaybackEngine.BRAVEPIPE -> "BravePipe (NewPipe)"
-          echo.music.iad1tya.constants.PlaybackEngine.AUTO -> "Auto (Try Both)"
+          com.ahr.rashmusic.constants.PlaybackEngine.POTOKEN -> "eXtended InnerTube"
+          com.ahr.rashmusic.constants.PlaybackEngine.BRAVEPIPE -> "BravePipe (NewPipe)"
+          com.ahr.rashmusic.constants.PlaybackEngine.AUTO -> "Auto (Try Both)"
         }
       },
       valueDescription = {
         when (it) {
-          echo.music.iad1tya.constants.PlaybackEngine.POTOKEN ->
+          com.ahr.rashmusic.constants.PlaybackEngine.POTOKEN ->
             "Uses WebView PoToken + CipherDeobfuscator. Most reliable and future-proof."
-          echo.music.iad1tya.constants.PlaybackEngine.BRAVEPIPE ->
+          com.ahr.rashmusic.constants.PlaybackEngine.BRAVEPIPE ->
             "Uses NewPipe extractor for stream resolution. Lightweight but may break with YouTube updates."
-          echo.music.iad1tya.constants.PlaybackEngine.AUTO ->
+          com.ahr.rashmusic.constants.PlaybackEngine.AUTO ->
             "Tries PoToken first, falls back to BravePipe if it fails."
         }
       }
@@ -468,7 +468,7 @@ fun PlayerSettings(
               description = {
                 Text(
                   when (downloadQuality) {
-                    echo.music.iad1tya.constants.DownloadQuality.YOUTUBE ->
+                    com.ahr.rashmusic.constants.DownloadQuality.YOUTUBE ->
                       "YouTube Music (AAC/Default)"
                     else -> "YouTube Music (AAC/Default)"
                   }
@@ -543,9 +543,9 @@ fun PlayerSettings(
               description = {
                 Text(
                   when (playbackEngine) {
-                    echo.music.iad1tya.constants.PlaybackEngine.POTOKEN -> "eXtended InnerTube"
-                    echo.music.iad1tya.constants.PlaybackEngine.BRAVEPIPE -> "BravePipe (NewPipe)"
-                    echo.music.iad1tya.constants.PlaybackEngine.AUTO -> "Auto (Try Both)"
+                    com.ahr.rashmusic.constants.PlaybackEngine.POTOKEN -> "eXtended InnerTube"
+                    com.ahr.rashmusic.constants.PlaybackEngine.BRAVEPIPE -> "BravePipe (NewPipe)"
+                    com.ahr.rashmusic.constants.PlaybackEngine.AUTO -> "Auto (Try Both)"
                   }
                 )
               },
@@ -861,13 +861,13 @@ fun PlayerSettings(
               description = {
                 Text(
                   when (audioLoudnessPreset) {
-                    echo.music.iad1tya.constants.AudioLoudnessPreset.QUIET ->
+                    com.ahr.rashmusic.constants.AudioLoudnessPreset.QUIET ->
                       stringResource(R.string.loudness_preset_quiet)
-                    echo.music.iad1tya.constants.AudioLoudnessPreset.NORMAL ->
+                    com.ahr.rashmusic.constants.AudioLoudnessPreset.NORMAL ->
                       stringResource(R.string.loudness_preset_normal)
-                    echo.music.iad1tya.constants.AudioLoudnessPreset.LOUD ->
+                    com.ahr.rashmusic.constants.AudioLoudnessPreset.LOUD ->
                       stringResource(R.string.loudness_preset_loud)
-                    echo.music.iad1tya.constants.AudioLoudnessPreset.AGGRESSIVE ->
+                    com.ahr.rashmusic.constants.AudioLoudnessPreset.AGGRESSIVE ->
                       stringResource(R.string.loudness_preset_aggressive)
                   }
                 )

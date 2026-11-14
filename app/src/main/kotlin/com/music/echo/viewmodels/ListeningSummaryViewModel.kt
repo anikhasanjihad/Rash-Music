@@ -4,7 +4,7 @@ package com.music.echo.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.db.MusicDatabase
+import com.ahr.rashmusic.db.MusicDatabase
 import java.time.DayOfWeek
 import java.time.Instant
 import java.time.LocalDate

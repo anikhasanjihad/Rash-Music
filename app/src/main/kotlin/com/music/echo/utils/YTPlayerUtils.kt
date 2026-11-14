@@ -1,5 +1,5 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.net.ConnectivityManager
 import android.net.Uri
@@ -15,12 +15,12 @@ import com.music.innertube.models.YouTubeClient.Companion.VISIONOS
 import com.music.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import com.music.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.music.innertube.models.response.PlayerResponse
-import echo.music.iad1tya.constants.AudioQuality
-import echo.music.iad1tya.utils.YTPlayerUtils.MAIN_CLIENT
-import echo.music.iad1tya.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
-import echo.music.iad1tya.utils.YTPlayerUtils.validateStatus
-import echo.music.iad1tya.utils.cipher.CipherDeobfuscator
-import echo.music.iad1tya.utils.potoken.PoTokenGenerator
+import com.ahr.rashmusic.constants.AudioQuality
+import com.ahr.rashmusic.utils.YTPlayerUtils.MAIN_CLIENT
+import com.ahr.rashmusic.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
+import com.ahr.rashmusic.utils.YTPlayerUtils.validateStatus
+import com.ahr.rashmusic.utils.cipher.CipherDeobfuscator
+import com.ahr.rashmusic.utils.potoken.PoTokenGenerator
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
@@ -42,8 +42,8 @@ object YTPlayerUtils {
   @Volatile var forceOpusEnabled: Boolean = false
 
   @Volatile
-  var playbackEngine: echo.music.iad1tya.constants.PlaybackEngine =
-    echo.music.iad1tya.constants.PlaybackEngine.AUTO
+  var playbackEngine: com.ahr.rashmusic.constants.PlaybackEngine =
+    com.ahr.rashmusic.constants.PlaybackEngine.AUTO
 
   private val httpClient =
     OkHttpClient.Builder()
@@ -238,7 +238,7 @@ object YTPlayerUtils {
       audioQuality.maxKbps.coerceAtMost(160)
     }
     val extracted =
-      echo.music.iad1tya.utils.InnerTubeXResolver.extract(
+      com.ahr.rashmusic.utils.InnerTubeXResolver.extract(
         videoId = videoId,
         maxKbps = targetMaxKbps,
         requireM4a = false
@@ -392,8 +392,8 @@ object YTPlayerUtils {
         }
       val requestBuilder = okhttp3.Request.Builder().head().url(url).addHeader("Range", range)
       val extraHeaders =
-        echo.music.iad1tya.utils.InnerTubeXResolver.headersFor(url)
-          ?: echo.music.iad1tya.utils.PlayerClient.forStreamUrl(url).mediaHeaders()
+        com.ahr.rashmusic.utils.InnerTubeXResolver.headersFor(url)
+          ?: com.ahr.rashmusic.utils.PlayerClient.forStreamUrl(url).mediaHeaders()
       for ((k, v) in extraHeaders) {
         requestBuilder.header(k, v)
       }
@@ -484,8 +484,8 @@ object YTPlayerUtils {
 
     // --- PoToken / CipherDeobfuscator path ---
     val useCipher =
-      engine == echo.music.iad1tya.constants.PlaybackEngine.POTOKEN ||
-        engine == echo.music.iad1tya.constants.PlaybackEngine.AUTO
+      engine == com.ahr.rashmusic.constants.PlaybackEngine.POTOKEN ||
+        engine == com.ahr.rashmusic.constants.PlaybackEngine.AUTO
     if (useCipher) {
       val signatureCipher = format.signatureCipher ?: format.cipher
       if (!signatureCipher.isNullOrEmpty()) {
@@ -507,8 +507,8 @@ object YTPlayerUtils {
 
     // --- BravePipe / NewPipeExtractor path ---
     val useBravePipe =
-      engine == echo.music.iad1tya.constants.PlaybackEngine.BRAVEPIPE ||
-        engine == echo.music.iad1tya.constants.PlaybackEngine.AUTO
+      engine == com.ahr.rashmusic.constants.PlaybackEngine.BRAVEPIPE ||
+        engine == com.ahr.rashmusic.constants.PlaybackEngine.AUTO
     if (useBravePipe) {
       if (skipNewPipe) {
         Timber.tag(logTag).d("Skipping NewPipe methods for age-restricted content")

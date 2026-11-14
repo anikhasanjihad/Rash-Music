@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import java.math.BigInteger
 import java.security.MessageDigest

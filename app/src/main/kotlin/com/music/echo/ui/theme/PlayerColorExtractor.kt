@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.theme
+package com.ahr.rashmusic.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb

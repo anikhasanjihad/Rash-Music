@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ListItemColors

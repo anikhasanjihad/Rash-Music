@@ -1,10 +1,10 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
 import android.content.Context
 import com.music.youlyplus.YouLyPlus
-import echo.music.iad1tya.constants.EnableYouLyPlusKey
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
+import com.ahr.rashmusic.constants.EnableYouLyPlusKey
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
 
 object YouLyPlusLyricsProvider : LyricsProvider {
   override val name = "YouLyPlus"

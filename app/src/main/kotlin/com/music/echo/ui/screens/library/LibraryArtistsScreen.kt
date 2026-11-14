@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -47,30 +48,30 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ArtistFilter
-import echo.music.iad1tya.constants.ArtistFilterKey
-import echo.music.iad1tya.constants.ArtistSortDescendingKey
-import echo.music.iad1tya.constants.ArtistSortType
-import echo.music.iad1tya.constants.ArtistSortTypeKey
-import echo.music.iad1tya.constants.ArtistViewTypeKey
-import echo.music.iad1tya.constants.CONTENT_TYPE_ARTIST
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.constants.LibraryViewType
-import echo.music.iad1tya.constants.YtmSyncKey
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.EmptyPlaceholder
-import echo.music.iad1tya.ui.component.LibraryArtistGridItem
-import echo.music.iad1tya.ui.component.LibraryArtistListItem
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.SortHeader
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.LibraryArtistsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ArtistFilter
+import com.ahr.rashmusic.constants.ArtistFilterKey
+import com.ahr.rashmusic.constants.ArtistSortDescendingKey
+import com.ahr.rashmusic.constants.ArtistSortType
+import com.ahr.rashmusic.constants.ArtistSortTypeKey
+import com.ahr.rashmusic.constants.ArtistViewTypeKey
+import com.ahr.rashmusic.constants.CONTENT_TYPE_ARTIST
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.constants.LibraryViewType
+import com.ahr.rashmusic.constants.YtmSyncKey
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.EmptyPlaceholder
+import com.ahr.rashmusic.ui.component.LibraryArtistGridItem
+import com.ahr.rashmusic.ui.component.LibraryArtistListItem
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.SortHeader
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.LibraryArtistsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -220,7 +221,7 @@ fun LibraryArtistsScreen(
       LibraryViewType.LIST ->
         LazyColumn(
           state = lazyListState,
-          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
         ) {
           item(
             key = "filter",
@@ -270,7 +271,7 @@ fun LibraryArtistsScreen(
               minSize =
                 GridThumbnailHeight + if (gridItemSize == GridItemSize.BIG) 24.dp else (-24).dp,
             ),
-          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
         ) {
           item(
             key = "filter",

@@ -1,8 +1,8 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
-import echo.music.iad1tya.db.entities.ArtistEntity
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.ArtistEntity
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SongEntity
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

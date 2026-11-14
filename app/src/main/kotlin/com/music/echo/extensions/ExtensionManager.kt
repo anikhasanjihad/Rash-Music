@@ -7,8 +7,8 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import com.music.innertube.models.Artist
 import com.music.innertube.models.SongItem
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.utils.dataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.Serializable

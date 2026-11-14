@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
@@ -32,8 +33,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
-import echo.music.iad1tya.R
-import echo.music.iad1tya.utils.makeTimeString
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.utils.makeTimeString
 
 val GridMenuItemHeight = 108.dp
 
@@ -47,7 +48,7 @@ fun GridMenu(
     columns = GridCells.Adaptive(minSize = 120.dp),
     modifier = modifier,
     contentPadding = contentPadding,
-    content = content
+    content = content, flingBehavior = rememberLiquidFling()
   )
 }
 

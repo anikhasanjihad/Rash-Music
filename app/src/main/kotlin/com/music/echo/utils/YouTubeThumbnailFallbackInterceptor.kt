@@ -1,10 +1,10 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import coil3.intercept.Interceptor
 import coil3.network.HttpException
 import coil3.request.ErrorResult
 import coil3.request.ImageResult
-import echo.music.iad1tya.ui.utils.ytimgFallbackUrl
+import com.ahr.rashmusic.ui.utils.ytimgFallbackUrl
 
 /**
  * Retries a missing YouTube video thumbnail with the always-available variant.

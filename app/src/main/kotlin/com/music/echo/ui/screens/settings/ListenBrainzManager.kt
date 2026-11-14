@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.content.Context
 import java.util.concurrent.atomic.AtomicBoolean

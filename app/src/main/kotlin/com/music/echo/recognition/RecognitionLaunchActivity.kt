@@ -1,4 +1,4 @@
-package echo.music.iad1tya.recognition
+package com.ahr.rashmusic.recognition
 
 import android.Manifest
 import android.app.Activity
@@ -7,7 +7,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-import echo.music.iad1tya.MainActivity
+import com.ahr.rashmusic.MainActivity
 
 class RecognitionLaunchActivity : Activity() {
   override fun onCreate(savedInstanceState: Bundle?) {

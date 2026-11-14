@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.search
+package com.ahr.rashmusic.ui.screens.search
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,28 +41,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CONTENT_TYPE_LIST
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.Artist
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.AlbumListItem
-import echo.music.iad1tya.ui.component.ArtistListItem
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.EmptyPlaceholder
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.PlaylistListItem
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.viewmodels.LocalFilter
-import echo.music.iad1tya.viewmodels.LocalSearchViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CONTENT_TYPE_LIST
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.Artist
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.AlbumListItem
+import com.ahr.rashmusic.ui.component.ArtistListItem
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.EmptyPlaceholder
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.PlaylistListItem
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.viewmodels.LocalFilter
+import com.ahr.rashmusic.viewmodels.LocalSearchViewModel
 import kotlinx.coroutines.flow.drop
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -109,7 +110,7 @@ fun LocalSearchScreen(
           if (isLandscape) {
             base.windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal))
           } else base
-        }
+        }, flingBehavior = rememberLiquidFling()
   ) {
     stickyHeader {
       Box(

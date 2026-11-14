@@ -1,4 +1,4 @@
-package echo.music.iad1tya.recognition
+package com.ahr.rashmusic.recognition
 
 import androidx.annotation.OptIn
 import androidx.media3.common.audio.AudioProcessor

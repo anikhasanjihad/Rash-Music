@@ -1,6 +1,6 @@
-package echo.music.iad1tya.data
+package com.ahr.rashmusic.data
 
-import echo.music.iad1tya.models.SponsorBlockSegment
+import com.ahr.rashmusic.models.SponsorBlockSegment
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers

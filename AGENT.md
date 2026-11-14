@@ -112,7 +112,7 @@ group listening), Discord Rich Presence, and more. It ships as a single
 **GMS** build variant (Google Cast + Firebase enabled) — the previous FOSS
 (no-Google-services) flavor has been removed. See "Build variants" below.
 
-Package/namespace: `echo.music.iad1tya` (app module). Application ID matches.
+Package/namespace: `com.ahr.rashmusic` (app module). Application ID matches.
 
 ## Tech stack
 
@@ -334,7 +334,7 @@ Run tests with:
 
 ## Local Taste Engine
 
-The Local Taste Engine (`echo.music.iad1tya.generate`) provides offline, account-free algorithmic recommendation and smart mix generation:
+The Local Taste Engine (`com.ahr.rashmusic.generate`) provides offline, account-free algorithmic recommendation and smart mix generation:
 - **Database (v47, v48):**
   - v47: Introduces `song_play_stats` (keyed by normalized `trackKey` = `"${title.trim()}|${artist.trim()}".lowercase()`) and `recommendation_exclusions`. Auto-migration backfills legacy playback history without data loss.
   - v48: Re-introduces `taste_profile` table (`TasteProfileEntity`, `TasteProfileDao`) storing Last.fm top artists, tracks, and genre snapshots.
@@ -353,7 +353,7 @@ The Local Taste Engine (`echo.music.iad1tya.generate`) provides offline, account
 
 ## Music Flow
 
-Optional full-screen vertical swipe discovery (`echo.music.iad1tya.musicflow`, route `music_flow`, settings route `settings/music_flow`). It is a UI/orchestration layer over the existing player — never add a player, ExoPlayer or service for it.
+Optional full-screen vertical swipe discovery (`com.ahr.rashmusic.musicflow`, route `music_flow`, settings route `settings/music_flow`). It is a UI/orchestration layer over the existing player — never add a player, ExoPlayer or service for it.
 
 - **Playback ownership:** `MusicFlowCoordinator` turns settled pager pages into commands on the shared `MusicService` via the `MusicFlowPlayer` interface (`PlayerConnectionMusicFlowPlayer` in production). First takeover plays a `MusicFlowQueue` (a normal `Queue`); later swipes `seekTo` inside it. Flow "owns" playback only while `MusicService.activeQueue` is its queue instance — any playlist/radio/clear replaces it and Flow stops commanding. Requests carry increasing ids and are debounced in `MusicFlowViewModel`, so rapid swipes only command the final page.
 - **Queue handoff:** before the first takeover, `MusicService.snapshotQueue()` captures the prior queue (in memory only, never persisted, so nothing stale is restored after process death). `Restore previous queue` calls `restoreQueueSnapshot` only while Flow still owns playback; a superseding queue invalidates it. Opening the normal player keeps the current Flow song.

@@ -1,11 +1,11 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.widget
+package com.ahr.rashmusic.widget
 
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 class AdaptiveQueueWidgetService : RemoteViewsService() {
 

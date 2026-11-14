@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -33,28 +33,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.api.DeepLService
-import echo.music.iad1tya.api.OpenRouterService
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.api.DeepLService
+import com.ahr.rashmusic.api.OpenRouterService
 import kotlinx.coroutines.launch
-import echo.music.iad1tya.constants.AiProviderKey
-import echo.music.iad1tya.constants.AiRecommendationsKey
-import echo.music.iad1tya.constants.AutoTranslateKey
-import echo.music.iad1tya.constants.DeeplApiKey
-import echo.music.iad1tya.constants.DeeplFormalityKey
-import echo.music.iad1tya.constants.LanguageCodeToName
-import echo.music.iad1tya.constants.OpenRouterApiKey
-import echo.music.iad1tya.constants.OpenRouterBaseUrlKey
-import echo.music.iad1tya.constants.OpenRouterModelKey
-import echo.music.iad1tya.constants.TranslateLanguageKey
-import echo.music.iad1tya.constants.TranslateModeKey
-import echo.music.iad1tya.lyrics.LyricsTranslationHelper
-import echo.music.iad1tya.ui.component.EnumDialog
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.component.TextFieldDialog
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.constants.AiProviderKey
+import com.ahr.rashmusic.constants.AiRecommendationsKey
+import com.ahr.rashmusic.constants.AutoTranslateKey
+import com.ahr.rashmusic.constants.DeeplApiKey
+import com.ahr.rashmusic.constants.DeeplFormalityKey
+import com.ahr.rashmusic.constants.LanguageCodeToName
+import com.ahr.rashmusic.constants.OpenRouterApiKey
+import com.ahr.rashmusic.constants.OpenRouterBaseUrlKey
+import com.ahr.rashmusic.constants.OpenRouterModelKey
+import com.ahr.rashmusic.constants.TranslateLanguageKey
+import com.ahr.rashmusic.constants.TranslateModeKey
+import com.ahr.rashmusic.lyrics.LyricsTranslationHelper
+import com.ahr.rashmusic.ui.component.EnumDialog
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.component.TextFieldDialog
+import com.ahr.rashmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,7 +75,7 @@ fun AiSettings(
   var translateMode by rememberPreference(TranslateModeKey, "Literal")
   var autoTranslate by rememberPreference(AutoTranslateKey, false)
   var aiRecommendations by rememberPreference(AiRecommendationsKey, false)
-  var createFromTasteDaily by rememberPreference(echo.music.iad1tya.constants.CreateFromTasteDailyKey, false)
+  var createFromTasteDaily by rememberPreference(com.ahr.rashmusic.constants.CreateFromTasteDailyKey, false)
   var deeplApiKey by rememberPreference(DeeplApiKey, "")
   var deeplFormality by rememberPreference(DeeplFormalityKey, "default")
 
@@ -791,13 +791,13 @@ fun AiSettings(
     )
 
     if (showRefreshDialog) {
-      echo.music.iad1tya.ui.component.RefreshAiRecommendationDialog(
+      com.ahr.rashmusic.ui.component.RefreshAiRecommendationDialog(
         onDismiss = { showRefreshDialog = false }
       )
     }
 
     if (showTasteGenerationDialog) {
-      echo.music.iad1tya.ui.component.CreateFromTasteDialog(
+      com.ahr.rashmusic.ui.component.CreateFromTasteDialog(
         onDismiss = { showTasteGenerationDialog = false },
         onPlaylistCreated = { showTasteGenerationDialog = false }
       )

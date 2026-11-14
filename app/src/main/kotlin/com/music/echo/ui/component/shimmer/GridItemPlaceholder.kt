@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component.shimmer
+package com.ahr.rashmusic.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -16,12 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.constants.SmallGridThumbnailHeight
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.utils.rememberEnumPreference
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.constants.SmallGridThumbnailHeight
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.utils.rememberEnumPreference
 
 @Composable
 fun GridItemPlaceHolder(

@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,9 +32,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
-import echo.music.iad1tya.utils.PlaybackLogEntry
-import echo.music.iad1tya.utils.PlaybackLogLevel
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.utils.PlaybackLogEntry
+import com.ahr.rashmusic.utils.PlaybackLogLevel
 
 @Composable
 fun PlaybackLogsDialog(logs: List<PlaybackLogEntry>, onClear: () -> Unit, onDismiss: () -> Unit) {
@@ -90,7 +91,7 @@ fun PlaybackLogsDialog(logs: List<PlaybackLogEntry>, onClear: () -> Unit, onDism
           )
         }
       } else {
-        LazyColumn(state = listState, modifier = Modifier.fillMaxSize()) {
+        LazyColumn(state = listState, modifier = Modifier.fillMaxSize(), flingBehavior = rememberLiquidFling()) {
           items(logs) { log -> PlaybackLogEntryItem(log) }
         }
       }

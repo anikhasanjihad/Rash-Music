@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.ActivityNotFoundException
 import android.content.Context

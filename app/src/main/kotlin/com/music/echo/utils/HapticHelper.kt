@@ -20,14 +20,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
-import echo.music.iad1tya.constants.EnableClickHapticsKey
-import echo.music.iad1tya.constants.EnableHapticsKey
-import echo.music.iad1tya.constants.EnableLongPressHapticsKey
-import echo.music.iad1tya.constants.EnableScrollEdgeHapticsKey
-import echo.music.iad1tya.constants.EnableSliderHapticsKey
-import echo.music.iad1tya.constants.HapticIntensity
-import echo.music.iad1tya.constants.HapticIntensityKey
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.constants.EnableClickHapticsKey
+import com.ahr.rashmusic.constants.EnableHapticsKey
+import com.ahr.rashmusic.constants.EnableLongPressHapticsKey
+import com.ahr.rashmusic.constants.EnableScrollEdgeHapticsKey
+import com.ahr.rashmusic.constants.EnableSliderHapticsKey
+import com.ahr.rashmusic.constants.HapticIntensity
+import com.ahr.rashmusic.constants.HapticIntensityKey
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlinx.coroutines.flow.distinctUntilChanged
 
 enum class HapticType {

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.playlist
+package com.ahr.rashmusic.ui.screens.playlist
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -6,10 +6,10 @@ import androidx.lifecycle.viewModelScope
 import com.music.echo.spotify.SpotifyPlaybackResolver
 import com.music.innertube.models.SongItem
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.spotify.Spotify
-import echo.music.iad1tya.spotify.models.SpotifyTrack
-import echo.music.iad1tya.spotifyimport.SpotifyImportRepository
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.spotify.Spotify
+import com.ahr.rashmusic.spotify.models.SpotifyTrack
+import com.ahr.rashmusic.spotifyimport.SpotifyImportRepository
+import com.ahr.rashmusic.utils.reportException
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -20,19 +20,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.music.innertube.utils.parseCookieString
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AccountEmailKey
-import echo.music.iad1tya.constants.AudioQuality
-import echo.music.iad1tya.constants.AudioQualityKey
-import echo.music.iad1tya.constants.InnerTubeCookieKey
-import echo.music.iad1tya.constants.UseLoginForBrowse
-import echo.music.iad1tya.constants.YtmSyncKey
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.HomeViewModel
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AccountEmailKey
+import com.ahr.rashmusic.constants.AudioQuality
+import com.ahr.rashmusic.constants.AudioQualityKey
+import com.ahr.rashmusic.constants.InnerTubeCookieKey
+import com.ahr.rashmusic.constants.UseLoginForBrowse
+import com.ahr.rashmusic.constants.YtmSyncKey
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.HomeViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -133,7 +133,7 @@ fun SettingDialoge(
               Material3SettingsItem(
                 title = { Text("Extensions") },
                 description = { Text("Manage third-party content plugins") },
-                icon = androidx.compose.ui.res.painterResource(echo.music.iad1tya.R.drawable.extension),
+                icon = androidx.compose.ui.res.painterResource(com.ahr.rashmusic.R.drawable.extension),
                 onClick = {
                   onDismissRequest()
                   onNavigate("settings/extensions")

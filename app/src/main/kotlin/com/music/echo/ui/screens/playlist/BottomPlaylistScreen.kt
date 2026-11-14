@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.playlist
+package com.ahr.rashmusic.ui.screens.playlist
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -81,31 +82,31 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.MyTopFilter
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.playback.DownloadUtil
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.DraggableScrollbar
-import echo.music.iad1tya.ui.component.EmptyPlaceholder
-import echo.music.iad1tya.ui.component.ExpandableText
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.SortHeader
-import echo.music.iad1tya.ui.menu.SelectionSongMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.ui.menu.TopPlaylistMenu
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.viewmodels.BottomPlaylistViewModel
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.MyTopFilter
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.playback.DownloadUtil
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.DraggableScrollbar
+import com.ahr.rashmusic.ui.component.EmptyPlaceholder
+import com.ahr.rashmusic.ui.component.ExpandableText
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.SortHeader
+import com.ahr.rashmusic.ui.menu.SelectionSongMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.ui.menu.TopPlaylistMenu
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.viewmodels.BottomPlaylistViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -246,7 +247,7 @@ fun BottomPlaylistScreen(
   ) {
     LazyColumn(
       state = state,
-      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
     ) {
       if (songs != null) {
         if (songs!!.isEmpty()) {
@@ -494,7 +495,7 @@ private fun BottomPlaylistHeader(
   likeLength: Int,
   downloadState: Int,
   onShowRemoveDownloadDialog: () -> Unit,
-  menuState: echo.music.iad1tya.ui.component.MenuState,
+  menuState: com.ahr.rashmusic.ui.component.MenuState,
   modifier: Modifier = Modifier
 ) {
   val playerConnection = LocalPlayerConnection.current ?: return

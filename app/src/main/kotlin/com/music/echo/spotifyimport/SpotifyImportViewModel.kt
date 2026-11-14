@@ -5,12 +5,12 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package echo.music.iad1tya.spotifyimport
+package com.ahr.rashmusic.spotifyimport
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.utils.reportException
 import javax.inject.Inject
 import kotlin.jvm.Volatile
 import kotlinx.coroutines.CancellationException

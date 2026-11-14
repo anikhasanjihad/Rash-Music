@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ai.weather
+package com.ahr.rashmusic.ai.weather
 
 import androidx.compose.runtime.Immutable
 

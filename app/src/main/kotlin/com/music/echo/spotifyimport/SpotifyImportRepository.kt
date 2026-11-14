@@ -5,34 +5,34 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package echo.music.iad1tya.spotifyimport
+package com.ahr.rashmusic.spotifyimport
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.SpotifyAccessTokenExpiresAtKey
-import echo.music.iad1tya.constants.SpotifyAccessTokenKey
-import echo.music.iad1tya.constants.SpotifyAccountAvatarUrlKey
-import echo.music.iad1tya.constants.SpotifyAccountNameKey
-import echo.music.iad1tya.constants.SpotifySpDcKey
-import echo.music.iad1tya.constants.SpotifySpKeyKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.spotify.Spotify
-import echo.music.iad1tya.spotify.SpotifyAuth
-import echo.music.iad1tya.spotify.SpotifyMapper
-import echo.music.iad1tya.spotify.models.SpotifyPlaylist
-import echo.music.iad1tya.spotify.models.SpotifyPlaylistTracksRef
-import echo.music.iad1tya.spotify.models.SpotifyTrack
-import echo.music.iad1tya.utils.clearWebAuthSession
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.SpotifyAccessTokenExpiresAtKey
+import com.ahr.rashmusic.constants.SpotifyAccessTokenKey
+import com.ahr.rashmusic.constants.SpotifyAccountAvatarUrlKey
+import com.ahr.rashmusic.constants.SpotifyAccountNameKey
+import com.ahr.rashmusic.constants.SpotifySpDcKey
+import com.ahr.rashmusic.constants.SpotifySpKeyKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.spotify.Spotify
+import com.ahr.rashmusic.spotify.SpotifyAuth
+import com.ahr.rashmusic.spotify.SpotifyMapper
+import com.ahr.rashmusic.spotify.models.SpotifyPlaylist
+import com.ahr.rashmusic.spotify.models.SpotifyPlaylistTracksRef
+import com.ahr.rashmusic.spotify.models.SpotifyTrack
+import com.ahr.rashmusic.utils.clearWebAuthSession
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.reportException
 import java.time.LocalDateTime
 import java.util.concurrent.atomic.AtomicInteger
 import javax.inject.Inject

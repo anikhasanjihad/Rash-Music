@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -56,7 +57,7 @@ import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.comment.CommentRenderer
 import com.music.innertube.models.comment.CommentThreadRenderer
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import kotlinx.coroutines.launch
 
 @OptIn(
@@ -169,7 +170,7 @@ fun CommentSheet(videoId: String, onDismiss: () -> Unit) {
                 LazyColumn(
                   modifier = Modifier.fillMaxHeight(),
                   contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
-                  verticalArrangement = Arrangement.spacedBy(20.dp)
+                  verticalArrangement = Arrangement.spacedBy(20.dp), flingBehavior = rememberLiquidFling()
                 ) {
                   items(
                     comments,
@@ -394,7 +395,7 @@ fun CommentDetailPane(thread: CommentThreadRenderer, onBack: () -> Unit) {
     LazyColumn(
       modifier = Modifier.fillMaxHeight(),
       contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
-      verticalArrangement = Arrangement.spacedBy(16.dp)
+      verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling()
     ) {
       item { CommentItem(renderer = mainComment, onShowReplies = null) }
       item { Spacer(modifier = Modifier.height(8.dp)) }

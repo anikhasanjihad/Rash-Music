@@ -1,16 +1,16 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.SpotifySpDcKey
-import echo.music.iad1tya.spotify.Spotify
-import echo.music.iad1tya.spotify.models.SpotifyPlaylist
-import echo.music.iad1tya.spotifyimport.SpotifyImportRepository
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.constants.SpotifySpDcKey
+import com.ahr.rashmusic.spotify.Spotify
+import com.ahr.rashmusic.spotify.models.SpotifyPlaylist
+import com.ahr.rashmusic.spotifyimport.SpotifyImportRepository
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.reportException
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

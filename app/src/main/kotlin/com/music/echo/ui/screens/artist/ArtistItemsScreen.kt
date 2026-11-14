@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.artist
+package com.ahr.rashmusic.ui.screens.artist
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
@@ -36,29 +37,29 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.YouTubeGridItem
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.component.shimmer.GridItemPlaceHolder
-import echo.music.iad1tya.ui.component.shimmer.ListItemPlaceHolder
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.ui.menu.YouTubeAlbumMenu
-import echo.music.iad1tya.ui.menu.YouTubeArtistMenu
-import echo.music.iad1tya.ui.menu.YouTubePlaylistMenu
-import echo.music.iad1tya.ui.menu.YouTubeSongMenu
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.viewmodels.ArtistItemsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.YouTubeGridItem
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.component.shimmer.GridItemPlaceHolder
+import com.ahr.rashmusic.ui.component.shimmer.ListItemPlaceHolder
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.ui.menu.YouTubeAlbumMenu
+import com.ahr.rashmusic.ui.menu.YouTubeArtistMenu
+import com.ahr.rashmusic.ui.menu.YouTubePlaylistMenu
+import com.ahr.rashmusic.ui.menu.YouTubeSongMenu
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.viewmodels.ArtistItemsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -108,7 +109,7 @@ fun ArtistItemsScreen(
   if (itemsPage?.items?.firstOrNull() is SongItem) {
     LazyColumn(
       state = lazyListState,
-      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
     ) {
       itemsIndexed(
         items = itemsPage?.items.orEmpty().distinctBy { it.id },
@@ -196,7 +197,7 @@ fun ArtistItemsScreen(
         GridCells.Adaptive(
           minSize = GridThumbnailHeight + if (gridItemSize == GridItemSize.BIG) 24.dp else (-24).dp
         ),
-      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues()
+      contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling()
     ) {
       items(items = itemsPage?.items.orEmpty().distinctBy { it.id }, key = { it.id }) { item ->
         YouTubeGridItem(

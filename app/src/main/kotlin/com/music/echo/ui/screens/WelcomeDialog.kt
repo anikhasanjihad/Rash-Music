@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -30,8 +30,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.R
 
 @Composable
 fun WelcomeDialog(onDismissRequest: () -> Unit) {
@@ -57,11 +57,11 @@ fun WelcomeDialog(onDismissRequest: () -> Unit) {
         // Main Header
         WelcomeAppCard()
 
-        WelcomeSectionCard(title = "Rash Music Premium") {
+        WelcomeSectionCard(title = "About") {
           WelcomeActionRow(
             icon = painterResource(R.drawable.update),
-            title = "Welcome to the Premium experience",
-            subtitle = "Ad-free streaming, synced lyrics, offline playback and high-quality audio",
+            title = "Free music for everyone",
+            subtitle = "Ad-free streaming, synced lyrics, offline playback and in-app updates",
             onClick = {}
           )
         }
@@ -115,7 +115,7 @@ fun WelcomeDialog(onDismissRequest: () -> Unit) {
               contentColor = MaterialTheme.colorScheme.onPrimary
             )
         ) {
-          Text("Start Premium", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+          Text("Continue", fontWeight = FontWeight.Bold, fontSize = 16.sp)
         }
       }
     }

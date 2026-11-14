@@ -1,8 +1,8 @@
-package echo.music.iad1tya.ui.theme
+package com.ahr.rashmusic.ui.theme
 
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 val bbh_bartle = FontFamily(Font(R.font.bbh_bartle_regular, FontWeight.Normal))

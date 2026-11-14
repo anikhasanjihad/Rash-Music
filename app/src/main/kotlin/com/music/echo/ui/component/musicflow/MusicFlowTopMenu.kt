@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component.musicflow
+package com.ahr.rashmusic.ui.component.musicflow
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,11 +24,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
-import echo.music.iad1tya.musicflow.MusicFlowItem
-import echo.music.iad1tya.musicflow.MusicFlowUiState
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.musicflow.MusicFlowItem
+import com.ahr.rashmusic.musicflow.MusicFlowUiState
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
 
 @Composable
 fun MusicFlowTopMenu(

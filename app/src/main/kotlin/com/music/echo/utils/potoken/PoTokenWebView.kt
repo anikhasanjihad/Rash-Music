@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils.potoken
+package com.ahr.rashmusic.utils.potoken
 
 import android.content.Context
 import android.webkit.ConsoleMessage
@@ -8,7 +8,7 @@ import android.webkit.WebView
 import androidx.annotation.MainThread
 import androidx.collection.ArrayMap
 import com.music.innertube.YouTube
-import echo.music.iad1tya.BuildConfig
+import com.ahr.rashmusic.BuildConfig
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 import java.util.Collections

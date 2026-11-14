@@ -1,4 +1,4 @@
-package echo.music.iad1tya.echomusic.component
+package com.ahr.rashmusic.echomusic.component
 
 import android.content.Intent
 import androidx.compose.foundation.layout.*
@@ -14,10 +14,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
-import echo.music.iad1tya.echomusic.updater.ChangelogSection
-import echo.music.iad1tya.ui.utils.parseMarkdownToSections
-import echo.music.iad1tya.ui.utils.parseSimpleMarkdown
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.echomusic.updater.ChangelogSection
+import com.ahr.rashmusic.ui.utils.parseMarkdownToSections
+import com.ahr.rashmusic.ui.utils.parseSimpleMarkdown
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 /**
@@ -34,7 +34,8 @@ fun UpdateAvailableDialog(
   version: String,
   changelog: List<ChangelogSection>,
   description: String?,
-  onDismiss: () -> Unit
+  onDismiss: () -> Unit,
+  onUpdate: () -> Unit = {},
 ) {
   val context = LocalContext.current
   val cardShape =
@@ -100,7 +101,7 @@ fun UpdateAvailableDialog(
             }
 
             Text(
-              text = "Rash Music Premium $version is ready",
+              text = "Version $version is available",
               style = MaterialTheme.typography.titleLarge,
               fontWeight = FontWeight.Bold,
             )
@@ -196,13 +197,11 @@ fun UpdateAvailableDialog(
           Button(
             onClick = {
               onDismiss()
-              val intent =
-                Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://github.com/anikhasanjihad/Rash-Music/releases/latest"))
-              context.startActivity(intent)
+              onUpdate()
             },
             shape = actionShape,
           ) {
-            Text(text = "Upgrade now")
+            Text(text = "Update now")
           }
         }
       }

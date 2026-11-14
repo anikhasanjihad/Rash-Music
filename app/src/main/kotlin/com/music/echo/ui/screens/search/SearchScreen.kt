@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.search
+package com.ahr.rashmusic.ui.screens.search
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.app.Activity
 import android.content.Intent
 import android.speech.RecognizerIntent
@@ -76,20 +77,20 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.utils.YouTubeUrlParser
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalIsPlayerExpanded
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.PauseSearchHistoryKey
-import echo.music.iad1tya.constants.SearchSource
-import echo.music.iad1tya.constants.SearchSourceKey
-import echo.music.iad1tya.db.entities.SearchHistory
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.HomeViewModel
-import echo.music.iad1tya.viewmodels.MoodAndGenresViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalIsPlayerExpanded
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.PauseSearchHistoryKey
+import com.ahr.rashmusic.constants.SearchSource
+import com.ahr.rashmusic.constants.SearchSourceKey
+import com.ahr.rashmusic.db.entities.SearchHistory
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.HomeViewModel
+import com.ahr.rashmusic.viewmodels.MoodAndGenresViewModel
 import java.net.URLEncoder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -638,7 +639,7 @@ fun SearchScreen(
             ),
           horizontalArrangement = Arrangement.spacedBy(12.dp),
           verticalArrangement = Arrangement.spacedBy(12.dp),
-          modifier = Modifier.fillMaxSize(),
+          modifier = Modifier.fillMaxSize(), flingBehavior = rememberLiquidFling(),
         ) {
           items(items = APPLE_MUSIC_CATEGORIES, key = { it.title }) { category ->
             AppleMusicCategoryCard(

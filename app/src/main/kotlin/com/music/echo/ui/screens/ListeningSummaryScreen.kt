@@ -1,5 +1,6 @@
 package com.music.echo.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
@@ -23,8 +24,8 @@ import androidx.navigation.NavController
 import com.music.echo.ui.components.ExpressiveBarChart
 import com.music.echo.viewmodels.DayUsageData
 import com.music.echo.viewmodels.ListeningSummaryViewModel
-import echo.music.iad1tya.R
-import echo.music.iad1tya.ui.component.IconButton
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.ui.component.IconButton
 import java.time.LocalDate
 import java.time.ZoneOffset
 
@@ -99,7 +100,7 @@ fun ListeningSummaryScreen(
   ) { paddingValues ->
     LazyColumn(
       modifier = Modifier.fillMaxSize().padding(paddingValues).padding(horizontal = 16.dp),
-      verticalArrangement = Arrangement.spacedBy(16.dp)
+      verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling()
     ) {
       item {
         if (

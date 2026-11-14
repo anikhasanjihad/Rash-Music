@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,16 +26,16 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.music.innertube.models.PlaylistItem
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.CONTENT_TYPE_PLAYLIST
-import echo.music.iad1tya.ui.component.EmptyPlaceholder
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.component.continueListening
-import echo.music.iad1tya.ui.component.rememberEpisodesInProgress
-import echo.music.iad1tya.viewmodels.PodcastsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.CONTENT_TYPE_PLAYLIST
+import com.ahr.rashmusic.ui.component.EmptyPlaceholder
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.component.continueListening
+import com.ahr.rashmusic.ui.component.rememberEpisodesInProgress
+import com.ahr.rashmusic.viewmodels.PodcastsViewModel
 
 /** Saved podcast shows; opening one shows its episodes. */
 @Composable
@@ -46,7 +47,7 @@ fun LibraryPodcastsScreen(
   val podcasts by viewModel.podcasts.collectAsState()
   val episodesInProgress = rememberEpisodesInProgress(limit = 10)
 
-  LazyColumn(contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues()) {
+  LazyColumn(contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling()) {
     item(key = "filter", contentType = CONTENT_TYPE_HEADER) {
       Row(verticalAlignment = Alignment.CenterVertically) {
         Spacer(Modifier.width(12.dp))

@@ -4,10 +4,10 @@ import echo.music.domain.models.AlbumRef
 import echo.music.domain.models.ArtistRef
 import echo.music.domain.models.Playlist as DomainPlaylist
 import echo.music.domain.models.Song as DomainSong
-import echo.music.iad1tya.db.entities.Playlist as DbPlaylist
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.Song as DbSong
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.Playlist as DbPlaylist
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.Song as DbSong
+import com.ahr.rashmusic.db.entities.SongEntity
 
 fun DbSong.toDomain(): DomainSong {
   return DomainSong(

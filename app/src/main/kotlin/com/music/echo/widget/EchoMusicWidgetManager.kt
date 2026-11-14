@@ -1,5 +1,5 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.widget
+package com.ahr.rashmusic.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -29,9 +29,9 @@ import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.MainActivity
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.MusicDatabase
+import com.ahr.rashmusic.MainActivity
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.MusicDatabase
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers
@@ -699,7 +699,7 @@ constructor(
   private fun getLibraryIntent(): PendingIntent {
     val intent =
       Intent(context, MainActivity::class.java).apply {
-        action = "echo.music.iad1tya.action.LIBRARY"
+        action = "com.ahr.rashmusic.action.LIBRARY"
         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
       }
     return PendingIntent.getActivity(

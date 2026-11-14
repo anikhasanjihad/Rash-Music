@@ -1,7 +1,7 @@
 /** vivimusic Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
 @file:OptIn(ExperimentalSharedTransitionApi::class)
 
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.ExperimentalSharedTransitionApi
@@ -20,11 +20,11 @@ import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import echo.music.iad1tya.ui.component.floatingtabbar.FloatingTabBar
-import echo.music.iad1tya.ui.component.floatingtabbar.FloatingTabBarDefaults
-import echo.music.iad1tya.ui.component.floatingtabbar.FloatingTabBarScrollConnection
-import echo.music.iad1tya.ui.player.FloatingMiniPlayer
-import echo.music.iad1tya.ui.screens.Screens
+import com.ahr.rashmusic.ui.component.floatingtabbar.FloatingTabBar
+import com.ahr.rashmusic.ui.component.floatingtabbar.FloatingTabBarDefaults
+import com.ahr.rashmusic.ui.component.floatingtabbar.FloatingTabBarScrollConnection
+import com.ahr.rashmusic.ui.player.FloatingMiniPlayer
+import com.ahr.rashmusic.ui.screens.Screens
 
 /**
  * The iOS 26 style floating navigation bar, an alternative to [AppNavigationBar].
@@ -179,7 +179,7 @@ fun AppFloatingNavBar(
           },
           icon = {
             Icon(
-              painter = painterResource(echo.music.iad1tya.R.drawable.mic),
+              painter = painterResource(com.ahr.rashmusic.R.drawable.mic),
               contentDescription = musicRecognitionContentDescription,
               tint = unselectedContentColor,
             )

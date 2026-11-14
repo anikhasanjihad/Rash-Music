@@ -1,4 +1,4 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
@@ -9,18 +9,18 @@ import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.constants.PlaylistSongSortDescendingKey
-import echo.music.iad1tya.constants.PlaylistSongSortType
-import echo.music.iad1tya.constants.PlaylistSongSortTypeKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.PlaylistSong
-import echo.music.iad1tya.extensions.reversed
-import echo.music.iad1tya.extensions.toEnum
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.spotifyimport.SpotifyImportRepository
-import echo.music.iad1tya.utils.SyncUtils
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.constants.PlaylistSongSortDescendingKey
+import com.ahr.rashmusic.constants.PlaylistSongSortType
+import com.ahr.rashmusic.constants.PlaylistSongSortTypeKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.PlaylistSong
+import com.ahr.rashmusic.extensions.reversed
+import com.ahr.rashmusic.extensions.toEnum
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.spotifyimport.SpotifyImportRepository
+import com.ahr.rashmusic.utils.SyncUtils
+import com.ahr.rashmusic.utils.dataStore
 import java.text.Collator
 import java.util.Locale
 import javax.inject.Inject

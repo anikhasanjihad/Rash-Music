@@ -1,13 +1,13 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.db.daos.RecommendationExclusionDao
-import echo.music.iad1tya.db.daos.SongPlayStatsDao
-import echo.music.iad1tya.generate.GenerationState
-import echo.music.iad1tya.generate.GenerationStatus
-import echo.music.iad1tya.generate.LocalTasteEngine
+import com.ahr.rashmusic.db.daos.RecommendationExclusionDao
+import com.ahr.rashmusic.db.daos.SongPlayStatsDao
+import com.ahr.rashmusic.generate.GenerationState
+import com.ahr.rashmusic.generate.GenerationStatus
+import com.ahr.rashmusic.generate.LocalTasteEngine
 import javax.inject.Inject
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow

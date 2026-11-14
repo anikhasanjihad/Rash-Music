@@ -1,4 +1,4 @@
-package echo.music.iad1tya.betterlyrics
+package com.ahr.rashmusic.betterlyrics
 
 import javax.xml.parsers.DocumentBuilderFactory
 import org.w3c.dom.Element

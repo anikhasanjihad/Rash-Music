@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import android.widget.Toast
 import androidx.compose.animation.core.LinearEasing
@@ -46,7 +47,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.CircleShape
 
 import androidx.compose.runtime.LaunchedEffect
-import echo.music.iad1tya.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.DefaultDialog
 import androidx.compose.material3.TextButton
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.ui.Modifier
@@ -66,30 +67,30 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.EnableExportAsMp3Key
-import echo.music.iad1tya.constants.ExportDirectoryUriKey
-import echo.music.iad1tya.constants.ExportedSongIdsKey
-import echo.music.iad1tya.constants.ExportingSongIdsKey
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.VarispeedKey
-import echo.music.iad1tya.ui.menu.SpeedDialog
-import echo.music.iad1tya.extensions.toggleRepeatMode
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.ui.component.BottomSheetState
-import echo.music.iad1tya.ui.component.ListDialog
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
-import echo.music.iad1tya.ui.component.NewAction
-import echo.music.iad1tya.ui.component.NewActionGrid
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.CachePlaylistViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.EnableExportAsMp3Key
+import com.ahr.rashmusic.constants.ExportDirectoryUriKey
+import com.ahr.rashmusic.constants.ExportedSongIdsKey
+import com.ahr.rashmusic.constants.ExportingSongIdsKey
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.VarispeedKey
+import com.ahr.rashmusic.ui.menu.SpeedDialog
+import com.ahr.rashmusic.extensions.toggleRepeatMode
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.ui.component.BottomSheetState
+import com.ahr.rashmusic.ui.component.ListDialog
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.ui.component.NewAction
+import com.ahr.rashmusic.ui.component.NewActionGrid
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.CachePlaylistViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -140,7 +141,7 @@ fun OldPlayerMenu(
 
   val artists = remember(mediaMetadata.artists) { mediaMetadata.artists.filter { it.id != null } }
 
-  val ringtoneViewModel = echo.music.iad1tya.LocalRingtoneViewModel.current
+  val ringtoneViewModel = com.ahr.rashmusic.LocalRingtoneViewModel.current
 
   val (enableExportAsMp3) = rememberPreference(key = EnableExportAsMp3Key, defaultValue = false)
   val (exportDirectoryUri) = rememberPreference(key = ExportDirectoryUriKey, defaultValue = "")
@@ -148,7 +149,7 @@ fun OldPlayerMenu(
   val (exportedSongIds) = rememberPreference(key = ExportedSongIdsKey, defaultValue = "")
   val (showLyricsOnPlayer, onShowLyricsOnPlayerChange) =
     rememberPreference(
-      key = echo.music.iad1tya.constants.ShowLyricsOnPlayerKey,
+      key = com.ahr.rashmusic.constants.ShowLyricsOnPlayerKey,
       defaultValue = false
     )
 
@@ -182,7 +183,7 @@ fun OldPlayerMenu(
               onDismiss()
             } else {
               onDismiss()
-              echo.music.iad1tya.playback.AudioExportService.start(
+              com.ahr.rashmusic.playback.AudioExportService.start(
                 context = context,
                 songId = mediaMetadata.id,
                 songTitle = mediaMetadata.title,
@@ -400,7 +401,7 @@ fun OldPlayerMenu(
     ) {
       LazyColumn(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling()
       ) {
         item {
             Column {
@@ -467,7 +468,7 @@ fun OldPlayerMenu(
         top = 0.dp,
         end = 0.dp,
         bottom = 8.dp + WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-      ),
+      ), flingBehavior = rememberLiquidFling(),
   ) {
     item {
       val startingRadioText = stringResource(R.string.starting_radio)
@@ -568,7 +569,7 @@ fun OldPlayerMenu(
             )
             add(
               Material3MenuItemData(
-                customComposable = { echo.music.iad1tya.ui.component.CastButton(asMenuItem = true) }
+                customComposable = { com.ahr.rashmusic.ui.component.CastButton(asMenuItem = true) }
               )
             )
 
@@ -755,7 +756,7 @@ fun OldPlayerMenu(
                           onDismiss()
                         } else {
                           onDismiss()
-                          echo.music.iad1tya.playback.AudioExportService.start(
+                          com.ahr.rashmusic.playback.AudioExportService.start(
                             context = context,
                             songId = mediaMetadata.id,
                             songTitle = mediaMetadata.title,
@@ -838,15 +839,15 @@ fun OldPlayerMenu(
                   cacheViewModel.removeSongFromCache(mediaMetadata.id)
                   androidx.media3.exoplayer.offline.DownloadService.sendRemoveDownload(
                     context,
-                    echo.music.iad1tya.playback.ExoDownloadService::class.java,
+                    com.ahr.rashmusic.playback.ExoDownloadService::class.java,
                     mediaMetadata.id,
                     false
                   )
                   val intent =
                     android.content
-                      .Intent(context, echo.music.iad1tya.playback.MusicService::class.java)
+                      .Intent(context, com.ahr.rashmusic.playback.MusicService::class.java)
                       .apply {
-                        action = "echo.music.iad1tya.ACTION_CLEAR_SONG_CACHE"
+                        action = "com.ahr.rashmusic.ACTION_CLEAR_SONG_CACHE"
                         putExtra("songId", mediaMetadata.id)
                       }
                   context.startService(intent)

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets

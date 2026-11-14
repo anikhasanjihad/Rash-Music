@@ -1,10 +1,10 @@
-package echo.music.iad1tya.musicflow
+package com.ahr.rashmusic.musicflow
 
 import androidx.media3.common.Player
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.playback.MusicService
-import echo.music.iad1tya.playback.PlayerConnection
-import echo.music.iad1tya.playback.queues.Queue
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.playback.MusicService
+import com.ahr.rashmusic.playback.PlayerConnection
+import com.ahr.rashmusic.playback.queues.Queue
 
 class PlayerConnectionMusicFlowPlayer(
   private val connection: PlayerConnection,

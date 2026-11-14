@@ -1,16 +1,16 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.daos.RecommendationExclusionDao
-import echo.music.iad1tya.db.daos.SongPlayStatsDao
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.db.entities.SongEntity
-import echo.music.iad1tya.db.entities.SongPlayStatsEntity
-import echo.music.iad1tya.models.toMediaMetadata
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.daos.RecommendationExclusionDao
+import com.ahr.rashmusic.db.daos.SongPlayStatsDao
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.SongPlayStatsEntity
+import com.ahr.rashmusic.models.toMediaMetadata
 import java.time.LocalTime
 import javax.inject.Inject
 import javax.inject.Singleton

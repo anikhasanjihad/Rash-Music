@@ -1,7 +1,7 @@
-package echo.music.iad1tya.models
+package com.ahr.rashmusic.models
 
 import com.music.innertube.models.YTItem
-import echo.music.iad1tya.db.entities.LocalItem
+import com.ahr.rashmusic.db.entities.LocalItem
 
 data class SimilarRecommendation(
   val title: LocalItem,

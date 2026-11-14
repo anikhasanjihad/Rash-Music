@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component.musicflow
+package com.ahr.rashmusic.ui.component.musicflow
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -25,7 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 @Composable
 fun MusicFlowEntryCard(onClick: () -> Unit, modifier: Modifier = Modifier) {

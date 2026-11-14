@@ -516,9 +516,9 @@
             android:label="@string/widget_music_player">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.LIKE" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
 
             <meta-data
@@ -533,9 +533,9 @@
             android:label="@string/widget_turntable">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.TURNTABLE_PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.TURNTABLE_LIKE" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_TURNTABLE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.TURNTABLE_PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.TURNTABLE_LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_TURNTABLE_WIDGET" />
             </intent-filter>
 
             <meta-data
@@ -546,7 +546,7 @@
         <!-- Google Cast Options Provider -->
         <meta-data
             android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
-            android:value="echo.music.iad1tya.cast.CastOptionsProvider" />
+            android:value="com.ahr.rashmusic.cast.CastOptionsProvider" />
         <!-- Google Cast Reconnection Service (required by setEnableReconnectionService(true)) -->
         <service
             android:name="com.google.android.gms.cast.framework.ReconnectionService"
@@ -572,11 +572,11 @@
             android:label="@string/widget_modern_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.LIKE" />
-                <action android:name="echo.music.iad1tya.widget.NEXT" />
-                <action android:name="echo.music.iad1tya.widget.PREVIOUS" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.NEXT" />
+                <action android:name="com.ahr.rashmusic.widget.PREVIOUS" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -590,11 +590,11 @@
             android:label="@string/widget_square_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.LIKE" />
-                <action android:name="echo.music.iad1tya.widget.NEXT" />
-                <action android:name="echo.music.iad1tya.widget.PREVIOUS" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.NEXT" />
+                <action android:name="com.ahr.rashmusic.widget.PREVIOUS" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -608,11 +608,11 @@
             android:label="@string/widget_showcase_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.LIKE" />
-                <action android:name="echo.music.iad1tya.widget.NEXT" />
-                <action android:name="echo.music.iad1tya.widget.PREVIOUS" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.NEXT" />
+                <action android:name="com.ahr.rashmusic.widget.PREVIOUS" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -626,11 +626,11 @@
             android:label="@string/widget_slim_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.LIKE" />
-                <action android:name="echo.music.iad1tya.widget.NEXT" />
-                <action android:name="echo.music.iad1tya.widget.PREVIOUS" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.NEXT" />
+                <action android:name="com.ahr.rashmusic.widget.PREVIOUS" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -644,11 +644,11 @@
             android:label="@string/widget_vinyl_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.LIKE" />
-                <action android:name="echo.music.iad1tya.widget.NEXT" />
-                <action android:name="echo.music.iad1tya.widget.PREVIOUS" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.NEXT" />
+                <action android:name="com.ahr.rashmusic.widget.PREVIOUS" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -662,11 +662,11 @@
             android:label="@string/widget_vintage_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.LIKE" />
-                <action android:name="echo.music.iad1tya.widget.NEXT" />
-                <action android:name="echo.music.iad1tya.widget.PREVIOUS" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.LIKE" />
+                <action android:name="com.ahr.rashmusic.widget.NEXT" />
+                <action android:name="com.ahr.rashmusic.widget.PREVIOUS" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -680,14 +680,14 @@
             android:label="@string/widget_adaptive_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.PLAY_PAUSE" />
-                <action android:name="echo.music.iad1tya.widget.NEXT" />
-                <action android:name="echo.music.iad1tya.widget.PREVIOUS" />
-                <action android:name="echo.music.iad1tya.widget.SHUFFLE" />
-                <action android:name="echo.music.iad1tya.widget.REPEAT" />
-                <action android:name="echo.music.iad1tya.widget.SKIP_TO_QUEUE_ITEM" />
+                <action android:name="com.ahr.rashmusic.widget.PLAY_PAUSE" />
+                <action android:name="com.ahr.rashmusic.widget.NEXT" />
+                <action android:name="com.ahr.rashmusic.widget.PREVIOUS" />
+                <action android:name="com.ahr.rashmusic.widget.SHUFFLE" />
+                <action android:name="com.ahr.rashmusic.widget.REPEAT" />
+                <action android:name="com.ahr.rashmusic.widget.SKIP_TO_QUEUE_ITEM" />
                 <action android:name="com.music.echo.widget.SKIP_TO_QUEUE_ITEM" />
-                <action android:name="echo.music.iad1tya.widget.UPDATE_WIDGET" />
+                <action android:name="com.ahr.rashmusic.widget.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -729,9 +729,9 @@
             android:label="@string/widget_recognizer_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.recognizer.TAP_MIC" />
-                <action android:name="echo.music.iad1tya.widget.recognizer.UPDATE" />
-                <action android:name="echo.music.iad1tya.widget.recognizer.RESET" />
+                <action android:name="com.ahr.rashmusic.widget.recognizer.TAP_MIC" />
+                <action android:name="com.ahr.rashmusic.widget.recognizer.UPDATE" />
+                <action android:name="com.ahr.rashmusic.widget.recognizer.RESET" />
             </intent-filter>
 
             <meta-data

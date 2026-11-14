@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.settings.integrations
+package com.ahr.rashmusic.ui.screens.settings.integrations
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -60,26 +61,26 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ListenTogetherAutoApprovalKey
-import echo.music.iad1tya.constants.ListenTogetherServerUrlKey
-import echo.music.iad1tya.constants.ListenTogetherSmartResyncKey
-import echo.music.iad1tya.constants.ListenTogetherSyncVolumeKey
-import echo.music.iad1tya.constants.ListenTogetherUsernameKey
-import echo.music.iad1tya.listentogether.ListenTogetherEvent
-import echo.music.iad1tya.listentogether.ListenTogetherServer
-import echo.music.iad1tya.listentogether.ListenTogetherServers
-import echo.music.iad1tya.listentogether.LogEntry
-import echo.music.iad1tya.listentogether.LogLevel
-import echo.music.iad1tya.listentogether.RoomRole
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.ListenTogetherViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ListenTogetherAutoApprovalKey
+import com.ahr.rashmusic.constants.ListenTogetherServerUrlKey
+import com.ahr.rashmusic.constants.ListenTogetherSmartResyncKey
+import com.ahr.rashmusic.constants.ListenTogetherSyncVolumeKey
+import com.ahr.rashmusic.constants.ListenTogetherUsernameKey
+import com.ahr.rashmusic.listentogether.ListenTogetherEvent
+import com.ahr.rashmusic.listentogether.ListenTogetherServer
+import com.ahr.rashmusic.listentogether.ListenTogetherServers
+import com.ahr.rashmusic.listentogether.LogEntry
+import com.ahr.rashmusic.listentogether.LogLevel
+import com.ahr.rashmusic.listentogether.RoomRole
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.ListenTogetherViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -484,7 +485,7 @@ fun LogsDialog(logs: List<LogEntry>, onClear: () -> Unit, onDismiss: () -> Unit)
           )
         }
       } else {
-        LazyColumn(state = listState, modifier = Modifier.fillMaxSize()) {
+        LazyColumn(state = listState, modifier = Modifier.fillMaxSize(), flingBehavior = rememberLiquidFling()) {
           items(logs) { log -> LogEntryItem(log) }
         }
       }
@@ -671,7 +672,7 @@ fun BlockedUsersDialog(
         LazyColumn(
           state = listState,
           modifier = Modifier.fillMaxSize(),
-          verticalArrangement = Arrangement.spacedBy(8.dp)
+          verticalArrangement = Arrangement.spacedBy(8.dp), flingBehavior = rememberLiquidFling()
         ) {
           items(blockedUsernames.toList()) { username ->
             Row(

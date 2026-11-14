@@ -1,4 +1,4 @@
-package echo.music.iad1tya.musicflow
+package com.ahr.rashmusic.musicflow
 
 /** The narrow slice of the shared player Music Flow is allowed to drive. */
 interface MusicFlowPlayer {

@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -114,35 +115,35 @@ import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.source.ShuffleOrder.DefaultShuffleOrder
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.PlayerBackgroundStyle
-import echo.music.iad1tya.constants.QueueEditLockKey
-import echo.music.iad1tya.constants.ShowCommentButtonKey
-import echo.music.iad1tya.constants.UseNewPlayerDesignKey
-import echo.music.iad1tya.echomusic.AudioDeviceBottomSheet
-import echo.music.iad1tya.echomusic.isBluetoothHeadphoneConnected
-import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.extensions.move
-import echo.music.iad1tya.extensions.toggleRepeatMode
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.ui.component.ActionPromptDialog
-import echo.music.iad1tya.ui.component.BottomSheet
-import echo.music.iad1tya.ui.component.BottomSheetState
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.LocalBottomSheetPageState
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.MediaMetadataListItem
-import echo.music.iad1tya.ui.menu.PlayerMenu
-import echo.music.iad1tya.ui.menu.QueueMenu
-import echo.music.iad1tya.ui.menu.SelectionMediaMetadataMenu
-import echo.music.iad1tya.ui.screens.CommentSheet
-import echo.music.iad1tya.ui.utils.ShowMediaInfo
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.PlayerBackgroundStyle
+import com.ahr.rashmusic.constants.QueueEditLockKey
+import com.ahr.rashmusic.constants.ShowCommentButtonKey
+import com.ahr.rashmusic.constants.UseNewPlayerDesignKey
+import com.ahr.rashmusic.echomusic.AudioDeviceBottomSheet
+import com.ahr.rashmusic.echomusic.isBluetoothHeadphoneConnected
+import com.ahr.rashmusic.extensions.metadata
+import com.ahr.rashmusic.extensions.move
+import com.ahr.rashmusic.extensions.toggleRepeatMode
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.ui.component.ActionPromptDialog
+import com.ahr.rashmusic.ui.component.BottomSheet
+import com.ahr.rashmusic.ui.component.BottomSheetState
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.LocalBottomSheetPageState
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.MediaMetadataListItem
+import com.ahr.rashmusic.ui.menu.PlayerMenu
+import com.ahr.rashmusic.ui.menu.QueueMenu
+import com.ahr.rashmusic.ui.menu.SelectionMediaMetadataMenu
+import com.ahr.rashmusic.ui.screens.CommentSheet
+import com.ahr.rashmusic.ui.utils.ShowMediaInfo
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.roundToInt
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -1103,7 +1104,7 @@ fun Queue(
                 ),
               )
               .asPaddingValues(),
-          modifier = Modifier.fillMaxSize().nestedScroll(state.preUpPostDownNestedScrollConnection)
+          modifier = Modifier.fillMaxSize().nestedScroll(state.preUpPostDownNestedScrollConnection), flingBehavior = rememberLiquidFling()
         ) {
           item(key = "queue_top_spacer") {
             Spacer(

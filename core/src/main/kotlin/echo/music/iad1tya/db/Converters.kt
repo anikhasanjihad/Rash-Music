@@ -1,4 +1,4 @@
-package echo.music.iad1tya.db
+package com.ahr.rashmusic.db
 
 import androidx.room.TypeConverter
 import java.time.Instant

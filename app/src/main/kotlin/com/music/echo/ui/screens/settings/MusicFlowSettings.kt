@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,21 +22,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.datastore.preferences.core.Preferences
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CanvasThumbnailAnimationKey
-import echo.music.iad1tya.constants.MusicFlowAnimatedBackgroundKey
-import echo.music.iad1tya.constants.MusicFlowAutoNextKey
-import echo.music.iad1tya.constants.MusicFlowAutoplayKey
-import echo.music.iad1tya.constants.MusicFlowCellularPrefetchKey
-import echo.music.iad1tya.constants.MusicFlowEnabledKey
-import echo.music.iad1tya.constants.MusicFlowHideRecentKey
-import echo.music.iad1tya.constants.MusicFlowLyricsKey
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CanvasThumbnailAnimationKey
+import com.ahr.rashmusic.constants.MusicFlowAnimatedBackgroundKey
+import com.ahr.rashmusic.constants.MusicFlowAutoNextKey
+import com.ahr.rashmusic.constants.MusicFlowAutoplayKey
+import com.ahr.rashmusic.constants.MusicFlowCellularPrefetchKey
+import com.ahr.rashmusic.constants.MusicFlowEnabledKey
+import com.ahr.rashmusic.constants.MusicFlowHideRecentKey
+import com.ahr.rashmusic.constants.MusicFlowLyricsKey
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

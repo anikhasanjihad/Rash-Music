@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.Orientation

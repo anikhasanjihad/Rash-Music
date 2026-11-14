@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.podcast
+package com.ahr.rashmusic.ui.screens.podcast
 
 import android.app.Activity
 import android.content.Context
@@ -80,11 +80,11 @@ import androidx.media3.ui.PlayerView
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.podcast.PodcastVideoProvider
-import echo.music.iad1tya.podcast.VideoTrackOption
-import echo.music.iad1tya.utils.makeTimeString
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.podcast.PodcastVideoProvider
+import com.ahr.rashmusic.podcast.VideoTrackOption
+import com.ahr.rashmusic.utils.makeTimeString
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import okhttp3.OkHttpClient
@@ -225,8 +225,8 @@ fun PodcastVideoScreen(navController: NavController) {
 
         val url = request.url.toString()
         val extraHeaders =
-          echo.music.iad1tya.utils.InnerTubeXResolver.headersFor(url)
-            ?: echo.music.iad1tya.utils.PlayerClient.forStreamUrl(url).mediaHeaders()
+          com.ahr.rashmusic.utils.InnerTubeXResolver.headersFor(url)
+            ?: com.ahr.rashmusic.utils.PlayerClient.forStreamUrl(url).mediaHeaders()
 
         val builder = request.newBuilder()
         for ((k, v) in extraHeaders) {

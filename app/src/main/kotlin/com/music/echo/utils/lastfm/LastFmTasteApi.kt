@@ -1,6 +1,6 @@
-package echo.music.iad1tya.utils.lastfm
+package com.ahr.rashmusic.utils.lastfm
 
-import echo.music.iad1tya.BuildConfig
+import com.ahr.rashmusic.BuildConfig
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get

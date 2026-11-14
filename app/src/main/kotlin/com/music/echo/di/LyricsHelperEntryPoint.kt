@@ -1,9 +1,9 @@
-package echo.music.iad1tya.di
+package com.ahr.rashmusic.di
 
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import echo.music.iad1tya.lyrics.LyricsHelper
+import com.ahr.rashmusic.lyrics.LyricsHelper
 
 @EntryPoint
 @InstallIn(SingletonComponent::class)

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.SizeTransform
@@ -27,13 +27,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dagger.hilt.android.EntryPointAccessors
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.db.entities.LyricsEntity
-import echo.music.iad1tya.lyrics.LyricsUtils.parseLyrics
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.ui.component.shimmer.TextPlaceholder
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.db.entities.LyricsEntity
+import com.ahr.rashmusic.lyrics.LyricsUtils.parseLyrics
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.ui.component.shimmer.TextPlaceholder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.firstOrNull
@@ -61,7 +61,7 @@ fun PlayerSyncedLyricsView(
           val entryPoint =
             EntryPointAccessors.fromApplication(
               context.applicationContext,
-              echo.music.iad1tya.di.LyricsHelperEntryPoint::class.java
+              com.ahr.rashmusic.di.LyricsHelperEntryPoint::class.java
             )
           val lyricsHelper = entryPoint.lyricsHelper()
           val fetchedLyricsWithProvider = lyricsHelper.getLyrics(mediaMetadata)
@@ -92,7 +92,7 @@ fun PlayerSyncedLyricsView(
     modifier =
       modifier
         .fillMaxWidth()
-        .padding(horizontal = echo.music.iad1tya.constants.PlayerHorizontalPadding),
+        .padding(horizontal = com.ahr.rashmusic.constants.PlayerHorizontalPadding),
     contentAlignment = Alignment.CenterStart
   ) {
     if (currentLyrics == null) {

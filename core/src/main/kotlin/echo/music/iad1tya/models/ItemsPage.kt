@@ -1,4 +1,4 @@
-package echo.music.iad1tya.models
+package com.ahr.rashmusic.models
 
 import com.music.innertube.models.YTItem
 

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -24,9 +24,9 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import echo.music.iad1tya.MainActivity
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.MusicDatabase
+import com.ahr.rashmusic.MainActivity
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.MusicDatabase
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.flow.first
 import timber.log.Timber

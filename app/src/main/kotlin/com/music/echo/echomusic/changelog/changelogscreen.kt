@@ -1,4 +1,4 @@
-package echo.music.iad1tya.echomusic.changelog
+package com.ahr.rashmusic.echomusic.changelog
 
 import android.content.Context
 import android.content.Intent
@@ -68,9 +68,9 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.R
-import echo.music.iad1tya.ui.component.parseMarkdown
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.ui.component.parseMarkdown
 import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL

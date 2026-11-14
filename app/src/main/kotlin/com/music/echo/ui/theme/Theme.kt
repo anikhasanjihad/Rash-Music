@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.theme
+package com.ahr.rashmusic.ui.theme
 
 import android.graphics.Bitmap
 import android.os.Build
@@ -23,9 +23,9 @@ import com.materialkolor.PaletteStyle
 import com.materialkolor.dynamiccolor.ColorSpec
 import com.materialkolor.rememberDynamicColorScheme
 import com.materialkolor.score.Score
-import echo.music.iad1tya.constants.AppFont
-import echo.music.iad1tya.constants.SelectedFontKey
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.constants.AppFont
+import com.ahr.rashmusic.constants.SelectedFontKey
+import com.ahr.rashmusic.utils.rememberPreference
 
 val DefaultThemeColor = Color(0xFFED5564)
 
@@ -39,7 +39,7 @@ fun echomusicTheme(
 ) {
   val context = LocalContext.current
   val selectedFontValue by rememberPreference(SelectedFontKey, AppFont.SYSTEM.value)
-  val customFontPathValue by rememberPreference(echo.music.iad1tya.constants.CustomFontPathKey, "")
+  val customFontPathValue by rememberPreference(com.ahr.rashmusic.constants.CustomFontPathKey, "")
 
   val brandFont =
     remember(selectedFontValue, customFontPathValue) {

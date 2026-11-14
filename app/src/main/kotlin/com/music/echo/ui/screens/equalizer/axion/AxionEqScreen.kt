@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.equalizer.axion
+package com.ahr.rashmusic.ui.screens.equalizer.axion
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,10 +30,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import echo.music.dsp.core.models.SavedEQProfile
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
 import kotlin.math.abs
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
@@ -48,7 +49,7 @@ fun AxionEqScreen(onBackClick: () -> Unit, viewModel: AxionEqViewModel = hiltVie
       TopAppBar(
         title = { Text(stringResource(R.string.echo_equalizer)) },
         navigationIcon = {
-          echo.music.iad1tya.ui.component.IconButton(onClick = onBackClick, onLongClick = {}) {
+          com.ahr.rashmusic.ui.component.IconButton(onClick = onBackClick, onLongClick = {}) {
             Icon(
               painter = androidx.compose.ui.res.painterResource(R.drawable.arrow_back),
               contentDescription = null
@@ -681,7 +682,7 @@ private fun ManagePresetsDialog(
             } else {
               LazyColumn(
                 modifier = Modifier.heightIn(max = 300.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
+                verticalArrangement = Arrangement.spacedBy(4.dp), flingBehavior = rememberLiquidFling()
               ) {
                 items(customProfiles) { profile ->
                   val isSelected = selectedIds.contains(profile.id)

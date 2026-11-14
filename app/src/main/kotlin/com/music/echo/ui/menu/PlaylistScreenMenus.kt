@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
 import android.content.Context
 import android.content.Intent
@@ -12,12 +12,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.PlaylistSong
-import echo.music.iad1tya.ui.component.Material3MenuGroup
-import echo.music.iad1tya.ui.component.Material3MenuItemData
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.PlaylistSong
+import com.ahr.rashmusic.ui.component.Material3MenuGroup
+import com.ahr.rashmusic.ui.component.Material3MenuItemData
 
 @Composable
 fun LocalPlaylistMenu(

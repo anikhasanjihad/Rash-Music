@@ -1,4 +1,4 @@
-package echo.music.iad1tya.data.sources.module
+package com.ahr.rashmusic.data.sources.module
 
 import com.dokar.quickjs.QuickJs
 import com.dokar.quickjs.binding.AsyncFunctionBinding

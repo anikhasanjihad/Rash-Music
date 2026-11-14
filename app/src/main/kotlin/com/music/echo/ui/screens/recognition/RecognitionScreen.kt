@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.recognition
+package com.ahr.rashmusic.ui.screens.recognition
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -81,14 +81,14 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.shazamkit.models.RecognitionResult
 import com.music.shazamkit.models.RecognitionStatus
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.RecognitionHistory
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.IconButton
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.RecognitionHistory
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.IconButton
 import java.time.LocalDateTime
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -100,14 +100,14 @@ fun RecognitionScreen(navController: NavController) {
   val database = LocalDatabase.current
   val coroutineScope = rememberCoroutineScope()
 
-  LaunchedEffect(Unit) { echo.music.iad1tya.recognition.MusicRecognitionService.reset() }
+  LaunchedEffect(Unit) { com.ahr.rashmusic.recognition.MusicRecognitionService.reset() }
 
   DisposableEffect(Unit) {
-    onDispose { echo.music.iad1tya.recognition.MusicRecognitionService.reset() }
+    onDispose { com.ahr.rashmusic.recognition.MusicRecognitionService.reset() }
   }
 
   val recognitionStatus by
-    echo.music.iad1tya.recognition.MusicRecognitionService.recognitionStatus.collectAsState()
+    com.ahr.rashmusic.recognition.MusicRecognitionService.recognitionStatus.collectAsState()
 
   var hasPermission by remember {
     mutableStateOf(
@@ -122,7 +122,7 @@ fun RecognitionScreen(navController: NavController) {
       hasPermission = isGranted
       if (isGranted) {
         coroutineScope.launch {
-          echo.music.iad1tya.recognition.MusicRecognitionService.recognize(context)
+          com.ahr.rashmusic.recognition.MusicRecognitionService.recognize(context)
         }
       }
     }
@@ -130,7 +130,7 @@ fun RecognitionScreen(navController: NavController) {
   fun startRecognition() {
     if (hasPermission) {
       coroutineScope.launch {
-        echo.music.iad1tya.recognition.MusicRecognitionService.recognize(context)
+        com.ahr.rashmusic.recognition.MusicRecognitionService.recognize(context)
       }
     } else {
       permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
@@ -138,7 +138,7 @@ fun RecognitionScreen(navController: NavController) {
   }
 
   fun resetToReady() {
-    echo.music.iad1tya.recognition.MusicRecognitionService.reset()
+    com.ahr.rashmusic.recognition.MusicRecognitionService.reset()
   }
 
   fun saveToHistory(result: RecognitionResult) {
@@ -237,7 +237,7 @@ fun RecognitionScreen(navController: NavController) {
                 }
                 is RecognitionStatus.Listening -> {
                   ListeningState(
-                    onCancel = { echo.music.iad1tya.recognition.MusicRecognitionService.reset() }
+                    onCancel = { com.ahr.rashmusic.recognition.MusicRecognitionService.reset() }
                   )
                 }
                 is RecognitionStatus.Processing -> {

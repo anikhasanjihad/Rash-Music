@@ -1,4 +1,4 @@
-package echo.music.iad1tya.db.entities
+package com.ahr.rashmusic.db.entities
 
 import com.music.echo.metadata.cleaner.MetadataCleaner
 import com.music.echo.metadata.models.CleanedMetadata

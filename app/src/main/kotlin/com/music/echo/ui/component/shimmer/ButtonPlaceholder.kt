@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component.shimmer
+package com.ahr.rashmusic.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer

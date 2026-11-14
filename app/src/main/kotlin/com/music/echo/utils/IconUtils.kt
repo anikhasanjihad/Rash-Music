@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.ComponentName
 import android.content.Context
@@ -26,21 +26,21 @@ object IconUtils {
   fun setIcon(context: Context, iconType: AppIconType) {
     val pm = context.packageManager
 
-    val dynamic = ComponentName(context, "echo.music.iad1tya.MainActivityAlias")
-    val legacy = ComponentName(context, "echo.music.iad1tya.MainActivityLegacy")
-    val static = ComponentName(context, "echo.music.iad1tya.MainActivityStatic")
-    val cat = ComponentName(context, "echo.music.iad1tya.MainActivityCat")
-    val crazyBlue = ComponentName(context, "echo.music.iad1tya.MainActivityCrazyBlue")
-    val pookie = ComponentName(context, "echo.music.iad1tya.MainActivityPookie")
-    val sky = ComponentName(context, "echo.music.iad1tya.MainActivitySky")
-    val echoCat = ComponentName(context, "echo.music.iad1tya.MainActivityEchoCat")
-    val billieEilish = ComponentName(context, "echo.music.iad1tya.MainActivityBillieEilish")
-    val sabrina = ComponentName(context, "echo.music.iad1tya.MainActivitySabrina")
-    val sabrina2 = ComponentName(context, "echo.music.iad1tya.MainActivitySabrina2")
-    val craft = ComponentName(context, "echo.music.iad1tya.MainActivityCraft")
-    val sadie = ComponentName(context, "echo.music.iad1tya.MainActivitySadie")
-    val neonGlass = ComponentName(context, "echo.music.iad1tya.MainActivityNeonGlass")
-    val millie = ComponentName(context, "echo.music.iad1tya.MainActivityMillie")
+    val dynamic = ComponentName(context, "com.ahr.rashmusic.MainActivityAlias")
+    val legacy = ComponentName(context, "com.ahr.rashmusic.MainActivityLegacy")
+    val static = ComponentName(context, "com.ahr.rashmusic.MainActivityStatic")
+    val cat = ComponentName(context, "com.ahr.rashmusic.MainActivityCat")
+    val crazyBlue = ComponentName(context, "com.ahr.rashmusic.MainActivityCrazyBlue")
+    val pookie = ComponentName(context, "com.ahr.rashmusic.MainActivityPookie")
+    val sky = ComponentName(context, "com.ahr.rashmusic.MainActivitySky")
+    val echoCat = ComponentName(context, "com.ahr.rashmusic.MainActivityEchoCat")
+    val billieEilish = ComponentName(context, "com.ahr.rashmusic.MainActivityBillieEilish")
+    val sabrina = ComponentName(context, "com.ahr.rashmusic.MainActivitySabrina")
+    val sabrina2 = ComponentName(context, "com.ahr.rashmusic.MainActivitySabrina2")
+    val craft = ComponentName(context, "com.ahr.rashmusic.MainActivityCraft")
+    val sadie = ComponentName(context, "com.ahr.rashmusic.MainActivitySadie")
+    val neonGlass = ComponentName(context, "com.ahr.rashmusic.MainActivityNeonGlass")
+    val millie = ComponentName(context, "com.ahr.rashmusic.MainActivityMillie")
 
     pm.setComponentEnabledSetting(
       dynamic,

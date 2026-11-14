@@ -1,9 +1,9 @@
-package echo.music.iad1tya.db.daos
+package com.ahr.rashmusic.db.daos
 
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
-import echo.music.iad1tya.db.entities.SongPlayStatsEntity
+import com.ahr.rashmusic.db.entities.SongPlayStatsEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

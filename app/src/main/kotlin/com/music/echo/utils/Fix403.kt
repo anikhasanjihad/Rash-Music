@@ -1,7 +1,7 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
-import echo.music.iad1tya.BuildConfig
+import com.ahr.rashmusic.BuildConfig
 import java.security.MessageDigest
 import java.util.concurrent.atomic.AtomicLong
 import timber.log.Timber

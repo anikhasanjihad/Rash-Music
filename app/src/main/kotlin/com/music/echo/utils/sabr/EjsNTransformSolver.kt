@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils.sabr
+package com.ahr.rashmusic.utils.sabr
 
 import android.content.Context
 import android.net.Uri
@@ -6,8 +6,8 @@ import android.webkit.ConsoleMessage
 import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import echo.music.iad1tya.utils.cipher.CipherDeobfuscator
-import echo.music.iad1tya.utils.cipher.PlayerJsFetcher
+import com.ahr.rashmusic.utils.cipher.CipherDeobfuscator
+import com.ahr.rashmusic.utils.cipher.PlayerJsFetcher
 import java.io.File
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.utils
+package com.ahr.rashmusic.ui.utils
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent

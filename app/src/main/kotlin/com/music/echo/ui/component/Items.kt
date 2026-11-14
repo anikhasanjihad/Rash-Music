@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.liquidPress
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animate
@@ -85,32 +86,32 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CropAlbumArtKey
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.constants.ListItemHeight
-import echo.music.iad1tya.constants.ListThumbnailSize
-import echo.music.iad1tya.constants.SmallGridThumbnailHeight
-import echo.music.iad1tya.constants.SwipeToSongKey
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.Artist
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.playback.queues.LocalAlbumRadio
-import echo.music.iad1tya.ui.utils.resize
-import echo.music.iad1tya.utils.joinByBullet
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CropAlbumArtKey
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.constants.ListItemHeight
+import com.ahr.rashmusic.constants.ListThumbnailSize
+import com.ahr.rashmusic.constants.SmallGridThumbnailHeight
+import com.ahr.rashmusic.constants.SwipeToSongKey
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.Artist
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.playback.queues.LocalAlbumRadio
+import com.ahr.rashmusic.ui.utils.resize
+import com.ahr.rashmusic.utils.joinByBullet
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.utils.reportException
 import kotlin.math.roundToInt
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -146,7 +147,8 @@ inline fun ListItem(
   Row(
     verticalAlignment = Alignment.CenterVertically,
     modifier =
-      Modifier.padding(vertical = verticalPadding)
+      Modifier.liquidPress()
+        .padding(vertical = verticalPadding)
         .padding(horizontal = horizontalPadding)
         .clip(shape)
         .background(
@@ -304,9 +306,9 @@ fun GridItem(
   Column(
     modifier =
       if (fillMaxWidth) {
-        modifier.padding(12.dp).fillMaxWidth()
+        Modifier.liquidPress().then(modifier).padding(12.dp).fillMaxWidth()
       } else {
-        modifier.padding(12.dp).width(gridHeight * thumbnailRatio)
+        Modifier.liquidPress().then(modifier).padding(12.dp).width(gridHeight * thumbnailRatio)
       }
   ) {
     BoxWithConstraints(

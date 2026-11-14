@@ -1,4 +1,4 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -6,10 +6,10 @@ import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.utils.AppleMusicAboutAlbum
-import echo.music.iad1tya.utils.Wikipedia
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.utils.AppleMusicAboutAlbum
+import com.ahr.rashmusic.utils.Wikipedia
+import com.ahr.rashmusic.utils.reportException
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

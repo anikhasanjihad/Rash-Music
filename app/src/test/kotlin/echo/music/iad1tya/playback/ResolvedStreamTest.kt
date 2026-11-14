@@ -1,8 +1,8 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import androidx.media3.datasource.DataSpec
 import com.music.innertube.models.response.PlayerResponse
-import echo.music.iad1tya.utils.YTPlayerUtils.PlaybackData
+import com.ahr.rashmusic.utils.YTPlayerUtils.PlaybackData
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

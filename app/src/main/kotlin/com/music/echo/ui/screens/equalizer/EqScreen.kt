@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.equalizer
+package com.ahr.rashmusic.ui.screens.equalizer
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.audiofx.AudioEffect
@@ -49,9 +50,9 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.utils.launchSafely
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.utils.launchSafely
 import echo.music.dsp.core.models.SavedEQProfile
 import timber.log.Timber
 
@@ -221,7 +222,7 @@ private fun EqScreenContent(
 
       LazyColumn(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-        contentPadding = PaddingValues(bottom = 16.dp)
+        contentPadding = PaddingValues(bottom = 16.dp), flingBehavior = rememberLiquidFling()
       ) {
         item {
           androidx.compose.material3.Card(

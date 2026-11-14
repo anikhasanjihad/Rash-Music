@@ -1,4 +1,4 @@
-package echo.music.iad1tya.models.lastfm
+package com.ahr.rashmusic.models.lastfm
 
 import kotlinx.serialization.Serializable
 

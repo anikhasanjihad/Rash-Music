@@ -1,16 +1,16 @@
-package echo.music.iad1tya.discord
+package com.ahr.rashmusic.discord
 
 import android.content.Context
 import android.net.Uri
 import androidx.datastore.preferences.core.edit
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.constants.DiscordAvatarUrlKey
-import echo.music.iad1tya.constants.DiscordNameKey
-import echo.music.iad1tya.constants.DiscordRefreshTokenKey
-import echo.music.iad1tya.constants.DiscordTokenExpiresAtKey
-import echo.music.iad1tya.constants.DiscordTokenKey
-import echo.music.iad1tya.constants.DiscordUsernameKey
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.constants.DiscordAvatarUrlKey
+import com.ahr.rashmusic.constants.DiscordNameKey
+import com.ahr.rashmusic.constants.DiscordRefreshTokenKey
+import com.ahr.rashmusic.constants.DiscordTokenExpiresAtKey
+import com.ahr.rashmusic.constants.DiscordTokenKey
+import com.ahr.rashmusic.constants.DiscordUsernameKey
+import com.ahr.rashmusic.utils.dataStore
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL

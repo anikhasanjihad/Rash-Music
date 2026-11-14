@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback.smart
+package com.ahr.rashmusic.playback.smart
 
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment

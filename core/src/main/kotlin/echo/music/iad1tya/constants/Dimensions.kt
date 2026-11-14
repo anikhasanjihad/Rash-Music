@@ -1,4 +1,4 @@
-package echo.music.iad1tya.constants
+package com.ahr.rashmusic.constants
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring

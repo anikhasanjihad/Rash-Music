@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.equalizer
+package com.ahr.rashmusic.ui.screens.equalizer
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

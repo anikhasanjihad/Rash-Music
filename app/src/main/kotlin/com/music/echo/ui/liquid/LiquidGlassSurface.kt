@@ -3,7 +3,7 @@
  * Simplified: translucent tint + hairline border + slow moving highlight.
  * See THIRD_PARTY_NOTICES.md.
  */
-package echo.music.iad1tya.ui.liquid
+package com.ahr.rashmusic.ui.liquid
 
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat

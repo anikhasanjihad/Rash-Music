@@ -1,9 +1,9 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
-import echo.music.iad1tya.db.daos.RecommendationExclusionDao
-import echo.music.iad1tya.db.entities.RecommendationExclusionEntity
-import echo.music.iad1tya.viewmodels.GenerateUiState
-import echo.music.iad1tya.viewmodels.GenerateViewModel
+import com.ahr.rashmusic.db.daos.RecommendationExclusionDao
+import com.ahr.rashmusic.db.entities.RecommendationExclusionEntity
+import com.ahr.rashmusic.viewmodels.GenerateUiState
+import com.ahr.rashmusic.viewmodels.GenerateViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow

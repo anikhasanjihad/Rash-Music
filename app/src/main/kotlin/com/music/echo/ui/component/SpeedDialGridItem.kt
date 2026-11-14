@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
@@ -19,12 +19,12 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.playback.queues.LocalAlbumRadio
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.playback.queues.LocalAlbumRadio
+import com.ahr.rashmusic.utils.reportException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

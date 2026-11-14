@@ -1,4 +1,4 @@
-package echo.music.iad1tya.listentogether
+package com.ahr.rashmusic.listentogether
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -6,18 +6,18 @@ import androidx.media3.common.Player
 import com.music.innertube.YouTube
 import com.music.innertube.models.WatchEndpoint
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.ListenTogetherSmartResyncKey
-import echo.music.iad1tya.constants.ListenTogetherSyncVolumeKey
-import echo.music.iad1tya.extensions.currentMetadata
-import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.models.MediaMetadata.Album
-import echo.music.iad1tya.models.MediaMetadata.Artist
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.PlayerConnection
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.constants.ListenTogetherSmartResyncKey
+import com.ahr.rashmusic.constants.ListenTogetherSyncVolumeKey
+import com.ahr.rashmusic.extensions.currentMetadata
+import com.ahr.rashmusic.extensions.metadata
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.models.MediaMetadata.Album
+import com.ahr.rashmusic.models.MediaMetadata.Artist
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.PlayerConnection
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.utils.dataStore
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineScope

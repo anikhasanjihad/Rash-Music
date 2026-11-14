@@ -1,7 +1,7 @@
 package com.music.echo.spotify
 
 import com.music.innertube.YouTube
-import echo.music.iad1tya.spotify.models.SpotifyTrack
+import com.ahr.rashmusic.spotify.models.SpotifyTrack
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit

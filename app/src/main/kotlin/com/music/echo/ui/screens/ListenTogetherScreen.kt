@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -80,23 +81,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AppBarHeight
-import echo.music.iad1tya.constants.ListenTogetherInTopBarKey
-import echo.music.iad1tya.constants.ListenTogetherUsernameKey
-import echo.music.iad1tya.listentogether.ConnectionState
-import echo.music.iad1tya.listentogether.JoinRequestPayload
-import echo.music.iad1tya.listentogether.ListenTogetherEvent
-import echo.music.iad1tya.listentogether.SuggestionReceivedPayload
-import echo.music.iad1tya.listentogether.UserInfo
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AppBarHeight
+import com.ahr.rashmusic.constants.ListenTogetherInTopBarKey
+import com.ahr.rashmusic.constants.ListenTogetherUsernameKey
+import com.ahr.rashmusic.listentogether.ConnectionState
+import com.ahr.rashmusic.listentogether.JoinRequestPayload
+import com.ahr.rashmusic.listentogether.ListenTogetherEvent
+import com.ahr.rashmusic.listentogether.SuggestionReceivedPayload
+import com.ahr.rashmusic.listentogether.UserInfo
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
@@ -234,7 +235,7 @@ fun ListenTogetherScreen(navController: NavController, showTopBar: Boolean = fal
         top = windowInsets.asPaddingValues().calculateTopPadding() + 16.dp,
         bottom = windowInsets.asPaddingValues().calculateBottomPadding() + 16.dp + AppBarHeight
       ),
-    verticalArrangement = Arrangement.spacedBy(16.dp)
+    verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling()
   ) {
     if (connectionState == ConnectionState.CONNECTED && !isInRoom) {
       item {

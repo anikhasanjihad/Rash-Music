@@ -1,4 +1,4 @@
-package echo.music.iad1tya.listentogether
+package com.ahr.rashmusic.listentogether
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

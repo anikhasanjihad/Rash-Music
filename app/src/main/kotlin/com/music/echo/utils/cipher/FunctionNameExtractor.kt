@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils.cipher
+package com.ahr.rashmusic.utils.cipher
 
 import java.security.MessageDigest
 import timber.log.Timber

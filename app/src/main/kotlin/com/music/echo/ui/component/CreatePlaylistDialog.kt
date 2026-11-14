@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
@@ -22,12 +22,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.music.innertube.YouTube
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.InnerTubeCookieKey
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.extensions.isSyncEnabled
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.InnerTubeCookieKey
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.extensions.isSyncEnabled
+import com.ahr.rashmusic.utils.rememberPreference
 import java.time.LocalDateTime
 import java.util.logging.Logger
 import kotlinx.coroutines.Dispatchers

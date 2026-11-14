@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils.potoken
+package com.ahr.rashmusic.utils.potoken
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonNull

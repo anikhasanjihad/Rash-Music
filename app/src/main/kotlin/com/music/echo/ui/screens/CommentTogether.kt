@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
@@ -34,11 +35,11 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.listentogether.ChatMessagePayload
-import echo.music.iad1tya.listentogether.RepliedMessage
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.listentogether.ChatMessagePayload
+import com.ahr.rashmusic.listentogether.RepliedMessage
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -172,7 +173,7 @@ fun CommentTogetherScreen(navController: NavController) {
           state = lazyListState,
           modifier = Modifier.fillMaxSize(),
           contentPadding = PaddingValues(16.dp),
-          verticalArrangement = Arrangement.spacedBy(12.dp)
+          verticalArrangement = Arrangement.spacedBy(12.dp), flingBehavior = rememberLiquidFling()
         ) {
           items(items = messages, key = { it.timestamp.toString() + it.userId }) { message ->
             MessageItem(

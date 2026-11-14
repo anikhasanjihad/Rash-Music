@@ -1,4 +1,4 @@
-package echo.music.iad1tya.di
+package com.ahr.rashmusic.di
 
 import android.content.Context
 import dagger.Module
@@ -6,7 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import echo.music.iad1tya.utils.NetworkConnectivityObserver
+import com.ahr.rashmusic.utils.NetworkConnectivityObserver
 import javax.inject.Singleton
 
 @Module

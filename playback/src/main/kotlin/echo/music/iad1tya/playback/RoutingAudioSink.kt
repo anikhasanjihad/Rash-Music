@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.AuxEffectInfo

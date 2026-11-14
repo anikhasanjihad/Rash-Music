@@ -1,9 +1,9 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 
 @Immutable
 sealed class Screens(

@@ -1,13 +1,13 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.localmedia.LocalSongScanConfig
-import echo.music.iad1tya.localmedia.LocalSongScanSummary
-import echo.music.iad1tya.localmedia.LocalSongScanner
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.localmedia.LocalSongScanConfig
+import com.ahr.rashmusic.localmedia.LocalSongScanSummary
+import com.ahr.rashmusic.localmedia.LocalSongScanner
+import com.ahr.rashmusic.utils.reportException
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

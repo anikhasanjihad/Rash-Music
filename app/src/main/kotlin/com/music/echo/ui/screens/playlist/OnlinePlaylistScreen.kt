@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.playlist
+package com.ahr.rashmusic.ui.screens.playlist
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.Intent
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -113,41 +114,41 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AppBarHeight
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.PodcastHidePlayedKey
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.DownloadUtil
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.playback.queues.YouTubePlaylistQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.EpisodeDetails
-import echo.music.iad1tya.ui.component.HeartBurstIcon
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.NavigationTitle
-import echo.music.iad1tya.ui.component.OnlineBlur
-import echo.music.iad1tya.ui.component.YouTubeGridItem
-import echo.music.iad1tya.ui.component.YouTubeListItem
-import echo.music.iad1tya.ui.menu.YouTubeAlbumMenu
-import echo.music.iad1tya.ui.menu.YouTubeArtistMenu
-import echo.music.iad1tya.ui.menu.YouTubePlaylistMenu
-import echo.music.iad1tya.ui.menu.YouTubeSelectionSongMenu
-import echo.music.iad1tya.ui.menu.YouTubeSongMenu
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.PodcastProgress
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.OnlinePlaylistViewModel
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AppBarHeight
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.PodcastHidePlayedKey
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.DownloadUtil
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.playback.queues.YouTubePlaylistQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.EpisodeDetails
+import com.ahr.rashmusic.ui.component.HeartBurstIcon
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.NavigationTitle
+import com.ahr.rashmusic.ui.component.OnlineBlur
+import com.ahr.rashmusic.ui.component.YouTubeGridItem
+import com.ahr.rashmusic.ui.component.YouTubeListItem
+import com.ahr.rashmusic.ui.menu.YouTubeAlbumMenu
+import com.ahr.rashmusic.ui.menu.YouTubeArtistMenu
+import com.ahr.rashmusic.ui.menu.YouTubePlaylistMenu
+import com.ahr.rashmusic.ui.menu.YouTubeSelectionSongMenu
+import com.ahr.rashmusic.ui.menu.YouTubeSongMenu
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.PodcastProgress
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.OnlinePlaylistViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -297,7 +298,7 @@ fun OnlinePlaylistScreen(
     LazyColumn(
       state = lazyListState,
       contentPadding =
-        LocalPlayerAwareWindowInsets.current.union(WindowInsets.ime).asPaddingValues(),
+        LocalPlayerAwareWindowInsets.current.union(WindowInsets.ime).asPaddingValues(), flingBehavior = rememberLiquidFling(),
     ) {
       if (playlist == null || songs.isEmpty()) {
         if (isLoading) {

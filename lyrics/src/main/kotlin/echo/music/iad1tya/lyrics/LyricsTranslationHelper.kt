@@ -1,14 +1,14 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
 import android.content.Context
 import com.music.echo.lyrics.R
-import echo.music.iad1tya.api.DeepLService
-import echo.music.iad1tya.api.MistralService
-import echo.music.iad1tya.api.OpenRouterService
-import echo.music.iad1tya.api.OpenRouterStreamingService
-import echo.music.iad1tya.constants.LanguageCodeToName
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.LyricsEntity
+import com.ahr.rashmusic.api.DeepLService
+import com.ahr.rashmusic.api.MistralService
+import com.ahr.rashmusic.api.OpenRouterService
+import com.ahr.rashmusic.api.OpenRouterStreamingService
+import com.ahr.rashmusic.constants.LanguageCodeToName
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.LyricsEntity
 import java.util.Locale
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +24,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 import timber.log.Timber
-import echo.music.iad1tya.ai.AiLogger
+import com.ahr.rashmusic.ai.AiLogger
 
 object LyricsTranslationHelper {
   private val _status = MutableStateFlow<TranslationStatus>(TranslationStatus.Idle)

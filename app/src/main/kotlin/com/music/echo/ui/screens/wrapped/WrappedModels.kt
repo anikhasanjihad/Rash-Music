@@ -1,10 +1,10 @@
 package com.music.echo.ui.screens.wrapped
 
 import androidx.compose.runtime.Immutable
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.Artist
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SongWithStats
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.Artist
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SongWithStats
 
 enum class WrappedTimeRange(val label: String) {
   THIS_YEAR("This Year"),

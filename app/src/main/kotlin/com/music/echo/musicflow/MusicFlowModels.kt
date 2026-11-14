@@ -1,11 +1,11 @@
-package echo.music.iad1tya.musicflow
+package com.ahr.rashmusic.musicflow
 
 import androidx.compose.runtime.Immutable
 import com.music.innertube.models.Album
 import com.music.innertube.models.Artist
 import com.music.innertube.models.SongItem
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.models.MediaMetadata
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.models.MediaMetadata
 
 enum class MusicFlowSource {
   NOW_PLAYING,

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import android.content.Context
 import androidx.compose.runtime.getValue
@@ -15,13 +15,13 @@ import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.SearchSummaryPage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.constants.HideYoutubeShortsKey
-import echo.music.iad1tya.models.ItemsPage
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.constants.HideYoutubeShortsKey
+import com.ahr.rashmusic.models.ItemsPage
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
+import com.ahr.rashmusic.utils.reportException
 import java.net.URLDecoder
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow

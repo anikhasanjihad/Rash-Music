@@ -1,17 +1,17 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
 import android.content.Context
 import android.util.LruCache
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.FetchFasterLyricsKey
-import echo.music.iad1tya.constants.LyricsProviderOrderKey
-import echo.music.iad1tya.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.playback.LyricsWithProvider
-import echo.music.iad1tya.utils.NetworkConnectivityObserver
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.constants.FetchFasterLyricsKey
+import com.ahr.rashmusic.constants.LyricsProviderOrderKey
+import com.ahr.rashmusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.playback.LyricsWithProvider
+import com.ahr.rashmusic.utils.NetworkConnectivityObserver
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
+import com.ahr.rashmusic.utils.reportException
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 import kotlinx.coroutines.CancellationException

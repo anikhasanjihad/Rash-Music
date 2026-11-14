@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -35,14 +35,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.echomusic.updater.getUpdateAvailableState
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.screens.Screens
-import echo.music.iad1tya.ui.utils.backToMain
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.echomusic.updater.getUpdateAvailableState
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.screens.Screens
+import com.ahr.rashmusic.ui.utils.backToMain
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,7 +56,7 @@ fun SettingsScreen(
   val isAndroid12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
   val isUpdateAvailable =
     getUpdateAvailableState(context) &&
-      echo.music.iad1tya.echomusic.updater.getAutoUpdateCheckSetting(context)
+      com.ahr.rashmusic.echomusic.updater.getAutoUpdateCheckSetting(context)
 
   var searchQuery by rememberSaveable { mutableStateOf("") }
   val searchLower = searchQuery.lowercase()
@@ -173,10 +173,10 @@ fun SettingsScreen(
       if ("listening summary".contains(searchLower)) {
         add(
           Material3SettingsItem(
-            icon = painterResource(echo.music.iad1tya.R.drawable.history),
-            title = { Text(stringResource(echo.music.iad1tya.R.string.listening_summary)) },
+            icon = painterResource(com.ahr.rashmusic.R.drawable.history),
+            title = { Text(stringResource(com.ahr.rashmusic.R.string.listening_summary)) },
             description = {
-              Text(stringResource(echo.music.iad1tya.R.string.listening_summary_desc))
+              Text(stringResource(com.ahr.rashmusic.R.string.listening_summary_desc))
             },
             onClick = { navController.navigate("settings/listening_summary") }
           )
@@ -186,7 +186,7 @@ fun SettingsScreen(
       if ("echo wrapped".contains(searchLower) || "wrapped".contains(searchLower) || "replay".contains(searchLower)) {
         add(
           Material3SettingsItem(
-            icon = painterResource(echo.music.iad1tya.R.drawable.ic_echo_wrapped),
+            icon = painterResource(com.ahr.rashmusic.R.drawable.ic_echo_wrapped),
             title = { Text("Rash Wrapped") },
             description = { Text("Your year in sound & personal music recap") },
             onClick = { navController.navigate("wrapped") }

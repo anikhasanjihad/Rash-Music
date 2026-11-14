@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.search.suggestions
+package com.ahr.rashmusic.ui.screens.search.suggestions
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -19,7 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.constants.SuggestionRegionSlugToName
+import com.ahr.rashmusic.constants.SuggestionRegionSlugToName
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -66,7 +67,7 @@ fun SuggestionRegionSheet(
       LazyColumn(
         state = listState,
         modifier =
-          Modifier.fillMaxWidth().padding(horizontal = 16.dp).clip(RoundedCornerShape(24.dp))
+          Modifier.fillMaxWidth().padding(horizontal = 16.dp).clip(RoundedCornerShape(24.dp)), flingBehavior = rememberLiquidFling()
       ) {
         item {
           Text(

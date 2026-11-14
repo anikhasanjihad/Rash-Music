@@ -1,18 +1,18 @@
-package echo.music.iad1tya.ai
+package com.ahr.rashmusic.ai
 
 import android.content.Context
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import echo.music.iad1tya.constants.AiProviderKey
-import echo.music.iad1tya.constants.OpenRouterApiKey
-import echo.music.iad1tya.constants.OpenRouterBaseUrlKey
-import echo.music.iad1tya.constants.OpenRouterModelKey
-import echo.music.iad1tya.db.InternalDatabase
-import echo.music.iad1tya.db.entities.PlaylistSong
-import echo.music.iad1tya.db.entities.PlaylistSongMap
-import echo.music.iad1tya.db.entities.SongEntity
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
+import com.ahr.rashmusic.constants.AiProviderKey
+import com.ahr.rashmusic.constants.OpenRouterApiKey
+import com.ahr.rashmusic.constants.OpenRouterBaseUrlKey
+import com.ahr.rashmusic.constants.OpenRouterModelKey
+import com.ahr.rashmusic.db.InternalDatabase
+import com.ahr.rashmusic.db.entities.PlaylistSong
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.entities.SongEntity
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -103,7 +103,7 @@ object AiPlaylistModifier {
             return@withContext
           }
 
-          if (!echo.music.iad1tya.api.OpenRouterService.isUrlSafe(baseUrl)) {
+          if (!com.ahr.rashmusic.api.OpenRouterService.isUrlSafe(baseUrl)) {
             onLog("Restricted or unsafe AI endpoint destination.")
             return@withContext
           }

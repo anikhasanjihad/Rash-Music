@@ -1,5 +1,5 @@
 /** Metrolist Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.widget
+package com.ahr.rashmusic.widget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -7,7 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import echo.music.iad1tya.playback.MusicService
+import com.ahr.rashmusic.playback.MusicService
 
 open class MusicWidgetReceiver : AppWidgetProvider() {
 

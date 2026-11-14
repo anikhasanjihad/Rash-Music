@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -33,22 +33,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.BuildConfig
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.echomusic.component.UpdateInfoDialog
-import echo.music.iad1tya.echomusic.updater.autoClearOldApks
-import echo.music.iad1tya.echomusic.updater.getAutoUpdateCheckSetting
-import echo.music.iad1tya.echomusic.updater.getBetaUpdatesSetting
-import echo.music.iad1tya.echomusic.updater.getDownloadedApkCount
-import echo.music.iad1tya.echomusic.updater.getUpdateAvailableState
-import echo.music.iad1tya.echomusic.updater.getUpdateNotificationsSetting
-import echo.music.iad1tya.ui.component.IconButton
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.ui.utils.parseMarkdownToSections
-import echo.music.iad1tya.ui.utils.parseSimpleMarkdown
+import com.ahr.rashmusic.BuildConfig
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.echomusic.component.UpdateInfoDialog
+import com.ahr.rashmusic.echomusic.updater.autoClearOldApks
+import com.ahr.rashmusic.echomusic.updater.getAutoUpdateCheckSetting
+import com.ahr.rashmusic.echomusic.updater.getBetaUpdatesSetting
+import com.ahr.rashmusic.echomusic.updater.getDownloadedApkCount
+import com.ahr.rashmusic.echomusic.updater.getUpdateAvailableState
+import com.ahr.rashmusic.echomusic.updater.getUpdateNotificationsSetting
+import com.ahr.rashmusic.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.ui.utils.parseMarkdownToSections
+import com.ahr.rashmusic.ui.utils.parseSimpleMarkdown
 import org.json.JSONObject
 
 /**
@@ -149,7 +149,7 @@ fun UpdateSettings(
     )
 
     releaseNotes?.let { notes ->
-      echo.music.iad1tya.ui.component.PreferenceGroupTitle(title = "What's New")
+      com.ahr.rashmusic.ui.component.PreferenceGroupTitle(title = "What's New")
       androidx.compose.material3.Card(
         modifier = Modifier.fillMaxWidth(),
         shape = androidx.compose.foundation.shape.RoundedCornerShape(24.dp),

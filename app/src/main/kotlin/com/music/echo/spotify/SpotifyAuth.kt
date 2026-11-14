@@ -5,9 +5,9 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package echo.music.iad1tya.spotify
+package com.ahr.rashmusic.spotify
 
-import echo.music.iad1tya.spotify.models.SpotifyInternalToken
+import com.ahr.rashmusic.spotify.models.SpotifyInternalToken
 import java.net.HttpURLConnection
 import java.net.URL
 import javax.crypto.Mac

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component.musicflow
+package com.ahr.rashmusic.ui.component.musicflow
 
 import android.os.Build
 import androidx.compose.animation.AnimatedContent
@@ -69,13 +69,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.R
-import echo.music.iad1tya.lyrics.LyricsUtils.parseLyrics
-import echo.music.iad1tya.musicflow.MusicFlowItem
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.ui.component.shimmer.TextPlaceholder
-import echo.music.iad1tya.ui.screens.ambient.AmbientCanvasBackground
-import echo.music.iad1tya.ui.utils.resize
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.lyrics.LyricsUtils.parseLyrics
+import com.ahr.rashmusic.musicflow.MusicFlowItem
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.ui.component.shimmer.TextPlaceholder
+import com.ahr.rashmusic.ui.screens.ambient.AmbientCanvasBackground
+import com.ahr.rashmusic.ui.utils.resize
 
 data class MusicFlowPageActions(
   val onTogglePlay: () -> Unit,

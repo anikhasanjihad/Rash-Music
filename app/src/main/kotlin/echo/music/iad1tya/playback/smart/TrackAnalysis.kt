@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback.smart
+package com.ahr.rashmusic.playback.smart
 
 import kotlin.math.log10
 import kotlin.math.pow

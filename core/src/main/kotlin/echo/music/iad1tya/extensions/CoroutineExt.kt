@@ -1,4 +1,4 @@
-package echo.music.iad1tya.extensions
+package com.ahr.rashmusic.extensions
 
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope

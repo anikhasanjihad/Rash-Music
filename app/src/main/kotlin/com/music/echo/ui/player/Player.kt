@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import android.content.BroadcastReceiver
 import android.content.ClipData
@@ -172,77 +172,77 @@ import coil3.request.allowHardware
 import coil3.size.Size as CoilSize
 import coil3.toBitmap
 import dagger.hilt.android.EntryPointAccessors
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalDownloadUtil
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.applecanvas.AppleMusicCanvasProvider
-import echo.music.iad1tya.canvas.CanvasArtwork
-import echo.music.iad1tya.canvas.TidalCanvasProvider
-import echo.music.iad1tya.constants.AudioQuality
-import echo.music.iad1tya.constants.AudioQualityKey
-import echo.music.iad1tya.constants.CanvasThumbnailAnimationKey
-import echo.music.iad1tya.constants.CropAlbumArtKey
-import echo.music.iad1tya.constants.DarkModeKey
-import echo.music.iad1tya.constants.EnableLyricsThumbnailPlayPauseKey
-import echo.music.iad1tya.constants.HidePlayerThumbnailKey
-import echo.music.iad1tya.constants.HideStatusBarOnFullscreenKey
-import echo.music.iad1tya.constants.KeepScreenOn
-import echo.music.iad1tya.constants.MusicFlowEnabledKey
-import echo.music.iad1tya.constants.PlayerBackgroundStyle
-import echo.music.iad1tya.constants.PlayerBackgroundStyleKey
-import echo.music.iad1tya.constants.PlayerButtonsStyle
-import echo.music.iad1tya.constants.PlayerButtonsStyleKey
-import echo.music.iad1tya.constants.PlayerHorizontalPadding
-import echo.music.iad1tya.constants.QueuePeekHeight
-import echo.music.iad1tya.constants.ShowLyricsOnPlayerKey
-import echo.music.iad1tya.constants.SliderStyle
-import echo.music.iad1tya.constants.SliderStyleKey
-import echo.music.iad1tya.constants.SquigglySliderKey
-import echo.music.iad1tya.constants.WavyPlayPauseKey
-import echo.music.iad1tya.constants.SwipeLyricsKey
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.constants.UseNewPlayerDesignKey
-import echo.music.iad1tya.db.entities.LyricsEntity
-import echo.music.iad1tya.echomusic.getConnectedBluetoothDeviceName
-import echo.music.iad1tya.echomusic.isBuds
-import echo.music.iad1tya.echomusic.isSpeaker
-import echo.music.iad1tya.playback.audio.bluetooth.BluetoothAudioTracker
-import echo.music.iad1tya.playback.audio.bluetooth.BluetoothTelemetry
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalDownloadUtil
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.applecanvas.AppleMusicCanvasProvider
+import com.ahr.rashmusic.canvas.CanvasArtwork
+import com.ahr.rashmusic.canvas.TidalCanvasProvider
+import com.ahr.rashmusic.constants.AudioQuality
+import com.ahr.rashmusic.constants.AudioQualityKey
+import com.ahr.rashmusic.constants.CanvasThumbnailAnimationKey
+import com.ahr.rashmusic.constants.CropAlbumArtKey
+import com.ahr.rashmusic.constants.DarkModeKey
+import com.ahr.rashmusic.constants.EnableLyricsThumbnailPlayPauseKey
+import com.ahr.rashmusic.constants.HidePlayerThumbnailKey
+import com.ahr.rashmusic.constants.HideStatusBarOnFullscreenKey
+import com.ahr.rashmusic.constants.KeepScreenOn
+import com.ahr.rashmusic.constants.MusicFlowEnabledKey
+import com.ahr.rashmusic.constants.PlayerBackgroundStyle
+import com.ahr.rashmusic.constants.PlayerBackgroundStyleKey
+import com.ahr.rashmusic.constants.PlayerButtonsStyle
+import com.ahr.rashmusic.constants.PlayerButtonsStyleKey
+import com.ahr.rashmusic.constants.PlayerHorizontalPadding
+import com.ahr.rashmusic.constants.QueuePeekHeight
+import com.ahr.rashmusic.constants.ShowLyricsOnPlayerKey
+import com.ahr.rashmusic.constants.SliderStyle
+import com.ahr.rashmusic.constants.SliderStyleKey
+import com.ahr.rashmusic.constants.SquigglySliderKey
+import com.ahr.rashmusic.constants.WavyPlayPauseKey
+import com.ahr.rashmusic.constants.SwipeLyricsKey
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.constants.UseNewPlayerDesignKey
+import com.ahr.rashmusic.db.entities.LyricsEntity
+import com.ahr.rashmusic.echomusic.getConnectedBluetoothDeviceName
+import com.ahr.rashmusic.echomusic.isBuds
+import com.ahr.rashmusic.echomusic.isSpeaker
+import com.ahr.rashmusic.playback.audio.bluetooth.BluetoothAudioTracker
+import com.ahr.rashmusic.playback.audio.bluetooth.BluetoothTelemetry
 import com.music.echo.ui.component.BitPerfectBadge
 import echo.music.usbaudio.DacDeviceState
-import echo.music.iad1tya.echomusiccanvas.echomusicCanvasProvider
-import echo.music.iad1tya.extensions.SwipeGesture
-import echo.music.iad1tya.extensions.togglePlayPause
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.playback.ExoDownloadService
-import echo.music.iad1tya.ui.component.BottomSheet
-import echo.music.iad1tya.ui.component.BottomSheetState
-import echo.music.iad1tya.ui.component.HeartBurstIcon
-import echo.music.iad1tya.ui.component.Icon as MIcon
-import echo.music.iad1tya.ui.component.LocalBottomSheetPageState
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.Lyrics
-import echo.music.iad1tya.ui.component.PlayerSliderTrack
-import echo.music.iad1tya.ui.component.ResizableIconButton
-import echo.music.iad1tya.ui.component.SquigglySlider
-import echo.music.iad1tya.ui.component.WavySlider
-import echo.music.iad1tya.ui.component.rememberBottomSheetState
-import echo.music.iad1tya.ui.menu.OldPlayerMenu
-import echo.music.iad1tya.ui.menu.PlayerMenu
-import echo.music.iad1tya.ui.screens.settings.DarkMode
-import echo.music.iad1tya.ui.theme.PlayerColorExtractor
-import echo.music.iad1tya.ui.theme.PlayerSliderColors
-import echo.music.iad1tya.ui.utils.ShowMediaInfo
-import echo.music.iad1tya.ui.utils.ShowOffsetDialog
+import com.ahr.rashmusic.echomusiccanvas.echomusicCanvasProvider
+import com.ahr.rashmusic.extensions.SwipeGesture
+import com.ahr.rashmusic.extensions.togglePlayPause
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.playback.ExoDownloadService
+import com.ahr.rashmusic.ui.component.BottomSheet
+import com.ahr.rashmusic.ui.component.BottomSheetState
+import com.ahr.rashmusic.ui.component.HeartBurstIcon
+import com.ahr.rashmusic.ui.component.Icon as MIcon
+import com.ahr.rashmusic.ui.component.LocalBottomSheetPageState
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.Lyrics
+import com.ahr.rashmusic.ui.component.PlayerSliderTrack
+import com.ahr.rashmusic.ui.component.ResizableIconButton
+import com.ahr.rashmusic.ui.component.SquigglySlider
+import com.ahr.rashmusic.ui.component.WavySlider
+import com.ahr.rashmusic.ui.component.rememberBottomSheetState
+import com.ahr.rashmusic.ui.menu.OldPlayerMenu
+import com.ahr.rashmusic.ui.menu.PlayerMenu
+import com.ahr.rashmusic.ui.screens.settings.DarkMode
+import com.ahr.rashmusic.ui.theme.PlayerColorExtractor
+import com.ahr.rashmusic.ui.theme.PlayerSliderColors
+import com.ahr.rashmusic.ui.utils.ShowMediaInfo
+import com.ahr.rashmusic.ui.utils.ShowOffsetDialog
 import com.music.innertube.models.PODCAST_BROWSE_PREFIX
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_PODCAST_EPISODE
-import echo.music.iad1tya.utils.PodcastProgress
-import echo.music.iad1tya.utils.isLocalMediaId
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.utils.PodcastProgress
+import com.ahr.rashmusic.utils.isLocalMediaId
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 import java.io.File
 import java.util.Locale
 import kotlin.math.cos
@@ -312,12 +312,12 @@ fun BottomSheetPlayer(
   val (musicFlowEnabled) =
     rememberPreference(MusicFlowEnabledKey, defaultValue = true)
   val showCodecOnPlayer by
-    rememberPreference(echo.music.iad1tya.constants.ShowCodecOnPlayerKey, false)
+    rememberPreference(com.ahr.rashmusic.constants.ShowCodecOnPlayerKey, false)
   val hidePlayerSlider by
-    rememberPreference(echo.music.iad1tya.constants.HidePlayerSliderKey, false)
+    rememberPreference(com.ahr.rashmusic.constants.HidePlayerSliderKey, false)
   val (hidePlayerThumbnail, onHidePlayerThumbnailChange) =
     rememberPreference(HidePlayerThumbnailKey, false)
-  val showSeekButtons by rememberPreference(echo.music.iad1tya.constants.ShowSeekButtonsKey, false)
+  val showSeekButtons by rememberPreference(com.ahr.rashmusic.constants.ShowSeekButtonsKey, false)
   val cropAlbumArt by rememberPreference(CropAlbumArtKey, false)
   val showLyricsOnPlayer by rememberPreference(ShowLyricsOnPlayerKey, false)
   val mediaMetadata by playerConnection.mediaMetadata.collectAsState()
@@ -348,7 +348,7 @@ fun BottomSheetPlayer(
     }
 
   val dataSaverEnabled by
-    rememberPreference(key = echo.music.iad1tya.constants.DataSaverEnabledKey, defaultValue = false)
+    rememberPreference(key = com.ahr.rashmusic.constants.DataSaverEnabledKey, defaultValue = false)
   val enableCanvasPref by rememberPreference(CanvasThumbnailAnimationKey, true)
   val enableCanvas = if (dataSaverEnabled) false else enableCanvasPref
 
@@ -369,7 +369,7 @@ fun BottomSheetPlayer(
   val isAutomixing by playerConnection.isAutomixing.collectAsState()
   val automixDebug by playerConnection.automixDebugInfo.collectAsState()
   val automixDebugOverlayEnabled by
-    rememberPreference(echo.music.iad1tya.constants.AutomixDebugOverlayKey, false)
+    rememberPreference(com.ahr.rashmusic.constants.AutomixDebugOverlayKey, false)
 
   var currentAudioFormat by remember { mutableStateOf<androidx.media3.common.Format?>(null) }
   DisposableEffect(playerConnection, isCrossfading) {
@@ -745,7 +745,7 @@ fun BottomSheetPlayer(
     try {
       val file = File(context.filesDir, "canvas_${item.id}.json")
       if (file.exists()) {
-        val cached = Json.decodeFromString<echo.music.iad1tya.canvas.CanvasArtwork>(file.readText())
+        val cached = Json.decodeFromString<com.ahr.rashmusic.canvas.CanvasArtwork>(file.readText())
         CanvasArtworkPlaybackCache.put(item.id, cached)
         canvasArtwork = cached
         return@LaunchedEffect
@@ -784,7 +784,7 @@ fun BottomSheetPlayer(
           ?: AppleMusicCanvasProvider.getBySongArtist(s, a, requestedAlbum, storefront)?.takeIf {
             !it.preferredAnimationUrl.isNullOrBlank()
           }
-          ?: echo.music.iad1tya.canvas.YouTubeVideoCanvasProvider.getCanvasForVideo(
+          ?: com.ahr.rashmusic.canvas.YouTubeVideoCanvasProvider.getCanvasForVideo(
             videoId = item.id,
             title = requestedTitle,
             artist = requestedArtist,
@@ -984,7 +984,7 @@ fun BottomSheetPlayer(
         delay(200)
         if (sliderPosition == null) {
           position = playerConnection.player.currentPosition
-          duration = echo.music.iad1tya.playback.PlaybackCutoffGuard.computeEffectiveDuration(
+          duration = com.ahr.rashmusic.playback.PlaybackCutoffGuard.computeEffectiveDuration(
             mediaMetadata?.duration,
             playerConnection.player.duration
           )
@@ -996,7 +996,7 @@ fun BottomSheetPlayer(
   LaunchedEffect(playbackState, mediaMetadata?.id) {
     if (!isCasting) {
       position = playerConnection.player.currentPosition
-      duration = echo.music.iad1tya.playback.PlaybackCutoffGuard.computeEffectiveDuration(
+      duration = com.ahr.rashmusic.playback.PlaybackCutoffGuard.computeEffectiveDuration(
         mediaMetadata?.duration,
         playerConnection.player.duration
       )
@@ -1896,7 +1896,7 @@ fun BottomSheetPlayer(
                 FilledIconButton(
                   onClick = {
                     menuState.show {
-                      echo.music.iad1tya.ui.menu.LyricsMenu(
+                      com.ahr.rashmusic.ui.menu.LyricsMenu(
                         lyricsProvider = { currentLyrics },
                         songProvider = { currentSong?.song },
                         mediaMetadataProvider = { mediaMetadata },
@@ -2008,7 +2008,7 @@ fun BottomSheetPlayer(
                     .background(textButtonColor.copy(alpha = 0.2f))
                     .clickable {
                       menuState.show {
-                        echo.music.iad1tya.ui.menu.LyricsMenu(
+                        com.ahr.rashmusic.ui.menu.LyricsMenu(
                           lyricsProvider = { currentLyrics },
                           songProvider = { currentSong?.song },
                           mediaMetadataProvider = { mediaMetadata },
@@ -2514,7 +2514,7 @@ fun BottomSheetPlayer(
               color = TextBackgroundColor,
               onSeek = { offsetMs ->
                 playerConnection.seekTo(
-                  echo.music.iad1tya.playback.seekButtonTarget(
+                  com.ahr.rashmusic.playback.seekButtonTarget(
                     if (isCasting) castPosition else playerConnection.player.currentPosition,
                     if (isCasting) castDuration else playerConnection.player.duration,
                     offsetMs,
@@ -2535,7 +2535,7 @@ fun BottomSheetPlayer(
                 val currentDuration =
                   if (isCasting) castDuration else playerConnection.player.duration
                 playerConnection.seekTo(
-                  echo.music.iad1tya.playback.seekButtonTarget(
+                  com.ahr.rashmusic.playback.seekButtonTarget(
                     currentPosition, currentDuration, offsetMs
                   )
                 )
@@ -2553,7 +2553,7 @@ fun BottomSheetPlayer(
               val currentDuration =
                 if (isCasting) castDuration else playerConnection.player.duration
               playerConnection.seekTo(
-                echo.music.iad1tya.playback.seekButtonTarget(
+                com.ahr.rashmusic.playback.seekButtonTarget(
                   currentPosition, currentDuration, offsetMs
                 )
               )
@@ -3298,7 +3298,7 @@ fun InlineLyricsView(
           val entryPoint =
             EntryPointAccessors.fromApplication(
               context.applicationContext,
-              echo.music.iad1tya.di.LyricsHelperEntryPoint::class.java
+              com.ahr.rashmusic.di.LyricsHelperEntryPoint::class.java
             )
           val lyricsHelper = entryPoint.lyricsHelper()
           val fetchedLyricsWithProvider = lyricsHelper.getLyrics(mediaMetadata)

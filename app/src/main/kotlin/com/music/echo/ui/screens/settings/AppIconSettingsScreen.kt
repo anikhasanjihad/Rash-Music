@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.app.Activity
 import androidx.compose.foundation.Image
@@ -49,12 +49,12 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AppIconTypeKey
-import echo.music.iad1tya.utils.AppIconType
-import echo.music.iad1tya.utils.IconUtils
-import echo.music.iad1tya.utils.rememberEnumPreference
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AppIconTypeKey
+import com.ahr.rashmusic.utils.AppIconType
+import com.ahr.rashmusic.utils.IconUtils
+import com.ahr.rashmusic.utils.rememberEnumPreference
 import kotlinx.coroutines.launch
 
 @Composable

@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.menu
+package com.ahr.rashmusic.ui.menu
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -11,10 +11,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.ui.component.TextFieldDialog
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.ui.component.TextFieldDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch

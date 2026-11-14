@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -47,7 +48,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import kotlinx.coroutines.delay
 
 @Composable
@@ -193,7 +194,7 @@ fun ListDialog(
         }
         LazyColumn(
           contentPadding = PaddingValues(top = if (title != null) 0.dp else 24.dp, bottom = 24.dp),
-          content = content
+          content = content, flingBehavior = rememberLiquidFling()
         )
       }
     }

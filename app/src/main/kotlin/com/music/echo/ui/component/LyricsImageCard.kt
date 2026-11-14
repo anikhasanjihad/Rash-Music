@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -54,8 +54,8 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import echo.music.iad1tya.R
-import echo.music.iad1tya.models.MediaMetadata
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

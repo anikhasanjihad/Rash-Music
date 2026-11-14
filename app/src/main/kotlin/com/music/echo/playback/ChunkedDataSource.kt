@@ -7,8 +7,8 @@ import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.HttpDataSource
 import androidx.media3.datasource.TransferListener
-import echo.music.iad1tya.utils.InnerTubeXResolver
-import echo.music.iad1tya.utils.PlayerClient
+import com.ahr.rashmusic.utils.InnerTubeXResolver
+import com.ahr.rashmusic.utils.PlayerClient
 import java.io.InterruptedIOException
 
 /**

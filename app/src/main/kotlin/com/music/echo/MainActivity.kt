@@ -1,4 +1,4 @@
-package echo.music.iad1tya
+package com.ahr.rashmusic
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -12,7 +12,7 @@ import android.os.IBinder
 import android.provider.Settings
 import android.util.Log
 import androidx.compose.runtime.snapshotFlow
-import echo.music.iad1tya.echomusic.AudioDeviceBottomSheet
+import com.ahr.rashmusic.echomusic.AudioDeviceBottomSheet
 import android.view.HapticFeedbackConstants
 import android.view.View
 import android.view.WindowManager
@@ -140,106 +140,106 @@ import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.valentinilk.shimmer.LocalShimmerTheme
 import dagger.hilt.android.AndroidEntryPoint
-import echo.music.iad1tya.constants.*
-import echo.music.iad1tya.constants.AiRecommendationsKey
-import echo.music.iad1tya.constants.AppBarHeight
-import echo.music.iad1tya.constants.AppLanguageKey
-import echo.music.iad1tya.constants.DarkModeKey
-import echo.music.iad1tya.constants.DefaultOpenTabKey
-import echo.music.iad1tya.constants.DisableScreenshotKey
-import echo.music.iad1tya.constants.DynamicThemeKey
-import echo.music.iad1tya.constants.EnableHighRefreshRateKey
-import echo.music.iad1tya.constants.FloatingToolbarBottomPadding
-import echo.music.iad1tya.constants.FloatingToolbarHorizontalPadding
-import echo.music.iad1tya.constants.LiquidGlassBlurRadiusKey
-import echo.music.iad1tya.constants.LiquidGlassChromaticAberrationKey
-import echo.music.iad1tya.constants.LiquidGlassDepthEffectKey
-import echo.music.iad1tya.constants.LiquidGlassGlobalEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassLensAmountKey
-import echo.music.iad1tya.constants.LiquidGlassLensHeightKey
-import echo.music.iad1tya.constants.LiquidGlassMiniPlayerEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassNavBarEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassPlayerEnabledKey
-import echo.music.iad1tya.constants.LiquidGlassSurfaceOpacityKey
-import echo.music.iad1tya.constants.LiquidGlassSurfaceTintColorKey
-import echo.music.iad1tya.constants.LiquidGlassTextColorKey
-import echo.music.iad1tya.constants.LiquidGlassVibrancyKey
-import echo.music.iad1tya.constants.ListenTogetherInTopBarKey
-import echo.music.iad1tya.constants.ListenTogetherUsernameKey
-import echo.music.iad1tya.constants.MiniPlayerBottomSpacing
-import echo.music.iad1tya.constants.MiniPlayerHeight
-import echo.music.iad1tya.constants.MusicFlowEnabledKey
-import echo.music.iad1tya.constants.NavigationBarAnimationSpec
-import echo.music.iad1tya.constants.NavigationBarHeight
-import echo.music.iad1tya.constants.PauseListenHistoryKey
-import echo.music.iad1tya.constants.PauseSearchHistoryKey
-import echo.music.iad1tya.constants.PureBlackKey
-import echo.music.iad1tya.constants.IsMonochromeThemeKey
-import echo.music.iad1tya.constants.SYSTEM_DEFAULT
-import echo.music.iad1tya.constants.SelectedThemeColorKey
-import echo.music.iad1tya.constants.StopMusicOnTaskClearKey
-import echo.music.iad1tya.constants.UseFloatingNavBarKey
-import echo.music.iad1tya.constants.UseNewMiniPlayerDesignKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.SearchHistory
-import echo.music.iad1tya.echomusic.UpdateNotificationHelper
-import echo.music.iad1tya.echomusic.updater.checkForUpdate
-import echo.music.iad1tya.echomusic.updater.getAutoUpdateCheckSetting
-import echo.music.iad1tya.echomusic.updater.getUpdateNotificationsSetting
-import echo.music.iad1tya.echomusic.updater.saveUpdateAvailableState
-import echo.music.iad1tya.extensions.toEnum
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.DownloadUtil
-import echo.music.iad1tya.playback.MusicService
-import echo.music.iad1tya.playback.MusicService.MusicBinder
-import echo.music.iad1tya.playback.PlayerConnection
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.ui.component.*
-import echo.music.iad1tya.ui.component.AppFloatingNavBar
-import echo.music.iad1tya.ui.component.GlassEffectConfig
-import echo.music.iad1tya.ui.component.LocalAppBackdrop
-import echo.music.iad1tya.ui.component.LocalGlassEffectConfig
-import echo.music.iad1tya.ui.component.RingtoneProgressDialog
-import echo.music.iad1tya.ui.component.RingtoneTrimmerDialog
-import echo.music.iad1tya.ui.component.backdrop.backdrops.layerBackdrop
-import echo.music.iad1tya.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import echo.music.iad1tya.ui.component.floatingtabbar.rememberFloatingTabBarScrollConnection
-import echo.music.iad1tya.ui.component.shimmer.getShimmerTheme
-import echo.music.iad1tya.ui.menu.YouTubeSongMenu
-import echo.music.iad1tya.ui.player.BottomSheetPlayer
-import echo.music.iad1tya.ui.screens.Screens
-import echo.music.iad1tya.ui.screens.SettingDialoge
-import echo.music.iad1tya.ui.screens.WelcomeDialog
-import echo.music.iad1tya.ui.screens.navigationBuilder
-import echo.music.iad1tya.ui.screens.settings.DarkMode
-import echo.music.iad1tya.ui.screens.settings.NavigationTab
-import echo.music.iad1tya.ui.screens.settings.RingtoneViewModel
-import echo.music.iad1tya.ui.theme.ColorSaver
-import echo.music.iad1tya.ui.theme.DefaultThemeColor
-import echo.music.iad1tya.ui.theme.echomusicTheme
-import echo.music.iad1tya.ui.theme.extractThemeColor
-import echo.music.iad1tya.ui.utils.appBarScrollBehavior
-import echo.music.iad1tya.ui.utils.resetHeightOffset
-import echo.music.iad1tya.utils.SyncUtils
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.ai.AiRecommendationHelper
-import echo.music.iad1tya.constants.AiRecommendationsKey
-import echo.music.iad1tya.constants.LastAiRecommendationUpdateDayKey
-import echo.music.iad1tya.constants.CreateFromTasteDailyKey
-import echo.music.iad1tya.constants.LastCreateFromTasteUpdateDayKey
+import com.ahr.rashmusic.constants.*
+import com.ahr.rashmusic.constants.AiRecommendationsKey
+import com.ahr.rashmusic.constants.AppBarHeight
+import com.ahr.rashmusic.constants.AppLanguageKey
+import com.ahr.rashmusic.constants.DarkModeKey
+import com.ahr.rashmusic.constants.DefaultOpenTabKey
+import com.ahr.rashmusic.constants.DisableScreenshotKey
+import com.ahr.rashmusic.constants.DynamicThemeKey
+import com.ahr.rashmusic.constants.EnableHighRefreshRateKey
+import com.ahr.rashmusic.constants.FloatingToolbarBottomPadding
+import com.ahr.rashmusic.constants.FloatingToolbarHorizontalPadding
+import com.ahr.rashmusic.constants.LiquidGlassBlurRadiusKey
+import com.ahr.rashmusic.constants.LiquidGlassChromaticAberrationKey
+import com.ahr.rashmusic.constants.LiquidGlassDepthEffectKey
+import com.ahr.rashmusic.constants.LiquidGlassGlobalEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassLensAmountKey
+import com.ahr.rashmusic.constants.LiquidGlassLensHeightKey
+import com.ahr.rashmusic.constants.LiquidGlassMiniPlayerEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassNavBarEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassPlayerEnabledKey
+import com.ahr.rashmusic.constants.LiquidGlassSurfaceOpacityKey
+import com.ahr.rashmusic.constants.LiquidGlassSurfaceTintColorKey
+import com.ahr.rashmusic.constants.LiquidGlassTextColorKey
+import com.ahr.rashmusic.constants.LiquidGlassVibrancyKey
+import com.ahr.rashmusic.constants.ListenTogetherInTopBarKey
+import com.ahr.rashmusic.constants.ListenTogetherUsernameKey
+import com.ahr.rashmusic.constants.MiniPlayerBottomSpacing
+import com.ahr.rashmusic.constants.MiniPlayerHeight
+import com.ahr.rashmusic.constants.MusicFlowEnabledKey
+import com.ahr.rashmusic.constants.NavigationBarAnimationSpec
+import com.ahr.rashmusic.constants.NavigationBarHeight
+import com.ahr.rashmusic.constants.PauseListenHistoryKey
+import com.ahr.rashmusic.constants.PauseSearchHistoryKey
+import com.ahr.rashmusic.constants.PureBlackKey
+import com.ahr.rashmusic.constants.IsMonochromeThemeKey
+import com.ahr.rashmusic.constants.SYSTEM_DEFAULT
+import com.ahr.rashmusic.constants.SelectedThemeColorKey
+import com.ahr.rashmusic.constants.StopMusicOnTaskClearKey
+import com.ahr.rashmusic.constants.UseFloatingNavBarKey
+import com.ahr.rashmusic.constants.UseNewMiniPlayerDesignKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.SearchHistory
+import com.ahr.rashmusic.echomusic.UpdateNotificationHelper
+import com.ahr.rashmusic.echomusic.updater.checkForUpdate
+import com.ahr.rashmusic.echomusic.updater.getAutoUpdateCheckSetting
+import com.ahr.rashmusic.echomusic.updater.getUpdateNotificationsSetting
+import com.ahr.rashmusic.echomusic.updater.saveUpdateAvailableState
+import com.ahr.rashmusic.extensions.toEnum
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.DownloadUtil
+import com.ahr.rashmusic.playback.MusicService
+import com.ahr.rashmusic.playback.MusicService.MusicBinder
+import com.ahr.rashmusic.playback.PlayerConnection
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.ui.component.*
+import com.ahr.rashmusic.ui.component.AppFloatingNavBar
+import com.ahr.rashmusic.ui.component.GlassEffectConfig
+import com.ahr.rashmusic.ui.component.LocalAppBackdrop
+import com.ahr.rashmusic.ui.component.LocalGlassEffectConfig
+import com.ahr.rashmusic.ui.component.RingtoneProgressDialog
+import com.ahr.rashmusic.ui.component.RingtoneTrimmerDialog
+import com.ahr.rashmusic.ui.component.backdrop.backdrops.layerBackdrop
+import com.ahr.rashmusic.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.ahr.rashmusic.ui.component.floatingtabbar.rememberFloatingTabBarScrollConnection
+import com.ahr.rashmusic.ui.component.shimmer.getShimmerTheme
+import com.ahr.rashmusic.ui.menu.YouTubeSongMenu
+import com.ahr.rashmusic.ui.player.BottomSheetPlayer
+import com.ahr.rashmusic.ui.screens.Screens
+import com.ahr.rashmusic.ui.screens.SettingDialoge
+import com.ahr.rashmusic.ui.screens.WelcomeDialog
+import com.ahr.rashmusic.ui.screens.navigationBuilder
+import com.ahr.rashmusic.ui.screens.settings.DarkMode
+import com.ahr.rashmusic.ui.screens.settings.NavigationTab
+import com.ahr.rashmusic.ui.screens.settings.RingtoneViewModel
+import com.ahr.rashmusic.ui.theme.ColorSaver
+import com.ahr.rashmusic.ui.theme.DefaultThemeColor
+import com.ahr.rashmusic.ui.theme.echomusicTheme
+import com.ahr.rashmusic.ui.theme.extractThemeColor
+import com.ahr.rashmusic.ui.utils.appBarScrollBehavior
+import com.ahr.rashmusic.ui.utils.resetHeightOffset
+import com.ahr.rashmusic.utils.SyncUtils
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.ai.AiRecommendationHelper
+import com.ahr.rashmusic.constants.AiRecommendationsKey
+import com.ahr.rashmusic.constants.LastAiRecommendationUpdateDayKey
+import com.ahr.rashmusic.constants.CreateFromTasteDailyKey
+import com.ahr.rashmusic.constants.LastCreateFromTasteUpdateDayKey
 import androidx.datastore.preferences.core.edit
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import echo.music.iad1tya.utils.get
-import echo.music.iad1tya.utils.onlinePlaylistRoute
-import echo.music.iad1tya.utils.validOnlinePlaylistId
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.utils.reportException
-import echo.music.iad1tya.utils.setAppLocale
-import echo.music.iad1tya.viewmodels.HomeViewModel
+import com.ahr.rashmusic.utils.get
+import com.ahr.rashmusic.utils.onlinePlaylistRoute
+import com.ahr.rashmusic.utils.validOnlinePlaylistId
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.utils.reportException
+import com.ahr.rashmusic.utils.setAppLocale
+import com.ahr.rashmusic.viewmodels.HomeViewModel
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.util.Locale
@@ -267,28 +267,28 @@ val EmphasizedEasing = CubicBezierEasing(0.2f, 0.0f, 0.0f, 1.0f)
 class MainActivity : ComponentActivity() {
   companion object {
     private const val EXTRA_VOICE_REQUEST_HANDLED = "echo.music.voice_request_handled"
-    const val ACTION_SEARCH = "echo.music.iad1tya.action.SEARCH"
-    const val ACTION_LIBRARY = "echo.music.iad1tya.action.LIBRARY"
-    const val ACTION_RECOGNITION = "echo.music.iad1tya.action.RECOGNITION"
-    const val ACTION_NOW_PLAYING = "echo.music.iad1tya.action.NOW_PLAYING"
-    const val ACTION_QUEUE = "echo.music.iad1tya.action.QUEUE"
-    const val ACTION_OUTPUT_SWITCHER = "echo.music.iad1tya.action.OUTPUT_SWITCHER"
-    const val ACTION_SONG_OPTIONS = "echo.music.iad1tya.action.SONG_OPTIONS"
-    const val ACTION_LYRICS = "echo.music.iad1tya.action.LYRICS"
+    const val ACTION_SEARCH = "com.ahr.rashmusic.action.SEARCH"
+    const val ACTION_LIBRARY = "com.ahr.rashmusic.action.LIBRARY"
+    const val ACTION_RECOGNITION = "com.ahr.rashmusic.action.RECOGNITION"
+    const val ACTION_NOW_PLAYING = "com.ahr.rashmusic.action.NOW_PLAYING"
+    const val ACTION_QUEUE = "com.ahr.rashmusic.action.QUEUE"
+    const val ACTION_OUTPUT_SWITCHER = "com.ahr.rashmusic.action.OUTPUT_SWITCHER"
+    const val ACTION_SONG_OPTIONS = "com.ahr.rashmusic.action.SONG_OPTIONS"
+    const val ACTION_LYRICS = "com.ahr.rashmusic.action.LYRICS"
     const val ACTION_MEDIA_OUTPUT = "com.android.settings.panel.action.MEDIA_OUTPUT"
     const val EXTRA_MEDIA_OUTPUT_PACKAGE_NAME = "com.android.settings.panel.extra.PACKAGE_NAME"
     const val EXTRA_AUTO_START_RECOGNITION = "auto_start_recognition"
   }
 
   @Inject lateinit var database: MusicDatabase
-  @Inject lateinit var localTasteEngine: echo.music.iad1tya.generate.LocalTasteEngine
+  @Inject lateinit var localTasteEngine: com.ahr.rashmusic.generate.LocalTasteEngine
 
   @Inject lateinit var downloadUtil: DownloadUtil
 
   @Inject lateinit var syncUtils: SyncUtils
 
   @Inject
-  lateinit var listenTogetherManager: echo.music.iad1tya.listentogether.ListenTogetherManager
+  lateinit var listenTogetherManager: com.ahr.rashmusic.listentogether.ListenTogetherManager
   private lateinit var navController: NavHostController
   private var pendingIntent: Intent? = null
 
@@ -404,7 +404,7 @@ class MainActivity : ComponentActivity() {
     super.onCreate(savedInstanceState)
 
     try {
-      startService(Intent(this, echo.music.iad1tya.playback.MusicService::class.java))
+      startService(Intent(this, com.ahr.rashmusic.playback.MusicService::class.java))
     } catch (e: Exception) {
       timber.log.Timber.e(e, "Failed to pre-start MusicService for warmup")
     }
@@ -425,9 +425,9 @@ class MainActivity : ComponentActivity() {
     if (java.io.File(filesDir, "clear_export_state").exists()) {
       lifecycleScope.launch {
         dataStore.edit { preferences ->
-          preferences.remove(echo.music.iad1tya.constants.ExportingSongIdsKey)
-          preferences.remove(echo.music.iad1tya.constants.ExportedSongIdsKey)
-          preferences.remove(echo.music.iad1tya.constants.ExportProgressKey)
+          preferences.remove(com.ahr.rashmusic.constants.ExportingSongIdsKey)
+          preferences.remove(com.ahr.rashmusic.constants.ExportedSongIdsKey)
+          preferences.remove(com.ahr.rashmusic.constants.ExportProgressKey)
         }
         java.io.File(filesDir, "clear_export_state").delete()
       }
@@ -491,7 +491,7 @@ class MainActivity : ComponentActivity() {
             if (enabled) {
               val request =
                 androidx.work
-                  .PeriodicWorkRequestBuilder<echo.music.iad1tya.ai.AiRecommendationWorker>(
+                  .PeriodicWorkRequestBuilder<com.ahr.rashmusic.ai.AiRecommendationWorker>(
                     1,
                     java.util.concurrent.TimeUnit.DAYS
                   )
@@ -538,10 +538,11 @@ class MainActivity : ComponentActivity() {
     val enableHighRefreshRate by rememberPreference(EnableHighRefreshRateKey, defaultValue = true)
     val context = LocalContext.current
     var showUpdateDialog by remember { androidx.compose.runtime.mutableStateOf(false) }
+    var openUpdateScreen by remember { androidx.compose.runtime.mutableStateOf(false) }
     var availableUpdateVersion by remember { androidx.compose.runtime.mutableStateOf("") }
     var availableUpdateChangelog by remember {
       androidx.compose.runtime.mutableStateOf<
-        List<echo.music.iad1tya.echomusic.updater.ChangelogSection>
+        List<com.ahr.rashmusic.echomusic.updater.ChangelogSection>
       >(
         emptyList()
       )
@@ -550,7 +551,7 @@ class MainActivity : ComponentActivity() {
       androidx.compose.runtime.mutableStateOf<String?>(null)
     }
     var whatsNewInfo by remember {
-      androidx.compose.runtime.mutableStateOf<echo.music.iad1tya.echomusic.updater.WhatsNewInfo?>(
+      androidx.compose.runtime.mutableStateOf<com.ahr.rashmusic.echomusic.updater.WhatsNewInfo?>(
         null
       )
     }
@@ -558,25 +559,25 @@ class MainActivity : ComponentActivity() {
     LaunchedEffect(Unit) {
       val currentVersion = BuildConfig.VERSION_NAME
       val lastSeenVersion =
-        echo.music.iad1tya.echomusic.updater.getLastSeenChangelogVersion(context)
+        com.ahr.rashmusic.echomusic.updater.getLastSeenChangelogVersion(context)
 
       if (lastSeenVersion.isEmpty() || lastSeenVersion != currentVersion) {
         // Run migrations for fresh installs and updates
         context.dataStore.edit { preferences ->
-          preferences[echo.music.iad1tya.constants.ForceOpusKey] = true
-          preferences[echo.music.iad1tya.constants.EnableCronetKey] = true
+          preferences[com.ahr.rashmusic.constants.ForceOpusKey] = true
+          preferences[com.ahr.rashmusic.constants.EnableCronetKey] = true
         }
       }
 
       if (lastSeenVersion.isEmpty()) {
         // Fresh install, not an update — nothing "new" to show, so mark this
         // version seen right away rather than waiting on a dialog dismissal.
-        echo.music.iad1tya.echomusic.updater.saveLastSeenChangelogVersion(context, currentVersion)
+        com.ahr.rashmusic.echomusic.updater.saveLastSeenChangelogVersion(context, currentVersion)
       } else if (lastSeenVersion != currentVersion) {
         // Only mark the version seen once its changelog is actually shown (see
         // onDismiss below) — if the fetch fails here, retry on the next launch
         // instead of losing that version's release notes forever.
-        whatsNewInfo = echo.music.iad1tya.echomusic.updater.fetchChangelogForVersion(currentVersion)
+        whatsNewInfo = com.ahr.rashmusic.echomusic.updater.fetchChangelogForVersion(currentVersion)
       }
     }
 
@@ -710,19 +711,20 @@ class MainActivity : ComponentActivity() {
       val hapticHelper = rememberHapticHelper()
 
       if (showUpdateDialog) {
-        echo.music.iad1tya.echomusic.component.UpdateAvailableDialog(
+        com.ahr.rashmusic.echomusic.component.UpdateAvailableDialog(
           version = availableUpdateVersion,
           changelog = availableUpdateChangelog,
           description = availableUpdateDescription,
-          onDismiss = { showUpdateDialog = false }
+          onDismiss = { showUpdateDialog = false },
+          onUpdate = { openUpdateScreen = true },
         )
       } else {
         whatsNewInfo?.let { info ->
-          echo.music.iad1tya.echomusic.updater.WhatsNewDialog(
+          com.ahr.rashmusic.echomusic.updater.WhatsNewDialog(
             version = BuildConfig.VERSION_NAME,
             info = info,
             onDismiss = {
-              echo.music.iad1tya.echomusic.updater.saveLastSeenChangelogVersion(
+              com.ahr.rashmusic.echomusic.updater.saveLastSeenChangelogVersion(
                 context,
                 BuildConfig.VERSION_NAME,
               )
@@ -758,6 +760,12 @@ class MainActivity : ComponentActivity() {
         val bottomInsetDp = WindowInsets.systemBars.asPaddingValues().calculateBottomPadding()
 
         val navController = rememberNavController()
+        LaunchedEffect(openUpdateScreen) {
+          if (openUpdateScreen) {
+            navController.navigate("update")
+            openUpdateScreen = false
+          }
+        }
         val blockedArtists by
           dataStore.data
             .map { it[BlockedArtistsKey] ?: emptySet() }
@@ -1055,7 +1063,7 @@ class MainActivity : ComponentActivity() {
 
         LaunchedEffect(Unit) {
           val prefs = context.dataStore.data.first()
-          val lastOpened = prefs[echo.music.iad1tya.constants.LastOpenedVersionCodeKey] ?: -1
+          val lastOpened = prefs[com.ahr.rashmusic.constants.LastOpenedVersionCodeKey] ?: -1
           if (lastOpened < BuildConfig.VERSION_CODE) {
             showWelcomeDialog = true
           }
@@ -1801,7 +1809,7 @@ class MainActivity : ComponentActivity() {
                 showWelcomeDialog = false
                 coroutineScope.launch {
                   context.dataStore.edit {
-                    it[echo.music.iad1tya.constants.LastOpenedVersionCodeKey] =
+                    it[com.ahr.rashmusic.constants.LastOpenedVersionCodeKey] =
                       BuildConfig.VERSION_CODE
                   }
                 }
@@ -2075,6 +2083,6 @@ val LocalPlayerAwareWindowInsets =
 val LocalDownloadUtil = staticCompositionLocalOf<DownloadUtil> { error("No DownloadUtil provided") }
 val LocalSyncUtils = staticCompositionLocalOf<SyncUtils> { error("No SyncUtils provided") }
 val LocalListenTogetherManager =
-  staticCompositionLocalOf<echo.music.iad1tya.listentogether.ListenTogetherManager?> { null }
+  staticCompositionLocalOf<com.ahr.rashmusic.listentogether.ListenTogetherManager?> { null }
 val LocalIsPlayerExpanded = compositionLocalOf { false }
 val LocalExpandPlayer = staticCompositionLocalOf<() -> Unit> { {} }

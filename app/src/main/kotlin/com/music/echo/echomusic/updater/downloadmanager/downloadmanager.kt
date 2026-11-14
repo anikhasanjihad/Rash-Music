@@ -1,8 +1,8 @@
-package echo.music.iad1tya.echomusic.updater.downloadmanager
+package com.ahr.rashmusic.echomusic.updater.downloadmanager
 
 import android.content.Context
 import android.os.Environment
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import java.io.File
 import java.io.FileOutputStream
 import java.net.HttpURLConnection

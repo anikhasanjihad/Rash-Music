@@ -1,4 +1,4 @@
-package echo.music.iad1tya.extensions
+package com.ahr.rashmusic.extensions
 
 import androidx.sqlite.db.SimpleSQLiteQuery
 import java.net.InetSocketAddress

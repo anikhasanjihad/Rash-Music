@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -48,31 +49,31 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.CONTENT_TYPE_SONG
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.SongFilter
-import echo.music.iad1tya.constants.SongFilterKey
-import echo.music.iad1tya.constants.SongSortDescendingKey
-import echo.music.iad1tya.constants.SongSortType
-import echo.music.iad1tya.constants.SongSortTypeKey
-import echo.music.iad1tya.constants.YtmSyncKey
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.HideOnScrollFAB
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.SongListItem
-import echo.music.iad1tya.ui.component.SortHeader
-import echo.music.iad1tya.ui.menu.SelectionSongMenu
-import echo.music.iad1tya.ui.menu.SongMenu
-import echo.music.iad1tya.utils.listItemShape
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.LibrarySongsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.CONTENT_TYPE_SONG
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.SongFilter
+import com.ahr.rashmusic.constants.SongFilterKey
+import com.ahr.rashmusic.constants.SongSortDescendingKey
+import com.ahr.rashmusic.constants.SongSortType
+import com.ahr.rashmusic.constants.SongSortTypeKey
+import com.ahr.rashmusic.constants.YtmSyncKey
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.HideOnScrollFAB
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.SongListItem
+import com.ahr.rashmusic.ui.component.SortHeader
+import com.ahr.rashmusic.ui.menu.SelectionSongMenu
+import com.ahr.rashmusic.ui.menu.SongMenu
+import com.ahr.rashmusic.utils.listItemShape
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.LibrarySongsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -145,7 +146,7 @@ fun LibrarySongsScreen(
     ) {
       LazyColumn(
         state = lazyListState,
-        contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+        contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
       ) {
         item(
           key = "filter",

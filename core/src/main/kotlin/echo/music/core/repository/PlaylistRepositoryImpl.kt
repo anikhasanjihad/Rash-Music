@@ -4,8 +4,8 @@ import echo.music.core.mapping.toDomain
 import echo.music.domain.models.Playlist as DomainPlaylist
 import echo.music.domain.models.Song as DomainSong
 import echo.music.domain.repositories.PlaylistRepository
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.PlaylistSongMap
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.PlaylistSongMap
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.Flow

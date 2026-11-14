@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -22,10 +22,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.music.innertube.models.SongItem
-import echo.music.iad1tya.R
-import echo.music.iad1tya.utils.PodcastProgress
-import echo.music.iad1tya.utils.joinByBullet
-import echo.music.iad1tya.utils.makeTimeString
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.utils.PodcastProgress
+import com.ahr.rashmusic.utils.joinByBullet
+import com.ahr.rashmusic.utils.makeTimeString
 
 /** What an episode row shows about listening: a progress bar, or that it was played. */
 data class EpisodeState(val fraction: Float, val finished: Boolean, val remainingMs: Long?)

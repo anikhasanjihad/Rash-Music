@@ -1,7 +1,7 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.utils.lastfm.LastFM
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.utils.lastfm.LastFM
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

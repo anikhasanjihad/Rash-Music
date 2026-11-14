@@ -1,4 +1,4 @@
-package echo.music.iad1tya
+package com.ahr.rashmusic
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -23,17 +23,17 @@ import com.music.innertube.models.IpVersion
 import com.music.innertube.models.YouTubeLocale
 import com.music.kugou.KuGou
 import dagger.hilt.android.HiltAndroidApp
-import echo.music.iad1tya.constants.*
-import echo.music.iad1tya.di.ApplicationScope
-import echo.music.iad1tya.extensions.toEnum
-import echo.music.iad1tya.extensions.toInetSocketAddress
-import echo.music.iad1tya.utils.AppContextHolder
-import echo.music.iad1tya.utils.NewEpisodesWorker
-import echo.music.iad1tya.utils.CrashHandler
-import echo.music.iad1tya.utils.LocalAlbumArtFetcher
-import echo.music.iad1tya.utils.YouTubeThumbnailFallbackInterceptor
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.constants.*
+import com.ahr.rashmusic.di.ApplicationScope
+import com.ahr.rashmusic.extensions.toEnum
+import com.ahr.rashmusic.extensions.toInetSocketAddress
+import com.ahr.rashmusic.utils.AppContextHolder
+import com.ahr.rashmusic.utils.NewEpisodesWorker
+import com.ahr.rashmusic.utils.CrashHandler
+import com.ahr.rashmusic.utils.LocalAlbumArtFetcher
+import com.ahr.rashmusic.utils.YouTubeThumbnailFallbackInterceptor
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.reportException
 import java.net.Authenticator
 import java.net.PasswordAuthentication
 import java.net.Proxy
@@ -116,8 +116,8 @@ class App : Application(), SingletonImageLoader.Factory, Configuration.Provider 
 
     AppContextHolder.initialize(this)
     NewEpisodesWorker.schedule(this)
-    echo.music.iad1tya.utils.cipher.CipherDeobfuscator.initialize(this)
-    echo.music.iad1tya.utils.YTPlayerUtils.initialize()
+    com.ahr.rashmusic.utils.cipher.CipherDeobfuscator.initialize(this)
+    com.ahr.rashmusic.utils.YTPlayerUtils.initialize()
 
     if (BuildConfig.DEBUG) {
       Timber.plant(Timber.DebugTree())
@@ -149,7 +149,7 @@ class App : Application(), SingletonImageLoader.Factory, Configuration.Provider 
     applicationScope.launch {
       initializeSettings()
 
-      echo.music.iad1tya.utils.InnerTubeXResolver.init(this@App)
+      com.ahr.rashmusic.utils.InnerTubeXResolver.init(this@App)
       observeSettingsChanges()
     }
   }
@@ -214,13 +214,13 @@ class App : Application(), SingletonImageLoader.Factory, Configuration.Provider 
       settings[IpVersionKey]?.toEnum(defaultValue = IpVersion.AUTO) ?: IpVersion.AUTO
 
     // Set playback engine preference
-    val engineName = settings[echo.music.iad1tya.constants.PlaybackEngineKey]
-    echo.music.iad1tya.utils.YTPlayerUtils.playbackEngine =
+    val engineName = settings[com.ahr.rashmusic.constants.PlaybackEngineKey]
+    com.ahr.rashmusic.utils.YTPlayerUtils.playbackEngine =
       try {
-        if (engineName != null) echo.music.iad1tya.constants.PlaybackEngine.valueOf(engineName)
-        else echo.music.iad1tya.constants.PlaybackEngine.AUTO
+        if (engineName != null) com.ahr.rashmusic.constants.PlaybackEngine.valueOf(engineName)
+        else com.ahr.rashmusic.constants.PlaybackEngine.AUTO
       } catch (_: Exception) {
-        echo.music.iad1tya.constants.PlaybackEngine.AUTO
+        com.ahr.rashmusic.constants.PlaybackEngine.AUTO
       }
 
     val channel =
@@ -254,7 +254,7 @@ class App : Application(), SingletonImageLoader.Factory, Configuration.Provider 
         }
     }
 
-    echo.music.iad1tya.utils.lastfm.LastFM.initialize(
+    com.ahr.rashmusic.utils.lastfm.LastFM.initialize(
       apiKey = BuildConfig.LASTFM_API_KEY.takeIf { it.isNotEmpty() } ?: "",
       secret = BuildConfig.LASTFM_SECRET.takeIf { it.isNotEmpty() } ?: "",
     )
@@ -421,7 +421,7 @@ class App : Application(), SingletonImageLoader.Factory, Configuration.Provider 
       YouTube.cookie = null
       YouTube.visitorData = null
       YouTube.dataSyncId = null
-      echo.music.iad1tya.utils.InnerTubeXResolver.onSessionChanged()
+      com.ahr.rashmusic.utils.InnerTubeXResolver.onSessionChanged()
       Timber.d(
         "forgetAccount: After - cookie=${YouTube.cookie}, visitorData=${YouTube.visitorData}, dataSyncId=${YouTube.dataSyncId}"
       )

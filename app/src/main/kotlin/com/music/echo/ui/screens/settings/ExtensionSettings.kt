@@ -27,12 +27,12 @@ import androidx.navigation.NavController
 import com.music.echo.extensions.AddonEndpoint
 import com.music.echo.extensions.ExtensionManager
 import dagger.hilt.android.lifecycle.HiltViewModel
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.PreferExtensionAudioKey
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.PreferExtensionAudioKey
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberPreference
 import java.util.UUID
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -99,11 +99,11 @@ fun ExtensionSettingsScreen(
 
     Column(
         Modifier
-            .windowInsetsPadding(echo.music.iad1tya.LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Horizontal))
+            .windowInsetsPadding(com.ahr.rashmusic.LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Horizontal))
             .verticalScroll(scrollState)
             .padding(horizontal = 16.dp)
     ) {
-        Spacer(Modifier.windowInsetsPadding(echo.music.iad1tya.LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Top)))
+        Spacer(Modifier.windowInsetsPadding(com.ahr.rashmusic.LocalPlayerAwareWindowInsets.current.only(WindowInsetsSides.Top)))
         Spacer(Modifier.height(16.dp))
 
         val uriHandler = LocalUriHandler.current
@@ -161,14 +161,14 @@ fun ExtensionSettingsScreen(
                                 modifier = Modifier.size(24.dp),
                                 loading = {
                                     Icon(
-                                        painter = androidx.compose.ui.res.painterResource(echo.music.iad1tya.R.drawable.extension),
+                                        painter = androidx.compose.ui.res.painterResource(com.ahr.rashmusic.R.drawable.extension),
                                         contentDescription = null,
                                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
                                 },
                                 error = {
                                     Icon(
-                                        painter = androidx.compose.ui.res.painterResource(echo.music.iad1tya.R.drawable.extension),
+                                        painter = androidx.compose.ui.res.painterResource(com.ahr.rashmusic.R.drawable.extension),
                                         contentDescription = null,
                                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
@@ -224,7 +224,7 @@ fun ExtensionSettingsScreen(
             var name by remember { mutableStateOf(androidx.compose.ui.text.input.TextFieldValue("")) }
             var url by remember { mutableStateOf(androidx.compose.ui.text.input.TextFieldValue("")) }
             
-            echo.music.iad1tya.ui.component.TextFieldDialog(
+            com.ahr.rashmusic.ui.component.TextFieldDialog(
                 title = { Text("Add Extension") },
                 textFields = listOf("Name" to name, "Server URL" to url),
                 onTextFieldsChange = { index, value ->
@@ -247,12 +247,12 @@ fun ExtensionSettingsScreen(
         title = { Text("Extension Sources") },
         navigationIcon = {
             if (navController != null) {
-                echo.music.iad1tya.ui.component.IconButton(
+                com.ahr.rashmusic.ui.component.IconButton(
                     onClick = { navController.navigateUp() },
                     onLongClick = navController::backToMain
                 ) {
                     Icon(
-                        painterResource(echo.music.iad1tya.R.drawable.arrow_back),
+                        painterResource(com.ahr.rashmusic.R.drawable.arrow_back),
                         contentDescription = null
                     )
                 }

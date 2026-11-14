@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -42,36 +43,36 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.music.innertube.utils.parseCookieString
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CONTENT_TYPE_HEADER
-import echo.music.iad1tya.constants.CONTENT_TYPE_PLAYLIST
-import echo.music.iad1tya.constants.GridItemSize
-import echo.music.iad1tya.constants.GridItemsSizeKey
-import echo.music.iad1tya.constants.GridThumbnailHeight
-import echo.music.iad1tya.constants.InnerTubeCookieKey
-import echo.music.iad1tya.constants.LibraryViewType
-import echo.music.iad1tya.constants.PlaylistSortDescendingKey
-import echo.music.iad1tya.constants.PlaylistSortType
-import echo.music.iad1tya.constants.PlaylistSortTypeKey
-import echo.music.iad1tya.constants.PlaylistViewTypeKey
-import echo.music.iad1tya.constants.ShowBottomPlaylistKey
-import echo.music.iad1tya.constants.ShowCachedPlaylistKey
-import echo.music.iad1tya.constants.ShowDownloadedPlaylistKey
-import echo.music.iad1tya.constants.ShowExportedPlaylistKey
-import echo.music.iad1tya.constants.ShowLikedPlaylistKey
-import echo.music.iad1tya.constants.ShowTopPlaylistKey
-import echo.music.iad1tya.constants.YtmSyncKey
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.ui.component.AutoPlaylistButton
-import echo.music.iad1tya.ui.component.LibraryPlaylistGridItem
-import echo.music.iad1tya.ui.component.LibraryPlaylistListItem
-import echo.music.iad1tya.ui.component.LocalMenuState
-import echo.music.iad1tya.ui.component.SortHeader
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
-import echo.music.iad1tya.viewmodels.LibraryPlaylistsViewModel
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CONTENT_TYPE_HEADER
+import com.ahr.rashmusic.constants.CONTENT_TYPE_PLAYLIST
+import com.ahr.rashmusic.constants.GridItemSize
+import com.ahr.rashmusic.constants.GridItemsSizeKey
+import com.ahr.rashmusic.constants.GridThumbnailHeight
+import com.ahr.rashmusic.constants.InnerTubeCookieKey
+import com.ahr.rashmusic.constants.LibraryViewType
+import com.ahr.rashmusic.constants.PlaylistSortDescendingKey
+import com.ahr.rashmusic.constants.PlaylistSortType
+import com.ahr.rashmusic.constants.PlaylistSortTypeKey
+import com.ahr.rashmusic.constants.PlaylistViewTypeKey
+import com.ahr.rashmusic.constants.ShowBottomPlaylistKey
+import com.ahr.rashmusic.constants.ShowCachedPlaylistKey
+import com.ahr.rashmusic.constants.ShowDownloadedPlaylistKey
+import com.ahr.rashmusic.constants.ShowExportedPlaylistKey
+import com.ahr.rashmusic.constants.ShowLikedPlaylistKey
+import com.ahr.rashmusic.constants.ShowTopPlaylistKey
+import com.ahr.rashmusic.constants.YtmSyncKey
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.ui.component.AutoPlaylistButton
+import com.ahr.rashmusic.ui.component.LibraryPlaylistGridItem
+import com.ahr.rashmusic.ui.component.LibraryPlaylistListItem
+import com.ahr.rashmusic.ui.component.LocalMenuState
+import com.ahr.rashmusic.ui.component.SortHeader
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
+import com.ahr.rashmusic.viewmodels.LibraryPlaylistsViewModel
 import java.util.UUID
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -227,7 +228,7 @@ fun LibraryPlaylistsScreen(
       LibraryViewType.LIST -> {
         LazyColumn(
           state = lazyListState,
-          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
         ) {
           item(
             key = "filter",
@@ -362,7 +363,7 @@ fun LibraryPlaylistsScreen(
               minSize =
                 GridThumbnailHeight + if (gridItemSize == GridItemSize.BIG) 24.dp else (-24).dp,
             ),
-          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(),
+          contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues(), flingBehavior = rememberLiquidFling(),
         ) {
           item(
             key = "filter",

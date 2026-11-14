@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.utils
+package com.ahr.rashmusic.ui.utils
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.text.format.Formatter
@@ -46,14 +47,14 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.MediaInfo
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.FormatEntity
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.ui.component.LocalBottomSheetPageState
-import echo.music.iad1tya.ui.component.shimmer.ShimmerHost
-import echo.music.iad1tya.ui.component.shimmer.TextPlaceholder
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.FormatEntity
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.ui.component.LocalBottomSheetPageState
+import com.ahr.rashmusic.ui.component.shimmer.ShimmerHost
+import com.ahr.rashmusic.ui.component.shimmer.TextPlaceholder
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -83,7 +84,7 @@ fun ShowMediaInfo(videoId: String) {
         
         .padding(bottom = windowInsets.asPaddingValues().calculateBottomPadding())
         .padding(horizontal = 16.dp),
-    verticalArrangement = Arrangement.spacedBy(24.dp)
+    verticalArrangement = Arrangement.spacedBy(24.dp), flingBehavior = rememberLiquidFling()
   ) {
     item {
       Row(

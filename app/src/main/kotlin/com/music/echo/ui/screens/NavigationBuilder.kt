@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
 import android.app.Activity
 import androidx.compose.animation.core.tween
@@ -20,54 +20,54 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.navArgument
 import com.music.innertube.pages.PodcastPage
-import echo.music.iad1tya.constants.DarkModeKey
-import echo.music.iad1tya.constants.PureBlackKey
-import echo.music.iad1tya.echomusic.changelog.ChangelogScreen
-import echo.music.iad1tya.echomusic.commitscreen.CommitScreen
-import echo.music.iad1tya.echomusic.updater.UpdateScreen
-import echo.music.iad1tya.ui.screens.ambient.AmbientModeScreen
-import echo.music.iad1tya.ui.screens.artist.ArtistAlbumsScreen
-import echo.music.iad1tya.ui.screens.artist.ArtistItemsScreen
-import echo.music.iad1tya.ui.screens.artist.ArtistScreen
-import echo.music.iad1tya.ui.screens.artist.ArtistSongsScreen
-import echo.music.iad1tya.ui.screens.equalizer.EqScreen
-import echo.music.iad1tya.ui.screens.equalizer.axion.AxionEqScreen
-import echo.music.iad1tya.ui.screens.generate.GenerateScreen
-import echo.music.iad1tya.ui.screens.library.LibraryScreen
-import echo.music.iad1tya.ui.screens.library.LocalSongScreen
-import echo.music.iad1tya.ui.screens.musicflow.MusicFlowScreen
-import echo.music.iad1tya.ui.screens.playlist.AutoPlaylistScreen
-import echo.music.iad1tya.ui.screens.playlist.BottomPlaylistScreen
-import echo.music.iad1tya.ui.screens.playlist.CachePlaylistScreen
-import echo.music.iad1tya.ui.screens.playlist.LocalPlaylistScreen
-import echo.music.iad1tya.ui.screens.playlist.OnlinePlaylistScreen
-import echo.music.iad1tya.ui.screens.playlist.SpotifyPlaylistDetailScreen
-import echo.music.iad1tya.ui.screens.playlist.TopPlaylistScreen
-import echo.music.iad1tya.ui.screens.recognition.RecognitionHistoryScreen
-import echo.music.iad1tya.ui.screens.recognition.RecognitionScreen
-import echo.music.iad1tya.ui.screens.search.OnlineSearchResult
-import echo.music.iad1tya.ui.screens.search.SearchScreen
-import echo.music.iad1tya.ui.screens.settings.AboutScreen
-import echo.music.iad1tya.ui.screens.settings.AccountSettingsScreen
-import echo.music.iad1tya.ui.screens.settings.AiSettings
-import echo.music.iad1tya.ui.screens.settings.AppIconSettingsScreen
-import echo.music.iad1tya.ui.screens.settings.AppearanceSettings
-import echo.music.iad1tya.ui.screens.settings.BackupAndRestore
-import echo.music.iad1tya.ui.screens.settings.BlockedArtistsScreen
-import echo.music.iad1tya.ui.screens.settings.ContentSettings
-import echo.music.iad1tya.ui.screens.settings.DarkMode
-import echo.music.iad1tya.ui.screens.settings.GlassEffectSettings
-import echo.music.iad1tya.ui.screens.settings.MusicFlowSettings
-import echo.music.iad1tya.ui.screens.settings.PlayerSettings
-import echo.music.iad1tya.ui.screens.settings.PrivacySettings
-import echo.music.iad1tya.ui.screens.settings.SettingsScreen
-import echo.music.iad1tya.ui.screens.settings.StorageSettings
-import echo.music.iad1tya.ui.screens.settings.ThemeScreen
-import echo.music.iad1tya.ui.screens.settings.UpdateSettings
-import echo.music.iad1tya.ui.screens.settings.UptimeScreen
-import echo.music.iad1tya.ui.screens.settings.integrations.ListenTogetherSettings
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.constants.DarkModeKey
+import com.ahr.rashmusic.constants.PureBlackKey
+import com.ahr.rashmusic.echomusic.changelog.ChangelogScreen
+import com.ahr.rashmusic.echomusic.commitscreen.CommitScreen
+import com.ahr.rashmusic.echomusic.updater.UpdateScreen
+import com.ahr.rashmusic.ui.screens.ambient.AmbientModeScreen
+import com.ahr.rashmusic.ui.screens.artist.ArtistAlbumsScreen
+import com.ahr.rashmusic.ui.screens.artist.ArtistItemsScreen
+import com.ahr.rashmusic.ui.screens.artist.ArtistScreen
+import com.ahr.rashmusic.ui.screens.artist.ArtistSongsScreen
+import com.ahr.rashmusic.ui.screens.equalizer.EqScreen
+import com.ahr.rashmusic.ui.screens.equalizer.axion.AxionEqScreen
+import com.ahr.rashmusic.ui.screens.generate.GenerateScreen
+import com.ahr.rashmusic.ui.screens.library.LibraryScreen
+import com.ahr.rashmusic.ui.screens.library.LocalSongScreen
+import com.ahr.rashmusic.ui.screens.musicflow.MusicFlowScreen
+import com.ahr.rashmusic.ui.screens.playlist.AutoPlaylistScreen
+import com.ahr.rashmusic.ui.screens.playlist.BottomPlaylistScreen
+import com.ahr.rashmusic.ui.screens.playlist.CachePlaylistScreen
+import com.ahr.rashmusic.ui.screens.playlist.LocalPlaylistScreen
+import com.ahr.rashmusic.ui.screens.playlist.OnlinePlaylistScreen
+import com.ahr.rashmusic.ui.screens.playlist.SpotifyPlaylistDetailScreen
+import com.ahr.rashmusic.ui.screens.playlist.TopPlaylistScreen
+import com.ahr.rashmusic.ui.screens.recognition.RecognitionHistoryScreen
+import com.ahr.rashmusic.ui.screens.recognition.RecognitionScreen
+import com.ahr.rashmusic.ui.screens.search.OnlineSearchResult
+import com.ahr.rashmusic.ui.screens.search.SearchScreen
+import com.ahr.rashmusic.ui.screens.settings.AboutScreen
+import com.ahr.rashmusic.ui.screens.settings.AccountSettingsScreen
+import com.ahr.rashmusic.ui.screens.settings.AiSettings
+import com.ahr.rashmusic.ui.screens.settings.AppIconSettingsScreen
+import com.ahr.rashmusic.ui.screens.settings.AppearanceSettings
+import com.ahr.rashmusic.ui.screens.settings.BackupAndRestore
+import com.ahr.rashmusic.ui.screens.settings.BlockedArtistsScreen
+import com.ahr.rashmusic.ui.screens.settings.ContentSettings
+import com.ahr.rashmusic.ui.screens.settings.DarkMode
+import com.ahr.rashmusic.ui.screens.settings.GlassEffectSettings
+import com.ahr.rashmusic.ui.screens.settings.MusicFlowSettings
+import com.ahr.rashmusic.ui.screens.settings.PlayerSettings
+import com.ahr.rashmusic.ui.screens.settings.PrivacySettings
+import com.ahr.rashmusic.ui.screens.settings.SettingsScreen
+import com.ahr.rashmusic.ui.screens.settings.StorageSettings
+import com.ahr.rashmusic.ui.screens.settings.ThemeScreen
+import com.ahr.rashmusic.ui.screens.settings.UpdateSettings
+import com.ahr.rashmusic.ui.screens.settings.UptimeScreen
+import com.ahr.rashmusic.ui.screens.settings.integrations.ListenTogetherSettings
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.navigationBuilder(
@@ -119,7 +119,7 @@ fun NavGraphBuilder.navigationBuilder(
     popEnterTransition = { fadeIn(tween(300)) },
     popExitTransition = { fadeOut(tween(300)) },
   ) {
-    echo.music.iad1tya.ui.screens.podcast.PodcastVideoScreen(navController)
+    com.ahr.rashmusic.ui.screens.podcast.PodcastVideoScreen(navController)
   }
 
   composable("local_songs") { LocalSongScreen(navController) }
@@ -393,7 +393,7 @@ fun NavGraphBuilder.navigationBuilder(
   }
 
   composable("ambient_settings") {
-    echo.music.iad1tya.ui.screens.settings.AmbientSettingsScreen(navController)
+    com.ahr.rashmusic.ui.screens.settings.AmbientSettingsScreen(navController)
   }
 
   composable(
@@ -421,7 +421,7 @@ fun NavGraphBuilder.navigationBuilder(
     route = "settings/appearance/haptics?highlightKey={highlightKey}",
     arguments = listOf(navArgument("highlightKey") { type = NavType.StringType; nullable = true })
   ) { backStackEntry ->
-    echo.music.iad1tya.ui.screens.settings.HapticsSettings(
+    com.ahr.rashmusic.ui.screens.settings.HapticsSettings(
       navController = navController,
       scrollBehavior = scrollBehavior,
       activity = activity,
@@ -449,7 +449,7 @@ fun NavGraphBuilder.navigationBuilder(
         navArgument("startTimestamp") { type = NavType.StringType },
       ),
   ) {
-    echo.music.iad1tya.ui.screens.DetailedListeningHistoryScreen(navController)
+    com.ahr.rashmusic.ui.screens.DetailedListeningHistoryScreen(navController)
   }
 
   composable("settings/appearance/liquidglass") {
@@ -576,15 +576,15 @@ fun NavGraphBuilder.navigationBuilder(
     )
   }
   composable("settings/discord") {
-    echo.music.iad1tya.ui.screens.settings.DiscordSettings(navController, scrollBehavior)
+    com.ahr.rashmusic.ui.screens.settings.DiscordSettings(navController, scrollBehavior)
   }
 
   composable("settings/lastfm") {
-    echo.music.iad1tya.ui.screens.settings.LastFMSettingsScreen(navController)
+    com.ahr.rashmusic.ui.screens.settings.LastFMSettingsScreen(navController)
   }
 
   composable("settings/discord/experimental") {
-    echo.music.iad1tya.ui.screens.settings.DiscordExperimental(navController)
+    com.ahr.rashmusic.ui.screens.settings.DiscordExperimental(navController)
   }
 
   composable("settings/spotify_import") { SpotifyImportScreen(navController) }

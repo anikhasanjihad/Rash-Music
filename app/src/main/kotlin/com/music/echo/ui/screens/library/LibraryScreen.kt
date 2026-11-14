@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.library
+package com.ahr.rashmusic.ui.screens.library
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -55,17 +55,17 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ChipSortTypeKey
-import echo.music.iad1tya.constants.LibraryFilter
-import echo.music.iad1tya.ui.component.ChipsRow
-import echo.music.iad1tya.ui.component.DefaultDialog
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.utils.onlinePlaylistIdFromUrl
-import echo.music.iad1tya.utils.onlinePlaylistRoute
-import echo.music.iad1tya.utils.rememberEnumPreference
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ChipSortTypeKey
+import com.ahr.rashmusic.constants.LibraryFilter
+import com.ahr.rashmusic.ui.component.ChipsRow
+import com.ahr.rashmusic.ui.component.DefaultDialog
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.utils.onlinePlaylistIdFromUrl
+import com.ahr.rashmusic.utils.onlinePlaylistRoute
+import com.ahr.rashmusic.utils.rememberEnumPreference
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
@@ -365,7 +365,7 @@ fun LibraryScreen(navController: NavController) {
   if (showYoutubeImportDialog) {
     var url by remember { mutableStateOf(TextFieldValue("")) }
     val invalidUrlMessage = stringResource(R.string.invalid_playlist_url)
-    echo.music.iad1tya.ui.component.TextFieldDialog(
+    com.ahr.rashmusic.ui.component.TextFieldDialog(
       icon = { Icon(painter = painterResource(R.drawable.link), contentDescription = null) },
       title = {
         Column {
@@ -399,7 +399,7 @@ fun LibraryScreen(navController: NavController) {
   }
 
   if (showCreatePlaylistDialog) {
-    echo.music.iad1tya.ui.component.CreatePlaylistDialog(
+    com.ahr.rashmusic.ui.component.CreatePlaylistDialog(
       onDismiss = { showCreatePlaylistDialog = false },
       initialTextFieldValue = null,
       allowSyncing = true,
@@ -424,7 +424,7 @@ fun LibraryScreen(navController: NavController) {
           color = MaterialTheme.colorScheme.surfaceContainerHighest,
           modifier = Modifier.fillMaxWidth()
         ) {
-          echo.music.iad1tya.ui.component.PreferenceEntry(
+          com.ahr.rashmusic.ui.component.PreferenceEntry(
             icon = { Icon(painter = painterResource(R.drawable.add), contentDescription = null) },
             title = { Text(stringResource(R.string.create_playlist_normally)) },
             description = "Standard playlist creation",
@@ -440,7 +440,7 @@ fun LibraryScreen(navController: NavController) {
           color = MaterialTheme.colorScheme.surfaceContainerHighest,
           modifier = Modifier.fillMaxWidth()
         ) {
-          echo.music.iad1tya.ui.component.PreferenceEntry(
+          com.ahr.rashmusic.ui.component.PreferenceEntry(
             icon = {
               androidx.compose.foundation.Image(painter = painterResource(R.drawable.ai_pfp), contentDescription = null, modifier = Modifier.size(24.dp).clip(androidx.compose.foundation.shape.CircleShape))
             },
@@ -457,7 +457,7 @@ fun LibraryScreen(navController: NavController) {
   }
 
   if (showAiPlaylistDialog) {
-    echo.music.iad1tya.ui.component.CreateAiPlaylistDialog(
+    com.ahr.rashmusic.ui.component.CreateAiPlaylistDialog(
       onDismiss = { showAiPlaylistDialog = false },
       onPlaylistCreated = { playlistId ->
         showAiPlaylistDialog = false
@@ -467,7 +467,7 @@ fun LibraryScreen(navController: NavController) {
   }
 
   if (showTasteGenerationDialog) {
-    echo.music.iad1tya.ui.component.CreateFromTasteDialog(
+    com.ahr.rashmusic.ui.component.CreateFromTasteDialog(
       onDismiss = { showTasteGenerationDialog = false },
       onPlaylistCreated = { playlistId ->
         showTasteGenerationDialog = false

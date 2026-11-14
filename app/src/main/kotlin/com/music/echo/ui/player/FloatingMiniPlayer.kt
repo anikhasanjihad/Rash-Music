@@ -1,5 +1,5 @@
 /** vivimusic Project (C) 2026 Licensed under GPL-3.0 | See git history for contributors */
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -50,13 +50,13 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.SwipeSensitivityKey
-import echo.music.iad1tya.constants.SwipeThumbnailKey
-import echo.music.iad1tya.extensions.togglePlayPause
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.SwipeSensitivityKey
+import com.ahr.rashmusic.constants.SwipeThumbnailKey
+import com.ahr.rashmusic.extensions.togglePlayPause
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.abs
 import kotlin.math.exp
 import kotlin.math.roundToInt
@@ -136,7 +136,7 @@ fun FloatingMiniPlayer(
   val pressScale by
     animateFloatAsState(
       targetValue = if (isPressed) 0.97f else 1f,
-      animationSpec = echo.music.iad1tya.ui.liquid.LiquidMotion.responsiveSpring(),
+      animationSpec = com.ahr.rashmusic.ui.liquid.LiquidMotion.responsiveSpring(),
       label = "accessoryPressScale",
     )
 

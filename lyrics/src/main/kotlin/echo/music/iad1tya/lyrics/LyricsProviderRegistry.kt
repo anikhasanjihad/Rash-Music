@@ -1,6 +1,6 @@
-package echo.music.iad1tya.lyrics
+package com.ahr.rashmusic.lyrics
 
-import echo.music.iad1tya.constants.PreferredLyricsProvider
+import com.ahr.rashmusic.constants.PreferredLyricsProvider
 
 object LyricsProviderRegistry {
   private val providerMap =

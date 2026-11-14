@@ -1,4 +1,4 @@
-package echo.music.iad1tya.discord
+package com.ahr.rashmusic.discord
 
 import kotlin.random.Random
 import kotlinx.coroutines.*

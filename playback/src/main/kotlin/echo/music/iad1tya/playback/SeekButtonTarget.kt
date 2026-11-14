@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 /** Bounds a relative seek within the track; unknown durations have no upper bound. */
 fun seekButtonTarget(positionMs: Long, durationMs: Long, offsetMs: Long): Long {

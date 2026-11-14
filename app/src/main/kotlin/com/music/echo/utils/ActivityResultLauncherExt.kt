@@ -1,10 +1,10 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
-import echo.music.iad1tya.R
+import com.ahr.rashmusic.R
 import timber.log.Timber
 
 fun <I> ActivityResultLauncher<I>.launchSafely(

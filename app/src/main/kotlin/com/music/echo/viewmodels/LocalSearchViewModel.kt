@@ -1,18 +1,18 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.Album
-import echo.music.iad1tya.db.entities.Artist
-import echo.music.iad1tya.db.entities.LocalItem
-import echo.music.iad1tya.db.entities.Playlist
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.utils.dataStore
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.Album
+import com.ahr.rashmusic.db.entities.Artist
+import com.ahr.rashmusic.db.entities.LocalItem
+import com.ahr.rashmusic.db.entities.Playlist
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.utils.dataStore
 import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

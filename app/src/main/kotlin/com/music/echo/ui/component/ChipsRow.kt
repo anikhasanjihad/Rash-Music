@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.animateContentSize
@@ -48,8 +48,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.R
-import echo.music.iad1tya.ui.screens.OptionStats
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.ui.screens.OptionStats
 
 @Composable
 fun <E> ChipsRow(

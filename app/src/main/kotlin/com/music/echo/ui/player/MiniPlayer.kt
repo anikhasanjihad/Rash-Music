@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.player
+package com.ahr.rashmusic.ui.player
 
 import android.content.res.Configuration
 import android.os.Build
@@ -99,38 +99,38 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.LocalListenTogetherManager
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.CropAlbumArtKey
-import echo.music.iad1tya.constants.DarkModeKey
-import echo.music.iad1tya.constants.MiniPlayerBackgroundStyleKey
-import echo.music.iad1tya.constants.MiniPlayerHeight
-import echo.music.iad1tya.constants.PlayerBackgroundStyle
-import echo.music.iad1tya.constants.PureBlackKey
-import echo.music.iad1tya.constants.PureBlackMiniPlayerKey
-import echo.music.iad1tya.constants.SwipeSensitivityKey
-import echo.music.iad1tya.constants.SwipeThumbnailKey
-import echo.music.iad1tya.constants.ThumbnailCornerRadius
-import echo.music.iad1tya.constants.UseFloatingNavBarKey
-import echo.music.iad1tya.constants.UseNewMiniPlayerDesignKey
-import echo.music.iad1tya.echomusic.AudioDeviceBottomSheet
-import echo.music.iad1tya.echomusic.isBluetoothHeadphoneConnected
-import echo.music.iad1tya.listentogether.ListenTogetherManager
-import echo.music.iad1tya.models.MediaMetadata
-import echo.music.iad1tya.playback.CastConnectionHandler
-import echo.music.iad1tya.playback.PlayerConnection
-import echo.music.iad1tya.ui.component.GlassComponent
-import echo.music.iad1tya.ui.component.HeartBurstIcon
-import echo.music.iad1tya.ui.component.Icon as MIcon
-import echo.music.iad1tya.ui.component.LocalGlassEffectConfig
-import echo.music.iad1tya.ui.component.isGlassSupported
-import echo.music.iad1tya.ui.component.liquidGlass
-import echo.music.iad1tya.ui.screens.settings.DarkMode
-import echo.music.iad1tya.ui.theme.PlayerColorExtractor
-import echo.music.iad1tya.utils.rememberEnumPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.LocalListenTogetherManager
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.CropAlbumArtKey
+import com.ahr.rashmusic.constants.DarkModeKey
+import com.ahr.rashmusic.constants.MiniPlayerBackgroundStyleKey
+import com.ahr.rashmusic.constants.MiniPlayerHeight
+import com.ahr.rashmusic.constants.PlayerBackgroundStyle
+import com.ahr.rashmusic.constants.PureBlackKey
+import com.ahr.rashmusic.constants.PureBlackMiniPlayerKey
+import com.ahr.rashmusic.constants.SwipeSensitivityKey
+import com.ahr.rashmusic.constants.SwipeThumbnailKey
+import com.ahr.rashmusic.constants.ThumbnailCornerRadius
+import com.ahr.rashmusic.constants.UseFloatingNavBarKey
+import com.ahr.rashmusic.constants.UseNewMiniPlayerDesignKey
+import com.ahr.rashmusic.echomusic.AudioDeviceBottomSheet
+import com.ahr.rashmusic.echomusic.isBluetoothHeadphoneConnected
+import com.ahr.rashmusic.listentogether.ListenTogetherManager
+import com.ahr.rashmusic.models.MediaMetadata
+import com.ahr.rashmusic.playback.CastConnectionHandler
+import com.ahr.rashmusic.playback.PlayerConnection
+import com.ahr.rashmusic.ui.component.GlassComponent
+import com.ahr.rashmusic.ui.component.HeartBurstIcon
+import com.ahr.rashmusic.ui.component.Icon as MIcon
+import com.ahr.rashmusic.ui.component.LocalGlassEffectConfig
+import com.ahr.rashmusic.ui.component.isGlassSupported
+import com.ahr.rashmusic.ui.component.liquidGlass
+import com.ahr.rashmusic.ui.screens.settings.DarkMode
+import com.ahr.rashmusic.ui.theme.PlayerColorExtractor
+import com.ahr.rashmusic.utils.rememberEnumPreference
+import com.ahr.rashmusic.utils.rememberPreference
 import kotlin.math.absoluteValue
 import kotlin.math.cos
 import kotlin.math.roundToInt
@@ -203,7 +203,7 @@ fun MiniPlayer(
         if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
       }
     val pureBlackGlobalPref by
-      rememberPreference(echo.music.iad1tya.constants.PureBlackKey, defaultValue = false)
+      rememberPreference(com.ahr.rashmusic.constants.PureBlackKey, defaultValue = false)
     val globalPureBlack = pureBlackGlobalPref && useDarkTheme
 
     val isFollowTheme = miniPlayerBackground == PlayerBackgroundStyle.DEFAULT
@@ -283,7 +283,7 @@ private fun NewMiniPlayer(progressState: ProgressState, modifier: Modifier = Mod
     )
 
   val pureBlackGlobalPref by
-    rememberPreference(echo.music.iad1tya.constants.PureBlackKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.PureBlackKey, defaultValue = false)
   val globalPureBlack = pureBlackGlobalPref && useDarkTheme
   val isFollowTheme = miniPlayerBackground == PlayerBackgroundStyle.DEFAULT
   val pureBlack = if (isFollowTheme) globalPureBlack else pureBlackMini
@@ -676,7 +676,7 @@ private fun LegacyMiniPlayer(progressState: ProgressState, modifier: Modifier = 
     )
 
   val pureBlackGlobalPref by
-    rememberPreference(echo.music.iad1tya.constants.PureBlackKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.PureBlackKey, defaultValue = false)
   val globalPureBlack = pureBlackGlobalPref && useDarkTheme
   val isFollowTheme = miniPlayerBackground == PlayerBackgroundStyle.DEFAULT
   val pureBlack = if (isFollowTheme) globalPureBlack else pureBlackMini
@@ -1262,7 +1262,7 @@ private fun MiniPlayerControls(
     castHandler?.castIsPlaying?.collectAsState() ?: remember { mutableStateOf(false) }
   val effectiveIsPlaying = if (isCasting) castIsPlaying else isPlaying
   val isMuted by playerConnection.isMuted.collectAsState()
-  val wavyPlayPause by echo.music.iad1tya.utils.rememberPreference(echo.music.iad1tya.constants.WavyPlayPauseKey, defaultValue = true)
+  val wavyPlayPause by com.ahr.rashmusic.utils.rememberPreference(com.ahr.rashmusic.constants.WavyPlayPauseKey, defaultValue = true)
   Row(verticalAlignment = Alignment.CenterVertically) {
     IconButton(
       enabled = canSkipPrevious && !isListenTogetherGuest,

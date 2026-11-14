@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
 import android.app.Activity
 import androidx.compose.foundation.layout.Column
@@ -13,7 +13,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import echo.music.iad1tya.ui.component.IconButton
+import com.ahr.rashmusic.ui.component.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Switch
@@ -32,19 +32,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.HapticIntensity
-import echo.music.iad1tya.constants.EnableClickHapticsKey
-import echo.music.iad1tya.constants.EnableLongPressHapticsKey
-import echo.music.iad1tya.constants.EnableScrollEdgeHapticsKey
-import echo.music.iad1tya.constants.EnableSliderHapticsKey
-import echo.music.iad1tya.constants.HapticIntensityKey
-import echo.music.iad1tya.LocalPlayerAwareWindowInsets
-import echo.music.iad1tya.ui.component.Material3SettingsGroup
-import echo.music.iad1tya.ui.component.Material3SettingsItem
-import echo.music.iad1tya.ui.component.EnumDialog
-import echo.music.iad1tya.ui.utils.backToMain
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.HapticIntensity
+import com.ahr.rashmusic.constants.EnableClickHapticsKey
+import com.ahr.rashmusic.constants.EnableLongPressHapticsKey
+import com.ahr.rashmusic.constants.EnableScrollEdgeHapticsKey
+import com.ahr.rashmusic.constants.EnableSliderHapticsKey
+import com.ahr.rashmusic.constants.HapticIntensityKey
+import com.ahr.rashmusic.LocalPlayerAwareWindowInsets
+import com.ahr.rashmusic.ui.component.Material3SettingsGroup
+import com.ahr.rashmusic.ui.component.Material3SettingsItem
+import com.ahr.rashmusic.ui.component.EnumDialog
+import com.ahr.rashmusic.ui.utils.backToMain
+import com.ahr.rashmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -58,7 +58,7 @@ fun HapticsSettings(
   val scrollState = rememberScrollState()
 
   val (enableHaptics, onEnableHapticsChange) =
-    rememberPreference(echo.music.iad1tya.constants.EnableHapticsKey, defaultValue = false)
+    rememberPreference(com.ahr.rashmusic.constants.EnableHapticsKey, defaultValue = false)
   val (hapticIntensityName, onHapticIntensityChange) =
     rememberPreference(HapticIntensityKey, defaultValue = HapticIntensity.MEDIUM.name)
   val (enableClickHaptics, onEnableClickHapticsChange) =

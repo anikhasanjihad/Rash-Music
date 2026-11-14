@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,9 +14,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.Playlist
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.Playlist
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -69,7 +70,7 @@ fun LocalSongPickerDialog(playlist: Playlist, onDismiss: () -> Unit) {
           Text(text = "No local songs found")
         }
       } else {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(modifier = Modifier.fillMaxSize(), flingBehavior = rememberLiquidFling()) {
           items(localSongs, key = { it.id }) { song ->
             val isSelected = selectedSongs.contains(song.song.id)
             Row(

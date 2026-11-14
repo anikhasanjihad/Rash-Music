@@ -1,4 +1,4 @@
-package echo.music.iad1tya.generate
+package com.ahr.rashmusic.generate
 
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,5 +1,6 @@
-package echo.music.iad1tya.ui.screens.settings
+package com.ahr.rashmusic.ui.screens.settings
 
+import com.ahr.rashmusic.ui.liquid.rememberLiquidFling
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -19,19 +20,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.DiscordActivityButton1CustomUrlKey
-import echo.music.iad1tya.constants.DiscordActivityButton1EnabledKey
-import echo.music.iad1tya.constants.DiscordActivityButton1LabelKey
-import echo.music.iad1tya.constants.DiscordActivityButton1UrlSourceKey
-import echo.music.iad1tya.constants.DiscordActivityButton2CustomUrlKey
-import echo.music.iad1tya.constants.DiscordActivityButton2EnabledKey
-import echo.music.iad1tya.constants.DiscordActivityButton2LabelKey
-import echo.music.iad1tya.constants.DiscordActivityButton2UrlSourceKey
-import echo.music.iad1tya.ui.component.EditTextPreference
-import echo.music.iad1tya.ui.component.ListPreference
-import echo.music.iad1tya.ui.component.SwitchPreference
-import echo.music.iad1tya.utils.rememberPreference
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.DiscordActivityButton1CustomUrlKey
+import com.ahr.rashmusic.constants.DiscordActivityButton1EnabledKey
+import com.ahr.rashmusic.constants.DiscordActivityButton1LabelKey
+import com.ahr.rashmusic.constants.DiscordActivityButton1UrlSourceKey
+import com.ahr.rashmusic.constants.DiscordActivityButton2CustomUrlKey
+import com.ahr.rashmusic.constants.DiscordActivityButton2EnabledKey
+import com.ahr.rashmusic.constants.DiscordActivityButton2LabelKey
+import com.ahr.rashmusic.constants.DiscordActivityButton2UrlSourceKey
+import com.ahr.rashmusic.ui.component.EditTextPreference
+import com.ahr.rashmusic.ui.component.ListPreference
+import com.ahr.rashmusic.ui.component.SwitchPreference
+import com.ahr.rashmusic.utils.rememberPreference
 
 private val DiscordExperimentalButtonUrlOptions =
   listOf("songurl", "artisturl", "albumurl", "custom")
@@ -100,7 +101,7 @@ fun DiscordExperimental(navController: NavController) {
           PaddingValues(
             bottom = inner.calculateBottomPadding() + 80.dp,
           ),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp), flingBehavior = rememberLiquidFling(),
       ) {
         item {
           PreferenceGroup(title = "Discord Button Options") {

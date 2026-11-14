@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens.equalizer.axion
+package com.ahr.rashmusic.ui.screens.equalizer.axion
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

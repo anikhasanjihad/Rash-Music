@@ -1,4 +1,4 @@
-package echo.music.iad1tya.viewmodels
+package com.ahr.rashmusic.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
@@ -13,13 +13,13 @@ import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.pages.PodcastPage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.utils.PodcastProgress
-import echo.music.iad1tya.utils.PodcastShowStore
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.utils.PodcastProgress
+import com.ahr.rashmusic.utils.PodcastShowStore
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
+import com.ahr.rashmusic.utils.reportException
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

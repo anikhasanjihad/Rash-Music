@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.utils
+package com.ahr.rashmusic.ui.utils
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -35,9 +35,9 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import echo.music.iad1tya.LocalDatabase
-import echo.music.iad1tya.R
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.LocalDatabase
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.db.entities.SongEntity
 import kotlinx.coroutines.FlowPreview
 
 @OptIn(FlowPreview::class)

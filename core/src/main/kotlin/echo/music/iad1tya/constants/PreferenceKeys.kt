@@ -1,4 +1,4 @@
-package echo.music.iad1tya.constants
+package com.ahr.rashmusic.constants
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey

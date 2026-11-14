@@ -6,7 +6,7 @@ Copyright (C) iad1tya and Echo Music contributors, released under the GNU Genera
 Modifications by AHR: app name, application id (`com.ahr.rashmusic`), launcher icon and logo,
 About/Welcome screens and developer information, removal of upstream Firebase configuration,
 share links, README/workflow naming, removal of remaining upstream brand text,
-Premium-styled welcome/update dialogs, a new original launcher icon, all-ABI (32-bit and 64-bit) universal build,
+free-app welcome/update dialogs with in-app updating, renamed internal package (com.ahr.rashmusic), press-scale animation on lists and buttons, smooth fling scrolling, a new original launcher icon, all-ABI (32-bit and 64-bit) universal build,
 and motion/glass styling adapted from Liquid Music Android (MIT, see THIRD_PARTY_NOTICES.md).
 
 This program is free software: you can redistribute it and/or modify it under the terms of the

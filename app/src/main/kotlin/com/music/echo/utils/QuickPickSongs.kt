@@ -1,9 +1,9 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import com.music.innertube.models.filterBlockedArtists
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
-import echo.music.iad1tya.db.entities.Song
+import com.ahr.rashmusic.db.entities.Song
 
 fun filterQuickPickSongs(
   songs: List<Song>,

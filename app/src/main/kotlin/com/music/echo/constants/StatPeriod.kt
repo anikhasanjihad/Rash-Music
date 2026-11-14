@@ -1,6 +1,6 @@
-package echo.music.iad1tya.constants
+package com.ahr.rashmusic.constants
 
-import echo.music.iad1tya.ui.screens.OptionStats
+import com.ahr.rashmusic.ui.screens.OptionStats
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 

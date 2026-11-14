@@ -1,4 +1,4 @@
-package echo.music.iad1tya.listentogether
+package com.ahr.rashmusic.listentogether
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -16,17 +16,17 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.getSystemService
 import androidx.datastore.preferences.core.edit
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.ListenTogetherAutoApprovalKey
-import echo.music.iad1tya.constants.ListenTogetherIsHostKey
-import echo.music.iad1tya.constants.ListenTogetherRoomCodeKey
-import echo.music.iad1tya.constants.ListenTogetherServerUrlKey
-import echo.music.iad1tya.constants.ListenTogetherSessionTimestampKey
-import echo.music.iad1tya.constants.ListenTogetherSessionTokenKey
-import echo.music.iad1tya.constants.ListenTogetherUserIdKey
-import echo.music.iad1tya.utils.NetworkConnectivityObserver
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.ListenTogetherAutoApprovalKey
+import com.ahr.rashmusic.constants.ListenTogetherIsHostKey
+import com.ahr.rashmusic.constants.ListenTogetherRoomCodeKey
+import com.ahr.rashmusic.constants.ListenTogetherServerUrlKey
+import com.ahr.rashmusic.constants.ListenTogetherSessionTimestampKey
+import com.ahr.rashmusic.constants.ListenTogetherSessionTokenKey
+import com.ahr.rashmusic.constants.ListenTogetherUserIdKey
+import com.ahr.rashmusic.utils.NetworkConnectivityObserver
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.ConcurrentHashMap
@@ -156,10 +156,10 @@ class ListenTogetherClient @Inject constructor(private val context: Context) {
     private const val SESSION_GRACE_PERIOD_MS = 10 * 60 * 1000L
 
     private const val NOTIFICATION_CHANNEL_ID = "listen_together_channel"
-    const val ACTION_APPROVE_JOIN = "echo.music.iad1tya.LISTEN_TOGETHER_APPROVE_JOIN"
-    const val ACTION_REJECT_JOIN = "echo.music.iad1tya.LISTEN_TOGETHER_REJECT_JOIN"
-    const val ACTION_APPROVE_SUGGESTION = "echo.music.iad1tya.LISTEN_TOGETHER_APPROVE_SUGGESTION"
-    const val ACTION_REJECT_SUGGESTION = "echo.music.iad1tya.LISTEN_TOGETHER_REJECT_SUGGESTION"
+    const val ACTION_APPROVE_JOIN = "com.ahr.rashmusic.LISTEN_TOGETHER_APPROVE_JOIN"
+    const val ACTION_REJECT_JOIN = "com.ahr.rashmusic.LISTEN_TOGETHER_REJECT_JOIN"
+    const val ACTION_APPROVE_SUGGESTION = "com.ahr.rashmusic.LISTEN_TOGETHER_APPROVE_SUGGESTION"
+    const val ACTION_REJECT_SUGGESTION = "com.ahr.rashmusic.LISTEN_TOGETHER_REJECT_SUGGESTION"
     const val EXTRA_USER_ID = "extra_user_id"
     const val EXTRA_SUGGESTION_ID = "extra_suggestion_id"
     const val EXTRA_NOTIFICATION_ID = "extra_notification_id"
@@ -288,7 +288,7 @@ class ListenTogetherClient @Inject constructor(private val context: Context) {
   private fun loadBlockedUsernames() {
     try {
       val blockedJson =
-        context.dataStore.get(echo.music.iad1tya.constants.ListenTogetherBlockedUsersKey, "")
+        context.dataStore.get(com.ahr.rashmusic.constants.ListenTogetherBlockedUsersKey, "")
       val blockedList =
         if (blockedJson.isNotEmpty()) {
           json.decodeFromString<List<String>>(blockedJson)
@@ -306,7 +306,7 @@ class ListenTogetherClient @Inject constructor(private val context: Context) {
     try {
       val blockedJson = json.encodeToString(_blockedUsernames.value.toList())
       context.dataStore.edit { preferences ->
-        preferences[echo.music.iad1tya.constants.ListenTogetherBlockedUsersKey] = blockedJson
+        preferences[com.ahr.rashmusic.constants.ListenTogetherBlockedUsersKey] = blockedJson
       }
     } catch (e: Exception) {
       log(LogLevel.ERROR, "Failed to save blocked usernames", e.message)

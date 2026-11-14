@@ -6,8 +6,8 @@
         android:shortcutId="search"
         android:shortcutShortLabel="@string/search">
         <intent
-            android:action="echo.music.iad1tya.action.SEARCH"
-            android:targetClass="echo.music.iad1tya.MainActivity"
+            android:action="com.ahr.rashmusic.action.SEARCH"
+            android:targetClass="com.ahr.rashmusic.MainActivity"
             android:targetPackage="com.ahr.rashmusic" />
     </shortcut>
     <shortcut
@@ -16,8 +16,8 @@
         android:shortcutId="library"
         android:shortcutShortLabel="@string/filter_library">
         <intent
-            android:action="echo.music.iad1tya.action.LIBRARY"
-            android:targetClass="echo.music.iad1tya.MainActivity"
+            android:action="com.ahr.rashmusic.action.LIBRARY"
+            android:targetClass="com.ahr.rashmusic.MainActivity"
             android:targetPackage="com.ahr.rashmusic" />
     </shortcut>
 </shortcuts>

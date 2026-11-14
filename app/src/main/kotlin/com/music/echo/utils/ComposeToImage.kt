@@ -1,4 +1,4 @@
-package echo.music.iad1tya.utils
+package com.ahr.rashmusic.utils
 
 import android.content.ContentValues
 import android.content.Context
@@ -25,8 +25,8 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import echo.music.iad1tya.R
-import echo.music.iad1tya.ui.component.LyricsBackgroundStyle
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.ui.component.LyricsBackgroundStyle
 import java.io.File
 import java.io.FileOutputStream
 import kotlin.math.roundToInt

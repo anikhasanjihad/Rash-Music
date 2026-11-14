@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import android.content.Context
 import androidx.media3.common.ForwardingPlayer
@@ -17,8 +17,8 @@ import androidx.media3.common.VideoSize
 import androidx.media3.common.text.Cue
 import androidx.media3.common.text.CueGroup
 import androidx.media3.exoplayer.source.ForwardingTimeline
-import echo.music.iad1tya.R
-import echo.music.iad1tya.utils.AutomotiveArtwork.withAutomotiveArtworkUri
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.utils.AutomotiveArtwork.withAutomotiveArtworkUri
 
 /**
  * The player exposed through the [androidx.media3.session.MediaSession].
@@ -27,7 +27,7 @@ import echo.music.iad1tya.utils.AutomotiveArtwork.withAutomotiveArtworkUri
  * queue from the legacy session, which Media3 builds from this player's getters
  * and listener callbacks. The items carry `https://` cover URLs, which those
  * surfaces do not load, so this swaps them for the local
- * [echo.music.iad1tya.utils.AutomotiveArtworkProvider] ones at the session
+ * [com.ahr.rashmusic.utils.AutomotiveArtworkProvider] ones at the session
  * boundary only: the app UI keeps using the ExoPlayer directly and is unaffected.
  *
  * It also gives the queue a title when the app has not set one, so Auto shows

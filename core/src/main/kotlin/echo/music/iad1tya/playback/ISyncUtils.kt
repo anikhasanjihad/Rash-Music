@@ -1,6 +1,6 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
-import echo.music.iad1tya.db.entities.SongEntity
+import com.ahr.rashmusic.db.entities.SongEntity
 
 interface ISyncUtils {
   fun likeSong(song: SongEntity)

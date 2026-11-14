@@ -1,6 +1,6 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
-import echo.music.iad1tya.models.MediaMetadata
+import com.ahr.rashmusic.models.MediaMetadata
 
 data class LyricsWithProvider(val lyrics: String?, val providerName: String)
 

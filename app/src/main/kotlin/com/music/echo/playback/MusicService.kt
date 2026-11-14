@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -74,116 +74,116 @@ import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.response.PlayerResponse
 import com.music.innertube.pages.PodcastPage
 import dagger.hilt.android.AndroidEntryPoint
-import echo.music.iad1tya.MainActivity
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AudioNormalizationKey
-import echo.music.iad1tya.constants.AudioOffload
-import echo.music.iad1tya.constants.AudioQualityKey
-import echo.music.iad1tya.constants.AudioQuality
-import echo.music.iad1tya.constants.AutoDownloadOnLikeKey
-import echo.music.iad1tya.constants.AutoLoadMoreKey
-import echo.music.iad1tya.constants.AutoSkipNextOnErrorKey
-import echo.music.iad1tya.constants.AutomixCrossfadeKey
-import echo.music.iad1tya.constants.CrossfadeDurationKey
-import echo.music.iad1tya.constants.CrossfadeEnabledKey
-import echo.music.iad1tya.constants.CrossfadeGaplessKey
-import echo.music.iad1tya.constants.StopMusicOnTaskClearKey
-import echo.music.iad1tya.constants.DisableLoadMoreWhenRepeatAllKey
-import echo.music.iad1tya.constants.DiscordTokenKey
-import echo.music.iad1tya.constants.EnableBitPerfectUsbDacKey
-import echo.music.iad1tya.constants.EnableDiscordRPCKey
-import echo.music.iad1tya.constants.EnableLastFMScrobblingKey
-import echo.music.iad1tya.constants.ForceOpusKey
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.constants.HistoryDuration
-import echo.music.iad1tya.constants.IpVersionKey
-import echo.music.iad1tya.constants.LastFMSessionKey
-import echo.music.iad1tya.constants.LastFMUseNowPlaying
-import echo.music.iad1tya.constants.LastFMUseSendLikes
-import echo.music.iad1tya.constants.MediaSessionConstants
-import echo.music.iad1tya.constants.MediaSessionConstants.CommandToggleLike
-import echo.music.iad1tya.constants.MediaSessionConstants.CommandToggleRepeatMode
-import echo.music.iad1tya.constants.MediaSessionConstants.CommandToggleShuffle
-import echo.music.iad1tya.constants.MediaSessionConstants.CommandToggleStartRadio
-import echo.music.iad1tya.constants.PauseListenHistoryKey
-import echo.music.iad1tya.constants.PauseOnMute
-import echo.music.iad1tya.constants.PersistentQueueKey
-import echo.music.iad1tya.constants.PersistentShuffleAcrossQueuesKey
-import echo.music.iad1tya.constants.PlayerVolumeKey
-import echo.music.iad1tya.constants.PreferExtensionAudioKey
-import echo.music.iad1tya.constants.PreloadLyricsEnabledKey
-import echo.music.iad1tya.constants.PreloadNextSongEnabledKey
-import echo.music.iad1tya.constants.PreloadNextSongLimitKey
-import echo.music.iad1tya.constants.PreventDuplicateTracksInQueueKey
-import echo.music.iad1tya.constants.RememberShuffleAndRepeatKey
-import echo.music.iad1tya.constants.RepeatModeKey
-import echo.music.iad1tya.constants.ResumeOnBluetoothConnectKey
-import echo.music.iad1tya.constants.ShowLyricsKey
-import echo.music.iad1tya.constants.ShuffleModeKey
-import echo.music.iad1tya.constants.ShufflePlaylistFirstKey
-import echo.music.iad1tya.constants.SimilarContent
-import echo.music.iad1tya.constants.SkipSilenceInstantKey
-import echo.music.iad1tya.constants.SkipSilenceKey
-import echo.music.iad1tya.constants.SpatialAudioKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.BeatInfoEntity
-import echo.music.iad1tya.db.entities.Event
-import echo.music.iad1tya.db.entities.FormatEntity
-import echo.music.iad1tya.db.entities.LyricsEntity
-import echo.music.iad1tya.db.entities.RelatedSongMap
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.di.DownloadCache
-import echo.music.iad1tya.di.PlayerCache
-import echo.music.iad1tya.echomusic.updater.downloadmanager.EchoNotificationProvider
+import com.ahr.rashmusic.MainActivity
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AudioNormalizationKey
+import com.ahr.rashmusic.constants.AudioOffload
+import com.ahr.rashmusic.constants.AudioQualityKey
+import com.ahr.rashmusic.constants.AudioQuality
+import com.ahr.rashmusic.constants.AutoDownloadOnLikeKey
+import com.ahr.rashmusic.constants.AutoLoadMoreKey
+import com.ahr.rashmusic.constants.AutoSkipNextOnErrorKey
+import com.ahr.rashmusic.constants.AutomixCrossfadeKey
+import com.ahr.rashmusic.constants.CrossfadeDurationKey
+import com.ahr.rashmusic.constants.CrossfadeEnabledKey
+import com.ahr.rashmusic.constants.CrossfadeGaplessKey
+import com.ahr.rashmusic.constants.StopMusicOnTaskClearKey
+import com.ahr.rashmusic.constants.DisableLoadMoreWhenRepeatAllKey
+import com.ahr.rashmusic.constants.DiscordTokenKey
+import com.ahr.rashmusic.constants.EnableBitPerfectUsbDacKey
+import com.ahr.rashmusic.constants.EnableDiscordRPCKey
+import com.ahr.rashmusic.constants.EnableLastFMScrobblingKey
+import com.ahr.rashmusic.constants.ForceOpusKey
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.constants.HistoryDuration
+import com.ahr.rashmusic.constants.IpVersionKey
+import com.ahr.rashmusic.constants.LastFMSessionKey
+import com.ahr.rashmusic.constants.LastFMUseNowPlaying
+import com.ahr.rashmusic.constants.LastFMUseSendLikes
+import com.ahr.rashmusic.constants.MediaSessionConstants
+import com.ahr.rashmusic.constants.MediaSessionConstants.CommandToggleLike
+import com.ahr.rashmusic.constants.MediaSessionConstants.CommandToggleRepeatMode
+import com.ahr.rashmusic.constants.MediaSessionConstants.CommandToggleShuffle
+import com.ahr.rashmusic.constants.MediaSessionConstants.CommandToggleStartRadio
+import com.ahr.rashmusic.constants.PauseListenHistoryKey
+import com.ahr.rashmusic.constants.PauseOnMute
+import com.ahr.rashmusic.constants.PersistentQueueKey
+import com.ahr.rashmusic.constants.PersistentShuffleAcrossQueuesKey
+import com.ahr.rashmusic.constants.PlayerVolumeKey
+import com.ahr.rashmusic.constants.PreferExtensionAudioKey
+import com.ahr.rashmusic.constants.PreloadLyricsEnabledKey
+import com.ahr.rashmusic.constants.PreloadNextSongEnabledKey
+import com.ahr.rashmusic.constants.PreloadNextSongLimitKey
+import com.ahr.rashmusic.constants.PreventDuplicateTracksInQueueKey
+import com.ahr.rashmusic.constants.RememberShuffleAndRepeatKey
+import com.ahr.rashmusic.constants.RepeatModeKey
+import com.ahr.rashmusic.constants.ResumeOnBluetoothConnectKey
+import com.ahr.rashmusic.constants.ShowLyricsKey
+import com.ahr.rashmusic.constants.ShuffleModeKey
+import com.ahr.rashmusic.constants.ShufflePlaylistFirstKey
+import com.ahr.rashmusic.constants.SimilarContent
+import com.ahr.rashmusic.constants.SkipSilenceInstantKey
+import com.ahr.rashmusic.constants.SkipSilenceKey
+import com.ahr.rashmusic.constants.SpatialAudioKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.BeatInfoEntity
+import com.ahr.rashmusic.db.entities.Event
+import com.ahr.rashmusic.db.entities.FormatEntity
+import com.ahr.rashmusic.db.entities.LyricsEntity
+import com.ahr.rashmusic.db.entities.RelatedSongMap
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.di.DownloadCache
+import com.ahr.rashmusic.di.PlayerCache
+import com.ahr.rashmusic.echomusic.updater.downloadmanager.EchoNotificationProvider
 import echo.music.dsp.audio.AutomixDuckAudioProcessor
 import echo.music.dsp.audio.CustomEqualizerAudioProcessor
 import echo.music.dsp.audio.StereoWidenerAudioProcessor
 import echo.music.dsp.controller.DspController
 import echo.music.dsp.data.EQProfileRepository
-import echo.music.iad1tya.playback.AudioSinkSelector
+import com.ahr.rashmusic.playback.AudioSinkSelector
 import echo.music.usbaudio.UsbAudioDriver
 import echo.music.usbaudio.UsbDacAudioSink
 import echo.music.usbaudio.UsbDacManager
-import echo.music.iad1tya.extensions.SilentHandler
-import echo.music.iad1tya.extensions.collect
-import echo.music.iad1tya.extensions.collectLatest
-import echo.music.iad1tya.extensions.currentMetadata
-import echo.music.iad1tya.extensions.findNextMediaItemById
-import echo.music.iad1tya.extensions.mediaItems
-import echo.music.iad1tya.extensions.metadata
-import echo.music.iad1tya.extensions.setOffloadEnabled
-import echo.music.iad1tya.extensions.toEnum
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.generate.SongPlayStatsRepository
-import echo.music.iad1tya.lyrics.LyricsHelper
-import echo.music.iad1tya.models.PersistPlayerState
-import echo.music.iad1tya.models.PersistQueue
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.audio.BeatAnalyzer
-import echo.music.iad1tya.playback.audio.SilenceDetectorAudioProcessor
-import echo.music.iad1tya.musicflow.MusicFlowQueue
-import echo.music.iad1tya.playback.queues.EmptyQueue
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.playback.queues.Queue
-import echo.music.iad1tya.playback.queues.YouTubePlaylistQueue
-import echo.music.iad1tya.playback.queues.YouTubeQueue
-import echo.music.iad1tya.playback.queues.filterExplicit
-import echo.music.iad1tya.playback.queues.filterVideoSongs
-import echo.music.iad1tya.ui.screens.settings.DiscordPresenceManager
-import echo.music.iad1tya.utils.CoilBitmapLoader
-import echo.music.iad1tya.utils.NetworkConnectivityObserver
-import echo.music.iad1tya.utils.PodcastProgress
-import echo.music.iad1tya.utils.ScrobbleManager
-import echo.music.iad1tya.utils.YTPlayerUtils
-import echo.music.iad1tya.utils.YTPlayerUtils.PlaybackData
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
-import echo.music.iad1tya.utils.isLocalMediaId
-import echo.music.iad1tya.utils.reportException
-import echo.music.iad1tya.widget.EchoMusicWidgetManager
-import echo.music.iad1tya.widget.MusicWidgetReceiver
-import echo.music.iad1tya.widget.WidgetQueueItem
+import com.ahr.rashmusic.extensions.SilentHandler
+import com.ahr.rashmusic.extensions.collect
+import com.ahr.rashmusic.extensions.collectLatest
+import com.ahr.rashmusic.extensions.currentMetadata
+import com.ahr.rashmusic.extensions.findNextMediaItemById
+import com.ahr.rashmusic.extensions.mediaItems
+import com.ahr.rashmusic.extensions.metadata
+import com.ahr.rashmusic.extensions.setOffloadEnabled
+import com.ahr.rashmusic.extensions.toEnum
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.generate.SongPlayStatsRepository
+import com.ahr.rashmusic.lyrics.LyricsHelper
+import com.ahr.rashmusic.models.PersistPlayerState
+import com.ahr.rashmusic.models.PersistQueue
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.audio.BeatAnalyzer
+import com.ahr.rashmusic.playback.audio.SilenceDetectorAudioProcessor
+import com.ahr.rashmusic.musicflow.MusicFlowQueue
+import com.ahr.rashmusic.playback.queues.EmptyQueue
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.playback.queues.Queue
+import com.ahr.rashmusic.playback.queues.YouTubePlaylistQueue
+import com.ahr.rashmusic.playback.queues.YouTubeQueue
+import com.ahr.rashmusic.playback.queues.filterExplicit
+import com.ahr.rashmusic.playback.queues.filterVideoSongs
+import com.ahr.rashmusic.ui.screens.settings.DiscordPresenceManager
+import com.ahr.rashmusic.utils.CoilBitmapLoader
+import com.ahr.rashmusic.utils.NetworkConnectivityObserver
+import com.ahr.rashmusic.utils.PodcastProgress
+import com.ahr.rashmusic.utils.ScrobbleManager
+import com.ahr.rashmusic.utils.YTPlayerUtils
+import com.ahr.rashmusic.utils.YTPlayerUtils.PlaybackData
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
+import com.ahr.rashmusic.utils.isLocalMediaId
+import com.ahr.rashmusic.utils.reportException
+import com.ahr.rashmusic.widget.EchoMusicWidgetManager
+import com.ahr.rashmusic.widget.MusicWidgetReceiver
+import com.ahr.rashmusic.widget.WidgetQueueItem
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
 import java.net.Inet4Address
@@ -238,9 +238,9 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
   @Inject lateinit var database: MusicDatabase
   @Inject lateinit var extensionManager: com.music.echo.extensions.ExtensionManager
 
-  @Inject lateinit var lyricsHelper: echo.music.iad1tya.lyrics.LyricsHelper
+  @Inject lateinit var lyricsHelper: com.ahr.rashmusic.lyrics.LyricsHelper
 
-  @Inject lateinit var syncUtils: echo.music.iad1tya.utils.SyncUtils
+  @Inject lateinit var syncUtils: com.ahr.rashmusic.utils.SyncUtils
 
   @Inject lateinit var mediaLibrarySessionCallback: MediaLibrarySessionCallback
 
@@ -248,10 +248,10 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
 
   @Inject lateinit var eqProfileRepository: EQProfileRepository
 
-  @Inject lateinit var widgetManager: echo.music.iad1tya.widget.EchoMusicWidgetManager
+  @Inject lateinit var widgetManager: com.ahr.rashmusic.widget.EchoMusicWidgetManager
 
   @Inject
-  lateinit var listenTogetherManager: echo.music.iad1tya.listentogether.ListenTogetherManager
+  lateinit var listenTogetherManager: com.ahr.rashmusic.listentogether.ListenTogetherManager
 
   @Inject
   lateinit var songPlayStatsRepository: SongPlayStatsRepository
@@ -303,7 +303,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
   private var crossfadeDuration = 5000f
   private var crossfadeGapless = true
   private var crossfadeTriggerJob: Job? = null
-  private val preArmManager by lazy { echo.music.iad1tya.playback.crossfade.AdaptivePreArmManager() }
+  private val preArmManager by lazy { com.ahr.rashmusic.playback.crossfade.AdaptivePreArmManager() }
 
   private var automixEnabled = false
   private var activeAutomixPlan: AutomixPlan? = null
@@ -401,22 +401,22 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
   val waitingForNetworkConnection = MutableStateFlow(false)
   private val isNetworkConnected = MutableStateFlow(false)
 
-  private lateinit var audioQuality: echo.music.iad1tya.constants.AudioQuality
+  private lateinit var audioQuality: com.ahr.rashmusic.constants.AudioQuality
   private lateinit var ipVersion: IpVersion
 
-  fun getEffectiveAudioQuality(): echo.music.iad1tya.constants.AudioQuality {
+  fun getEffectiveAudioQuality(): com.ahr.rashmusic.constants.AudioQuality {
     val dataSaver =
-      runCatching { dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false) }
+      runCatching { dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false) }
         .getOrDefault(false)
-    if (dataSaver) return echo.music.iad1tya.constants.AudioQuality.LOW
+    if (dataSaver) return com.ahr.rashmusic.constants.AudioQuality.LOW
 
     val isMetered = runCatching { connectivityManager.isActiveNetworkMetered }.getOrDefault(false)
     val wifiQuality =
-      dataStore.get(echo.music.iad1tya.constants.AudioQualityWifiKey)
-        .toEnum(echo.music.iad1tya.constants.AudioQuality.LOSSLESS)
+      dataStore.get(com.ahr.rashmusic.constants.AudioQualityWifiKey)
+        .toEnum(com.ahr.rashmusic.constants.AudioQuality.LOSSLESS)
     val cellularQuality =
-      dataStore.get(echo.music.iad1tya.constants.AudioQualityCellularKey)
-        .toEnum(echo.music.iad1tya.constants.AudioQuality.MEDIUM)
+      dataStore.get(com.ahr.rashmusic.constants.AudioQualityCellularKey)
+        .toEnum(com.ahr.rashmusic.constants.AudioQuality.MEDIUM)
 
     return if (isMetered) cellularQuality else wifiQuality
   }
@@ -449,7 +449,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
       else android.os.Handler(player.applicationLooper).post(update)
     }
 
-  val currentMediaMetadata = MutableStateFlow<echo.music.iad1tya.models.MediaMetadata?>(null)
+  val currentMediaMetadata = MutableStateFlow<com.ahr.rashmusic.models.MediaMetadata?>(null)
   private val currentSong =
     currentMediaMetadata
       .flatMapLatest { mediaMetadata -> database.song(mediaMetadata?.id) }
@@ -705,7 +705,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
           })
         }
         .distinctUntilChanged()
-        .collect { sessionKey -> echo.music.iad1tya.utils.lastfm.LastFM.sessionKey = sessionKey }
+        .collect { sessionKey -> com.ahr.rashmusic.utils.lastfm.LastFM.sessionKey = sessionKey }
     }
 
     try {
@@ -859,8 +859,8 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
     scope.launch {
       dataStore.data
         .map {
-          val listenBrainz = it[echo.music.iad1tya.constants.ListenBrainzEnabledKey] ?: false
-          val dataSaver = it[echo.music.iad1tya.constants.DataSaverEnabledKey] ?: false
+          val listenBrainz = it[com.ahr.rashmusic.constants.ListenBrainzEnabledKey] ?: false
+          val dataSaver = it[com.ahr.rashmusic.constants.DataSaverEnabledKey] ?: false
           if (dataSaver) false else listenBrainz
         }
         .distinctUntilChanged()
@@ -869,7 +869,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
 
     scope.launch {
       dataStore.data
-        .map { it[echo.music.iad1tya.constants.ListenBrainzTokenKey] ?: "" }
+        .map { it[com.ahr.rashmusic.constants.ListenBrainzTokenKey] ?: "" }
         .distinctUntilChanged()
         .collect { listenBrainzToken = it }
     }
@@ -969,7 +969,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
               } catch (e: Exception) {
                 null
               }) ?: false
-            val dataSaver = it[echo.music.iad1tya.constants.DataSaverEnabledKey] ?: false
+            val dataSaver = it[com.ahr.rashmusic.constants.DataSaverEnabledKey] ?: false
             if (dataSaver) false else showLyrics
           }
           .distinctUntilChanged(),
@@ -1054,7 +1054,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
         dataStore.data
           .map {
             (try {
-              it[echo.music.iad1tya.constants.AudioLoudnessPresetKey]
+              it[com.ahr.rashmusic.constants.AudioLoudnessPresetKey]
             } catch (e: Exception) {
               null
             })
@@ -1182,7 +1182,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
           } catch (e: Exception) {
             null
           }) ?: true
-        val dataSaver = it[echo.music.iad1tya.constants.DataSaverEnabledKey] ?: false
+        val dataSaver = it[com.ahr.rashmusic.constants.DataSaverEnabledKey] ?: false
         if (dataSaver) false else preload
       }
       .distinctUntilChanged()
@@ -2164,7 +2164,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
             .filterExplicit(dataStore.get(HideExplicitKey, false))
             .filterVideoSongs(
               dataStore.get(HideVideoSongsKey, false) ||
-                dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+                dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
             )
         }
       if (queue.preloadItem != null && player.playbackState == STATE_IDLE) return@launch
@@ -2264,7 +2264,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
               .filterExplicit(dataStore.get(HideExplicitKey, false))
               .filterVideoSongs(
                 dataStore.get(HideVideoSongsKey, false) ||
-                  dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+                  dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
               )
           }
 
@@ -2318,7 +2318,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
                   .filterExplicit(dataStore.get(HideExplicitKey, false))
                   .filterVideoSongs(
                     dataStore.get(HideVideoSongsKey, false) ||
-                      dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+                      dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
                   )
 
               if (radioItems.isNotEmpty()) {
@@ -2764,7 +2764,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
     scope.launch { toggleLike(database.song(songId).first()) }
   }
 
-  private suspend fun toggleLike(songToToggle: echo.music.iad1tya.db.entities.Song?) {
+  private suspend fun toggleLike(songToToggle: com.ahr.rashmusic.db.entities.Song?) {
     songToToggle?.let {
       val song = it.song.toggleLike()
       database.query {
@@ -2826,11 +2826,11 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
             dataStore.data
               .map {
                 (try {
-                    it[echo.music.iad1tya.constants.AudioLoudnessPresetKey]
+                    it[com.ahr.rashmusic.constants.AudioLoudnessPresetKey]
                   } catch (e: Exception) {
                     null
                   })
-                  .toEnum(echo.music.iad1tya.constants.AudioLoudnessPreset.NORMAL)
+                  .toEnum(com.ahr.rashmusic.constants.AudioLoudnessPreset.NORMAL)
               }
               .first()
           }
@@ -3065,7 +3065,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
                 .filterExplicit(dataStore.get(HideExplicitKey, false))
                 .filterVideoSongs(
                   dataStore.get(HideVideoSongsKey, false) ||
-                    dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+                    dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
                 )
             }
           if (
@@ -3121,7 +3121,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
     // Only Android Auto reads that cache: no network or disk work without a car.
     if (!isCarConnected()) return
     val url = artworkUri?.toString()?.takeIf { it.startsWith("http") } ?: return
-    scope.launch(Dispatchers.IO) { echo.music.iad1tya.utils.AutomotiveArtwork.artworkFile(this@MusicService, url) }
+    scope.launch(Dispatchers.IO) { com.ahr.rashmusic.utils.AutomotiveArtwork.artworkFile(this@MusicService, url) }
   }
 
   /** Items after the current one in play order (shuffle aware), counting up to [limit]. */
@@ -3168,7 +3168,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
               .filterExplicit(dataStore.get(HideExplicitKey, false))
               .filterVideoSongs(
                 dataStore.get(HideVideoSongsKey, false) ||
-                  dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+                  dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
               )
               .items
           }
@@ -3674,7 +3674,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
           if (cause is androidx.media3.datasource.HttpDataSource.InvalidResponseCodeException) {
             val urlStr = cause.dataSpec.uri.toString()
             Timber.tag(TAG).d("Extracted 403 URL: $urlStr")
-            echo.music.iad1tya.utils.InnerTubeXResolver.onRefused(urlStr)
+            com.ahr.rashmusic.utils.InnerTubeXResolver.onRefused(urlStr)
             break
           }
           cause = cause.cause
@@ -4080,7 +4080,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
     if (!listenBrainzEnabled || cleanToken.isBlank()) return
     scope.launch {
       if (isFinished) {
-        echo.music.iad1tya.ui.screens.settings.ListenBrainzManager.submitFinished(
+        com.ahr.rashmusic.ui.screens.settings.ListenBrainzManager.submitFinished(
           context = this@MusicService,
           token = cleanToken,
           title = title,
@@ -4091,7 +4091,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
           endMs = endMs
         )
       } else {
-        echo.music.iad1tya.ui.screens.settings.ListenBrainzManager.submitPlayingNow(
+        com.ahr.rashmusic.ui.screens.settings.ListenBrainzManager.submitPlayingNow(
           context = this@MusicService,
           token = cleanToken,
           title = title,
@@ -4206,7 +4206,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
       val lockedQuality = activeQualityInCache ?: getEffectiveAudioQuality()
 
       val preferExtensionAudio = runCatching { dataStore.get(PreferExtensionAudioKey, true) }.getOrDefault(true)
-      val isDataSaver = runCatching { dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false) }.getOrDefault(false)
+      val isDataSaver = runCatching { dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false) }.getOrDefault(false)
       val canUseAddon = !isDataSaver && (preferExtensionAudio || lockedQuality.permitsAddons())
       val hasEnabledAddons = runBlocking(Dispatchers.IO) { extensionManager.hasEnabledAddons() }
       val canBypassForAddon = canUseAddon && hasEnabledAddons
@@ -4796,7 +4796,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
       saveQueueToDisk()
     }
     if (!shouldStopPlaybackOnTaskRemoval(
-        dataStore.get(echo.music.iad1tya.constants.StopMusicOnTaskClearKey, false),
+        dataStore.get(com.ahr.rashmusic.constants.StopMusicOnTaskClearKey, false),
         player.playWhenReady,
         player.playbackState,
       )) return
@@ -4866,7 +4866,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
       MusicWidgetReceiver.ACTION_UPDATE_WIDGET -> {
         updateWidgetUI(player.isPlaying)
       }
-      "echo.music.iad1tya.ACTION_CLEAR_SONG_CACHE" -> {
+      "com.ahr.rashmusic.ACTION_CLEAR_SONG_CACHE" -> {
         val songId = intent.getStringExtra("songId")
         if (songId != null) {
           songUrlCache.keys
@@ -4995,7 +4995,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
   }
 
   private fun initializeCast() {
-    if (dataStore.get(echo.music.iad1tya.constants.EnableGoogleCastKey, true)) {
+    if (dataStore.get(com.ahr.rashmusic.constants.EnableGoogleCastKey, true)) {
       try {
         castConnectionHandler = CastConnectionHandler(this, scope, this)
         if (castConnectionHandler?.initialize() != true) {
@@ -5739,11 +5739,11 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
         // Equal-power curve: delegate to EqualPowerCurve for constant acoustic power
         fun equalPowerIn(edge0: Float, edge1: Float, x: Float): Float {
           val t = ((x - edge0) / (edge1 - edge0)).coerceIn(0f, 1f)
-          return echo.music.iad1tya.playback.crossfade.EqualPowerCurve.calculateGains(t).incomingGain
+          return com.ahr.rashmusic.playback.crossfade.EqualPowerCurve.calculateGains(t).incomingGain
         }
         fun equalPowerOut(edge0: Float, edge1: Float, x: Float): Float {
           val t = ((x - edge0) / (edge1 - edge0)).coerceIn(0f, 1f)
-          return echo.music.iad1tya.playback.crossfade.EqualPowerCurve.calculateGains(t).outgoingGain
+          return com.ahr.rashmusic.playback.crossfade.EqualPowerCurve.calculateGains(t).outgoingGain
         }
 
         try {
@@ -5765,7 +5765,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
             }
 
             val progress = (i / steps.toFloat()).coerceIn(0f, 1f)
-            val gains = echo.music.iad1tya.playback.crossfade.EqualPowerCurve.calculateGains(progress)
+            val gains = com.ahr.rashmusic.playback.crossfade.EqualPowerCurve.calculateGains(progress)
 
             try {
               player.volume = startVolume * gains.incomingGain
@@ -5915,7 +5915,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
             Timber.tag(TAG).d("Preloading stream for $mediaId")
             kotlin.runCatching {
               val preferExtensionAudio = runCatching { dataStore.get(PreferExtensionAudioKey, true) }.getOrDefault(true)
-              val isDataSaver = runCatching { dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false) }.getOrDefault(false)
+              val isDataSaver = runCatching { dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false) }.getOrDefault(false)
               val canUseAddon = !isDataSaver && (preferExtensionAudio || effectivePreloadQuality.permitsAddons())
               val hasEnabledAddons = extensionManager.hasEnabledAddons()
 
@@ -6020,7 +6020,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
                   ?.replace(" - Topic", "")
 
               val playbackData =
-                echo.music.iad1tya.utils.YTPlayerUtils.playerResponseForPlayback(
+                com.ahr.rashmusic.utils.YTPlayerUtils.playerResponseForPlayback(
                   videoId = mediaId,
                   audioQuality = effectivePreloadQuality,
                   connectivityManager = connectivityManager
@@ -6068,12 +6068,12 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
               if (dbSong != null) {
                 kotlin.runCatching {
                   val metadata =
-                    echo.music.iad1tya.models.MediaMetadata(
+                    com.ahr.rashmusic.models.MediaMetadata(
                       id = dbSong.song.id,
                       title = dbSong.song.title,
                       artists =
                         dbSong.artists.map { artist ->
-                          echo.music.iad1tya.models.MediaMetadata.Artist(artist.id, artist.name)
+                          com.ahr.rashmusic.models.MediaMetadata.Artist(artist.id, artist.name)
                         },
                       duration = dbSong.song.duration,
                       thumbnailUrl = dbSong.thumbnailUrl
@@ -6081,7 +6081,7 @@ class MusicService : MediaLibraryService(), Player.Listener, PlaybackStatsListen
                   val lyricsResult = lyricsHelper.getLyrics(metadata)
                   database.query {
                     upsert(
-                      echo.music.iad1tya.db.entities.LyricsEntity(
+                      com.ahr.rashmusic.db.entities.LyricsEntity(
                         id = mediaId,
                         lyrics = lyricsResult.lyrics ?: ""
                       )

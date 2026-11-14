@@ -1,9 +1,9 @@
-package echo.music.iad1tya.models
+package com.ahr.rashmusic.models
 
 import com.music.innertube.models.SongItem
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.db.entities.SongEntity
-import echo.music.iad1tya.ui.utils.resize
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.db.entities.SongEntity
+import com.ahr.rashmusic.ui.utils.resize
 
 fun MediaMetadata.toSongEntity() =
   SongEntity(

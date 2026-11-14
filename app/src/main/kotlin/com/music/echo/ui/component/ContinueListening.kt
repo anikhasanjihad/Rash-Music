@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.component
+package com.ahr.rashmusic.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.lazy.LazyListScope
@@ -14,14 +14,14 @@ import androidx.compose.ui.res.stringResource
 import com.music.innertube.models.Artist
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_PODCAST_EPISODE
-import echo.music.iad1tya.LocalPlayerConnection
-import echo.music.iad1tya.R
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.playback.queues.ListQueue
-import echo.music.iad1tya.utils.EpisodeProgress
-import echo.music.iad1tya.utils.PodcastProgress
-import echo.music.iad1tya.utils.listItemShape
+import com.ahr.rashmusic.LocalPlayerConnection
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.playback.queues.ListQueue
+import com.ahr.rashmusic.utils.EpisodeProgress
+import com.ahr.rashmusic.utils.PodcastProgress
+import com.ahr.rashmusic.utils.listItemShape
 
 /** Episodes started and not finished, most recently listened first. */
 @Composable

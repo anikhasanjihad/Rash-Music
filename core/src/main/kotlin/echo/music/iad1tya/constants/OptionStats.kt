@@ -1,4 +1,4 @@
-package echo.music.iad1tya.ui.screens
+package com.ahr.rashmusic.ui.screens
 
 enum class OptionStats {
   WEEKS,

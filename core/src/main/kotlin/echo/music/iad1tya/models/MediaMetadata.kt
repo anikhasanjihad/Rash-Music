@@ -1,4 +1,4 @@
-package echo.music.iad1tya.models
+package com.ahr.rashmusic.models
 
 import androidx.compose.runtime.Immutable
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV

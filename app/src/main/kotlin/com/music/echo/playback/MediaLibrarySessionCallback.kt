@@ -1,4 +1,4 @@
-package echo.music.iad1tya.playback
+package com.ahr.rashmusic.playback
 
 import android.content.ContentResolver
 import android.content.Context
@@ -43,29 +43,29 @@ import com.music.innertube.pages.HomePage
 import com.music.innertube.pages.PlaylistPage
 import com.music.innertube.pages.PodcastPage
 import dagger.hilt.android.qualifiers.ApplicationContext
-import echo.music.iad1tya.R
-import echo.music.iad1tya.constants.AutoplayOnAutomotiveConnectKey
-import echo.music.iad1tya.constants.DataSyncIdKey
-import echo.music.iad1tya.constants.HideExplicitKey
-import echo.music.iad1tya.constants.HideVideoSongsKey
-import echo.music.iad1tya.constants.MediaSessionConstants
-import echo.music.iad1tya.constants.SongSortType
-import echo.music.iad1tya.constants.PodcastHidePlayedKey
-import echo.music.iad1tya.db.MusicDatabase
-import echo.music.iad1tya.db.entities.PlaylistEntity
-import echo.music.iad1tya.db.entities.Song
-import echo.music.iad1tya.extensions.toMediaItem
-import echo.music.iad1tya.extensions.toggleRepeatMode
-import echo.music.iad1tya.ui.component.toSongItem
-import echo.music.iad1tya.utils.AutomotiveArtwork.withAutomotiveArtworkUri
-import echo.music.iad1tya.models.toMediaMetadata
-import echo.music.iad1tya.utils.EpisodeDates
-import echo.music.iad1tya.utils.PodcastProgress
-import echo.music.iad1tya.utils.makeTimeString
-import echo.music.iad1tya.utils.PodcastShowStore
-import echo.music.iad1tya.utils.dataStore
-import echo.music.iad1tya.utils.get
-import echo.music.iad1tya.utils.reportException
+import com.ahr.rashmusic.R
+import com.ahr.rashmusic.constants.AutoplayOnAutomotiveConnectKey
+import com.ahr.rashmusic.constants.DataSyncIdKey
+import com.ahr.rashmusic.constants.HideExplicitKey
+import com.ahr.rashmusic.constants.HideVideoSongsKey
+import com.ahr.rashmusic.constants.MediaSessionConstants
+import com.ahr.rashmusic.constants.SongSortType
+import com.ahr.rashmusic.constants.PodcastHidePlayedKey
+import com.ahr.rashmusic.db.MusicDatabase
+import com.ahr.rashmusic.db.entities.PlaylistEntity
+import com.ahr.rashmusic.db.entities.Song
+import com.ahr.rashmusic.extensions.toMediaItem
+import com.ahr.rashmusic.extensions.toggleRepeatMode
+import com.ahr.rashmusic.ui.component.toSongItem
+import com.ahr.rashmusic.utils.AutomotiveArtwork.withAutomotiveArtworkUri
+import com.ahr.rashmusic.models.toMediaMetadata
+import com.ahr.rashmusic.utils.EpisodeDates
+import com.ahr.rashmusic.utils.PodcastProgress
+import com.ahr.rashmusic.utils.makeTimeString
+import com.ahr.rashmusic.utils.PodcastShowStore
+import com.ahr.rashmusic.utils.dataStore
+import com.ahr.rashmusic.utils.get
+import com.ahr.rashmusic.utils.reportException
 import java.text.Normalizer
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
@@ -695,7 +695,7 @@ constructor(
                       ?.filterVideoSongs(
                         context.dataStore.get(HideVideoSongsKey, false) ||
                           context.dataStore.get(
-                            echo.music.iad1tya.constants.DataSaverEnabledKey,
+                            com.ahr.rashmusic.constants.DataSaverEnabledKey,
                             false
                           )
                       ) ?: emptyList()
@@ -719,7 +719,7 @@ constructor(
   }
 
   /**
-   * Points each item's artwork at [AutomotiveArtworkProvider][echo.music.iad1tya.utils.AutomotiveArtworkProvider].
+   * Points each item's artwork at [AutomotiveArtworkProvider][com.ahr.rashmusic.utils.AutomotiveArtworkProvider].
    * Android Auto ignores `https://` icon URIs, and embedding the bytes only fit
    * a bounded part of each page, so covers were missing on later items and on
    * some surfaces. A `content://` URI lets every surface load every cover lazily.
@@ -859,7 +859,7 @@ constructor(
     filterExplicit(context.dataStore.get(HideExplicitKey, false))
       .filterVideoSongs(
         context.dataStore.get(HideVideoSongsKey, false) ||
-          context.dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+          context.dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
       )
 
   /** [search] again when its first answer is empty: the first request after a start can be. */
@@ -948,7 +948,7 @@ constructor(
     val hideExplicit = context.dataStore.get(HideExplicitKey, false)
     val hideVideos =
       context.dataStore.get(HideVideoSongsKey, false) ||
-        context.dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+        context.dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
     return database
       .allSongs()
       .first()
@@ -1782,7 +1782,7 @@ constructor(
         ?.filterExplicit(context.dataStore.get(HideExplicitKey, false))
         ?.filterVideoSongs(
           context.dataStore.get(HideVideoSongsKey, false) ||
-            context.dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+            context.dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
         )
       home?.sections.orEmpty().flatMap { section ->
         val parentId = "${MusicService.HOME_SECTION}/${homeSectionKey(section)}"
@@ -2103,7 +2103,7 @@ constructor(
         ?.filterExplicit(context.dataStore.get(HideExplicitKey, false))
         ?.filterVideoSongs(
           context.dataStore.get(HideVideoSongsKey, false) ||
-            context.dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+            context.dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
         ) ?: return emptyList()
       home.sections.mapNotNull { section ->
         val artwork = sectionArtwork(section)
@@ -2149,7 +2149,7 @@ constructor(
       val section = homeSection(sectionId) ?: return emptyList()
       val hideExplicit = context.dataStore.get(HideExplicitKey, false)
       val hideVideos = context.dataStore.get(HideVideoSongsKey, false) ||
-        context.dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+        context.dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
       // Filter video songs on the YTItem list (same predicate as elsewhere);
       // filtering MediaItems afterwards would be a no-op.
       section.items.filterVideoSongs(hideVideos).flatMap { item ->
@@ -2177,7 +2177,7 @@ constructor(
         ?.filterExplicit(context.dataStore.get(HideExplicitKey, false))
         ?.filterVideoSongs(
           context.dataStore.get(HideVideoSongsKey, false) ||
-            context.dataStore.get(echo.music.iad1tya.constants.DataSaverEnabledKey, false)
+            context.dataStore.get(com.ahr.rashmusic.constants.DataSaverEnabledKey, false)
         ) ?: return emptyList()
       val songs = home.sections.flatMap { it.items }.filterIsInstance<SongItem>().take(50)
       songs.forEach { item ->
@@ -2404,7 +2404,7 @@ constructor(
       singleItemStyle = MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_CATEGORY_LIST_ITEM,
     )
 
-  private fun echo.music.iad1tya.db.entities.Playlist.toBrowsableMediaItem() =
+  private fun com.ahr.rashmusic.db.entities.Playlist.toBrowsableMediaItem() =
     browsableMediaItem(
       "${MusicService.PLAYLIST}/$id",
       playlist.name,
