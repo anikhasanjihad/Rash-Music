@@ -101,7 +101,7 @@ fun UpdateAvailableDialog(
             }
 
             Text(
-              text = "Version $version is available",
+              text = "Rash Music Premium $version is ready",
               style = MaterialTheme.typography.titleLarge,
               fontWeight = FontWeight.Bold,
             )

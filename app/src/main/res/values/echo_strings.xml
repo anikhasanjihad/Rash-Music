@@ -996,8 +996,8 @@
     <string name="welcome_update_status">Updated</string>
     <string name="welcome_update_intro">Ensuring you have the latest features and security improvements.</string>
     <string name="welcome_checking_updates">Checking for updates…</string>
-    <string name="welcome_up_to_date">Rash Music is up to date!</string>
-    <string name="welcome_update_available">New version is available: %s</string>
+    <string name="welcome_up_to_date">Rash Music Premium is up to date!</string>
+    <string name="welcome_update_available">Premium update ready: %s</string>
     <string name="welcome_everything_ready">Everything is now up to date</string>
     <string name="commits_title">Commits</string>
     <string name="error_loading_commits">Failed to load commits</string>
