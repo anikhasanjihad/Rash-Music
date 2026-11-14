@@ -98,6 +98,8 @@ android {
     create("universal") {
       dimension = "abi"
       buildConfigField("String", "ARCHITECTURE", "\"universal\"")
+      // One APK for every phone, including 32-bit (armeabi-v7a) devices
+      ndk { abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")) }
     }
     create("arm64") {
       dimension = "abi"

@@ -31,7 +31,7 @@ object UpdateNotificationHelper {
       nm.createNotificationChannel(channel)
     }
 
-    val apkUrl = "https://echomusic.fun"
+    val apkUrl = "https://github.com/anikhasanjihad/Rash-Music/releases/latest"
     val intent = Intent(Intent.ACTION_VIEW, apkUrl.toUri())
 
     val flags = PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE

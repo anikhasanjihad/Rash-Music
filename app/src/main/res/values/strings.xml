@@ -462,7 +462,7 @@
     <string name="restore_failed">Failed to restore backup</string>
 
     <string name="discord_integration">Discord Integration</string>
-    <string name="discord_information">echomusic uses the KizzyRPC library to set your Discord account\'s status. This involves using the Discord Gateway connection, which may be considered a violation of Discord\'s TOS. However, there are no known cases of user accounts being suspended for this reason. Use at your own risk.\n\echomusic will only extract your token, and everything else is stored locally.</string>
+    <string name="discord_information">Rash Music uses the KizzyRPC library to set your Discord account\'s status. This involves using the Discord Gateway connection, which may be considered a violation of Discord\'s TOS. However, there are no known cases of user accounts being suspended for this reason. Use at your own risk.\n\Rash Music will only extract your token, and everything else is stored locally.</string>
     <string name="dismiss">Dismiss</string>
     <string name="options">Options</string>
     <string name="preview">Preview</string>
@@ -709,7 +709,7 @@
     <string name="display_density_desc">Manage Display density settings</string>
     <string name="download_quality_title_desc">Manage Download Quality settings</string>
     <string name="downloaded_songs_desc">Manage Downloaded songs settings</string>
-    <string name="echomusic_1_desc">Manage Vivi Music (Fluid) settings</string>
+    <string name="echomusic_1_desc">Manage Rash Music (Fluid) settings</string>
     <string name="enable_desc">Enable or disable</string>
     <string name="enable_authentication_desc">Enable or disable authentication</string>
     <string name="enable_dynamic_theme_desc">Enable or disable dynamic theme</string>

@@ -133,7 +133,7 @@ fun UpdateSettings(
               }
             },
             onClick = {
-              val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://echomusic.fun"))
+              val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/anikhasanjihad/Rash-Music"))
               context.startActivity(intent)
             }
           )

@@ -485,7 +485,7 @@ object WrappedShareHelper {
     }
     canvas.drawText("${data.uniqueSongsCount} SONGS PLAYED", marginX, trioY, statTrioPaint)
     canvas.drawText("${data.uniqueArtistsCount} ARTISTS DISCOVERED", marginX + 330f, trioY, statTrioPaint)
-    canvas.drawText("ECHO MUSIC", marginX + 710f, trioY, statTrioAccentPaint)
+    canvas.drawText("RASH MUSIC", marginX + 710f, trioY, statTrioAccentPaint)
 
     // 8. Watermark Footer
     val footerPaint = Paint().apply {
@@ -497,7 +497,7 @@ object WrappedShareHelper {
       typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
     }
     canvas.drawText(
-      "CRAFTED WITH ECHO MUSIC • ${data.yearLabel} REPLAY • echomusic.app/wrapped",
+      "CRAFTED WITH RASH MUSIC • ${data.yearLabel} REPLAY",
       width / 2f,
       1750f,
       footerPaint

@@ -2419,7 +2419,7 @@ fun getAllSearchableSettings(): List<SearchableSetting> {
     ),
     SearchableSetting(
       "High Quality (320kbps) Music Quality",
-      "Visit 320kbps.echomusic.fun for setup guide",
+      "Open the 320kbps setup guide",
       "Extensions",
       "settings/extensions"
     ),

@@ -57,6 +57,15 @@ fun WelcomeDialog(onDismissRequest: () -> Unit) {
         // Main Header
         WelcomeAppCard()
 
+        WelcomeSectionCard(title = "Rash Music Premium") {
+          WelcomeActionRow(
+            icon = painterResource(R.drawable.update),
+            title = "Welcome to the Premium experience",
+            subtitle = "Ad-free streaming, synced lyrics, offline playback and high-quality audio",
+            onClick = {}
+          )
+        }
+
         WelcomeSectionCard(title = "Developer") {
           WelcomeActionRow(
             icon = painterResource(R.drawable.website),
@@ -106,7 +115,7 @@ fun WelcomeDialog(onDismissRequest: () -> Unit) {
               contentColor = MaterialTheme.colorScheme.onPrimary
             )
         ) {
-          Text("Continue", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+          Text("Start Premium", fontWeight = FontWeight.Bold, fontSize = 16.sp)
         }
       }
     }

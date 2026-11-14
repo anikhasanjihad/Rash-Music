@@ -436,7 +436,7 @@
     <string name="restore_failed">Échec de la restauration de la sauvegarde</string>
 
     <string name="discord_integration">Intégration Discord</string>
-    <string name="discord_information">echomusic utilise la bibliothèque KizzyRPC pour définir le statut de votre compte Discord. Cela implique l\'utilisation de la passerelle Discord, ce qui peut être considéré comme une violation des CGU de Discord. Cependant, aucun bannissement de compte n\'a été signalé pour cette raison. À utiliser à vos propres risques.\nechomusic ne fera qu\'extraire votre jeton et tout le reste est stocké localement.</string>
+    <string name="discord_information">Rash Music utilise la bibliothèque KizzyRPC pour définir le statut de votre compte Discord. Cela implique l\'utilisation de la passerelle Discord, ce qui peut être considéré comme une violation des CGU de Discord. Cependant, aucun bannissement de compte n\'a été signalé pour cette raison. À utiliser à vos propres risques.\nRash Music ne fera qu\'extraire votre jeton et tout le reste est stocké localement.</string>
     <string name="dismiss">Ignorer</string>
     <string name="options">Options</string>
     <string name="preview">Aperçu</string>
@@ -678,7 +678,7 @@
     <string name="display_density_desc">Gérer les paramètres de densité d\'affichage</string>
     <string name="download_quality_title_desc">Gérer les paramètres de qualité de téléchargement</string>
     <string name="downloaded_songs_desc">Gérer les paramètres des titres téléchargés</string>
-    <string name="echomusic_1_desc">Gérer les paramètres de Vivi Music (Fluide)</string>
+    <string name="echomusic_1_desc">Gérer les paramètres de Rash Music (Fluide)</string>
     <string name="enable_desc">Activer ou désactiver</string>
     <string name="enable_authentication_desc">Activer ou désactiver l\'authentification</string>
     <string name="enable_dynamic_theme_desc">Activer ou désactiver le thème dynamique</string>

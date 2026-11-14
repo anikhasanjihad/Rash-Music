@@ -100,7 +100,7 @@ fun UpdateAvailableDialog(
             }
 
             Text(
-              text = "Version $version is available",
+              text = "Rash Music Premium $version is ready",
               style = MaterialTheme.typography.titleLarge,
               fontWeight = FontWeight.Bold,
             )
@@ -190,19 +190,19 @@ fun UpdateAvailableDialog(
             onClick = onDismiss,
             shape = actionShape,
           ) {
-            Text(text = "Next time")
+            Text(text = stringResource(R.string.later))
           }
           Spacer(modifier = Modifier.width(8.dp))
           Button(
             onClick = {
               onDismiss()
               val intent =
-                Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://echomusic.fun"))
+                Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://github.com/anikhasanjihad/Rash-Music/releases/latest"))
               context.startActivity(intent)
             },
             shape = actionShape,
           ) {
-            Text(text = "Update")
+            Text(text = "Upgrade now")
           }
         }
       }

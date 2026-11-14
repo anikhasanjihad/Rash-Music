@@ -135,8 +135,8 @@ fun FloatingMiniPlayer(
   val isPressed by pressInteractionSource.collectIsPressedAsState()
   val pressScale by
     animateFloatAsState(
-      targetValue = if (isPressed) 1.04f else 1f,
-      animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
+      targetValue = if (isPressed) 0.97f else 1f,
+      animationSpec = echo.music.iad1tya.ui.liquid.LiquidMotion.responsiveSpring(),
       label = "accessoryPressScale",
     )
 
